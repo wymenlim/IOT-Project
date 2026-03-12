@@ -2,81 +2,130 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
-// Known sender MACs
-const char* MAC_A = "0C:8B:95:A8:1D:2C";
-const char* MAC_C = "4C:75:25:CB:7E:54";
+uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
+uint8_t macB[] = {0x4C, 0x75, 0x25, 0xCB, 0x89, 0x98};
+uint8_t macC[] = {0x4C, 0x75, 0x25, 0xCB, 0x7E, 0x54};
+
+struct ButtonPacket {
+  uint8_t nodeId;
+  unsigned long pressTime;
+  uint8_t hopCount;
+};
+
+struct StartPacket {
+  uint8_t type;
+};
 
 struct PressEvent {
-  char mac[18];
   unsigned long timestamp;
+  uint8_t hopCount;
   bool received;
 };
 
-PressEvent pressA = {"", 0, false};
-PressEvent pressC = {"", 0, false};
+PressEvent pressA = {0, 0, false};
+PressEvent pressB = {0, 0, false};
+PressEvent pressC = {0, 0, false};
 
-bool roundActive = true;
+bool roundActive = false;
 
-void declareWinner() {
+void registerPeer(uint8_t* mac) {
+  esp_now_peer_info_t peer = {};
+  memcpy(peer.peer_addr, mac, 6);
+  peer.channel = 0;
+  peer.encrypt = false;
+  esp_now_add_peer(&peer);
+}
+
+void resetRound() {
+  pressA = {0, 0, false};
+  pressB = {0, 0, false};
+  pressC = {0, 0, false};
   roundActive = false;
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 20);
   M5.Lcd.setTextSize(2);
+  M5.Lcd.println("Press D btn\nto START!");
+  Serial.println("--- Round reset. Press D button to START ---");
+}
 
-  if (pressA.received && pressC.received) {
-    long diff = (long)pressA.timestamp - (long)pressC.timestamp;
-    if (diff < 0) {
-      M5.Lcd.println("Winner: A!");
-      Serial.printf("Winner: A | diff: %ld ms\n", -diff);
-    } else if (diff > 0) {
-      M5.Lcd.println("Winner: C!");
-      Serial.printf("Winner: C | diff: %ld ms\n", diff);
-    } else {
-      M5.Lcd.println("TIE!");
-      Serial.println("TIE!");
-    }
-  } else if (pressA.received) {
-    M5.Lcd.println("Winner: A!\n(C no press)");
-    Serial.println("Winner: A (C did not press)");
-  } else {
-    M5.Lcd.println("Winner: C!\n(A no press)");
-    Serial.println("Winner: C (A did not press)");
-  }
+void broadcastStart() {
+  StartPacket spkt;
+  spkt.type = 0xAA;
+  esp_now_send(macA, (uint8_t*)&spkt, sizeof(spkt));
+  esp_now_send(macB, (uint8_t*)&spkt, sizeof(spkt));
+  // C gets START via B
 
-  // Reset after 3 seconds
-  delay(3000);
-  pressA = {"", 0, false};
-  pressC = {"", 0, false};
   roundActive = true;
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 20);
-  M5.Lcd.println("Ready!\nWaiting...");
-  Serial.println("--- New round ---");
+  M5.Lcd.setTextSize(3);
+  M5.Lcd.println("GO!");
+  Serial.println("START sent! Round is live.");
+}
+
+void declareWinner() {
+  roundActive = false;
+
+  struct Entry { const char* name; PressEvent* e; };
+  Entry entries[] = {{"A", &pressA}, {"B", &pressB}, {"C", &pressC}};
+
+  const char* winner = nullptr;
+  unsigned long earliest = ULONG_MAX;
+  for (auto& e : entries) {
+    if (e.e->received && e.e->timestamp < earliest) {
+      earliest = e.e->timestamp;
+      winner = e.name;
+    }
+  }
+
+  Serial.println("=== ROUND RESULT ===");
+  for (auto& e : entries) {
+    if (e.e->received) {
+      Serial.printf("  Player %s | reactionTime: %lu ms | hopCount: %d | diff: +%lu ms\n",
+        e.name, e.e->timestamp, e.e->hopCount, e.e->timestamp - earliest);
+    } else {
+      Serial.printf("  Player %s | did not press\n", e.name);
+    }
+  }
+  if (winner) Serial.printf("  >> WINNER: Player %s <<\n", winner);
+  Serial.println("====================");
+
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(10, 10);
+  M5.Lcd.setTextSize(2);
+  if (winner) M5.Lcd.printf("Winner: %s!\n\n", winner);
+  M5.Lcd.setTextSize(1);
+  for (auto& e : entries) {
+    if (e.e->received) {
+      M5.Lcd.printf("%s: %lums hop:%d\n", e.name, e.e->timestamp, e.e->hopCount);
+    } else {
+      M5.Lcd.printf("%s: no press\n", e.name);
+    }
+  }
+
+  delay(3000);
+  resetRound();
 }
 
 void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len) {
   if (!roundActive) return;
+  if (len != sizeof(ButtonPacket)) return;
 
-  char senderMAC[18];
-  snprintf(senderMAC, sizeof(senderMAC), "%02X:%02X:%02X:%02X:%02X:%02X",
-    recvInfo->src_addr[0], recvInfo->src_addr[1], recvInfo->src_addr[2],
-    recvInfo->src_addr[3], recvInfo->src_addr[4], recvInfo->src_addr[5]);
+  ButtonPacket pkt;
+  memcpy(&pkt, data, sizeof(pkt));
 
-  unsigned long receiveTime = millis();
-  Serial.printf("Received from %s at %lu ms\n", senderMAC, receiveTime);
+  Serial.printf("Received from Node %d | reactionTime: %lu ms | hopCount: %d\n",
+    pkt.nodeId, pkt.pressTime, pkt.hopCount);
 
-  if (strcmp(senderMAC, MAC_A) == 0 && !pressA.received) {
-    strncpy(pressA.mac, senderMAC, 18);
-    pressA.timestamp = receiveTime;
-    pressA.received = true;
-  } else if (strcmp(senderMAC, MAC_C) == 0 && !pressC.received) {
-    strncpy(pressC.mac, senderMAC, 18);
-    pressC.timestamp = receiveTime;
-    pressC.received = true;
+  if (pkt.nodeId == 1 && !pressA.received) {
+    pressA = {pkt.pressTime, pkt.hopCount, true};
+  } else if (pkt.nodeId == 2 && !pressB.received) {
+    pressB = {pkt.pressTime, pkt.hopCount, true};
+  } else if (pkt.nodeId == 3 && !pressC.received) {
+    pressC = {pkt.pressTime, pkt.hopCount, true};
   }
 
-  // Declare winner once both pressed, or after one presses
-  if (pressA.received && pressC.received) {
+  if (pressA.received && pressB.received && pressC.received) {
     declareWinner();
   }
 }
@@ -87,35 +136,25 @@ void setup() {
   delay(1000);
   WiFi.mode(WIFI_STA);
 
-  if (esp_now_init() != ESP_OK) {
-    Serial.println("ESP-NOW init failed");
-    return;
-  }
-
+  esp_now_init();
   esp_now_register_recv_cb(onDataReceived);
 
-  // Register A as peer
-  esp_now_peer_info_t peerA = {};
-  uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
-  memcpy(peerA.peer_addr, macA, 6);
-  peerA.channel = 0;
-  peerA.encrypt = false;
-  esp_now_add_peer(&peerA);
+  registerPeer(macA);
+  registerPeer(macB);
+  registerPeer(macC);
 
-  // Register C as peer
-  esp_now_peer_info_t peerC = {};
-  uint8_t macC[] = {0x4C, 0x75, 0x25, 0xCB, 0x7E, 0x54};
-  memcpy(peerC.peer_addr, macC, 6);
-  peerC.channel = 0;
-  peerC.encrypt = false;
-  esp_now_add_peer(&peerC);
-
-  M5.Lcd.setTextSize(2);
-  M5.Lcd.println("Ready!\nWaiting...");
-  Serial.println("D server ready");
-  Serial.println("--- New round ---");
+  Serial.println("Node D server ready");
+  resetRound();
 }
 
 void loop() {
   M5.update();
+  if (M5.BtnA.wasPressed()) {
+    if (!roundActive) {
+      broadcastStart();
+    } else {
+      Serial.println("Manual reset!");
+      resetRound();
+    }
+  }
 }
