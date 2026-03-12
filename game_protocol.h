@@ -16,8 +16,6 @@ enum PacketType : uint8_t {
 };
 
 #define DEDUP_CACHE_SIZE 8
-#define ROUND_TIMEOUT_MS 10000UL
-
 struct GamePacket {
   uint8_t type;
   uint8_t origin_mac[6];

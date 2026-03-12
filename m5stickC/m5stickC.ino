@@ -100,7 +100,7 @@ void loop() {
 
     // Send via B since C can't reach D
     esp_now_send(macB, (uint8_t*)&pkt, sizeof(pkt));
-    Serial.printf("Pressed! Reaction time: %lu ms | sending via B\n", pkt.reaction_ms);
+    Serial.printf("[C] Button pressed | reaction time: %lu ms | sending via B\n", pkt.reaction_ms);
 
     M5.Lcd.fillScreen(BLACK);
     M5.Lcd.setCursor(10, 30);

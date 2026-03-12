@@ -97,7 +97,7 @@ void loop() {
     );
 
     esp_now_send(macD, (uint8_t*)&pkt, sizeof(pkt));
-    Serial.printf("Pressed! Reaction time: %lu ms\n", pkt.reaction_ms);
+    Serial.printf("[A] Button pressed | reaction time: %lu ms\n", pkt.reaction_ms);
 
     M5.Lcd.fillScreen(BLACK);
     M5.Lcd.setCursor(10, 30);

@@ -19,7 +19,6 @@ PressEvent pressB = {0, 0, false};
 PressEvent pressC = {0, 0, false};
 
 bool roundActive = false;
-unsigned long roundDeadline = 0;
 uint16_t packetCounter = 0;
 DedupEntry dedupCache[DEDUP_CACHE_SIZE];
 uint8_t dedupIndex = 0;
@@ -44,7 +43,6 @@ void resetRound() {
   pressB = {0, 0, false};
   pressC = {0, 0, false};
   roundActive = false;
-  roundDeadline = 0;
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 20);
   M5.Lcd.setTextSize(2);
@@ -63,7 +61,6 @@ void broadcastStart() {
   // C gets GO via B
 
   roundActive = true;
-  roundDeadline = millis() + ROUND_TIMEOUT_MS;
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 20);
   M5.Lcd.setTextSize(3);
@@ -150,16 +147,19 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   if (!isLocalMac(pkt.dest_mac, myMac)) return;
   if (isDuplicateAndRemember(dedupCache, dedupIndex, pkt.origin_mac, pkt.packet_id)) return;
 
-  Serial.printf("Received PRESS | reactionTime: %lu ms | hopCount: %d\n",
-    pkt.reaction_ms, pkt.hop_count);
-
   int playerIndex = playerIndexFromMac(pkt.origin_mac);
   if (playerIndex == 0 && !pressA.received) {
     pressA = {pkt.reaction_ms, pkt.hop_count, true};
+    Serial.printf("[D] Player A pressed | reaction time: %lu ms | hopCount: %d\n",
+      pkt.reaction_ms, pkt.hop_count);
   } else if (playerIndex == 1 && !pressB.received) {
     pressB = {pkt.reaction_ms, pkt.hop_count, true};
+    Serial.printf("[D] Player B pressed | reaction time: %lu ms | hopCount: %d\n",
+      pkt.reaction_ms, pkt.hop_count);
   } else if (playerIndex == 2 && !pressC.received) {
     pressC = {pkt.reaction_ms, pkt.hop_count, true};
+    Serial.printf("[D] Player C pressed | reaction time: %lu ms | hopCount: %d\n",
+      pkt.reaction_ms, pkt.hop_count);
   } else {
     return;
   }
@@ -197,10 +197,5 @@ void loop() {
       sendResultToPlayers();
       resetRound();
     }
-  }
-
-  if (roundActive && (long)(millis() - roundDeadline) >= 0) {
-    Serial.println("Round timeout reached.");
-    declareWinner();
   }
 }
