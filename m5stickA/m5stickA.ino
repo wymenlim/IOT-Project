@@ -1,27 +1,19 @@
 #include <M5StickCPlus.h>
 #include <esp_now.h>
 #include <WiFi.h>
+#include "../game_protocol.h"
 
-#define MY_NODE_ID 1  // A=1, B=2, C=3
-
-uint8_t macB[] = {0x4C, 0x75, 0x25, 0xCB, 0x89, 0x98};
+uint8_t myMac[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
 uint8_t macD[] = {0xD4, 0xD4, 0xDA, 0x85, 0x4D, 0x98};
-
-struct ButtonPacket {
-  uint8_t nodeId;
-  unsigned long pressTime;
-  uint8_t hopCount;
-};
-
-struct StartPacket {
-  uint8_t type; // 0xAA = START
-};
 
 bool lastButtonState = false;
 unsigned long lastDebounceTime = 0;
 const unsigned long debounceDelay = 50;
 bool gameStarted = false;
 unsigned long startTime = 0;
+uint16_t packetCounter = 0;
+DedupEntry dedupCache[DEDUP_CACHE_SIZE];
+uint8_t dedupIndex = 0;
 
 void registerPeer(uint8_t* mac) {
   esp_now_peer_info_t peer = {};
@@ -32,29 +24,38 @@ void registerPeer(uint8_t* mac) {
 }
 
 void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len) {
-  if (len == sizeof(StartPacket)) {
-    StartPacket spkt;
-    memcpy(&spkt, data, sizeof(spkt));
-    if (spkt.type == 0xAA) {
-      startTime = millis();
-      gameStarted = true;
-      Serial.println("GO! Timer started.");
-      M5.Lcd.fillScreen(BLACK);
-      M5.Lcd.setCursor(10, 30);
-      M5.Lcd.setTextSize(3);
-      M5.Lcd.println("GO!");
-    }
+  if (len != sizeof(GamePacket)) {
     return;
   }
 
-  // Relay ButtonPacket to D
-  if (len == sizeof(ButtonPacket)) {
-    ButtonPacket pkt;
-    memcpy(&pkt, data, sizeof(pkt));
-    if (pkt.nodeId == MY_NODE_ID) return; // ignore own packets
-    pkt.hopCount++;
-    esp_now_send(macD, (uint8_t*)&pkt, sizeof(pkt));
-    Serial.printf("Relayed packet from node %d (hop %d)\n", pkt.nodeId, pkt.hopCount);
+  GamePacket pkt;
+  memcpy(&pkt, data, sizeof(pkt));
+
+  if (isDuplicateAndRemember(dedupCache, dedupIndex, pkt.origin_mac, pkt.packet_id)) {
+    return;
+  }
+
+  if (!isLocalMac(pkt.dest_mac, myMac)) {
+    return;
+  }
+
+  if (pkt.type == PACKET_GO) {
+    startTime = millis();
+    gameStarted = true;
+    Serial.println("GO! Timer started.");
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 30);
+    M5.Lcd.setTextSize(3);
+    M5.Lcd.println("GO!");
+  } else if (pkt.type == PACKET_RESULT) {
+    gameStarted = false;
+    Serial.println("Round complete. Resetting player state.");
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 20);
+    M5.Lcd.setTextSize(2);
+    M5.Lcd.println("Round done");
+    M5.Lcd.setTextSize(1);
+    M5.Lcd.println("Waiting for GO...");
   }
 }
 
@@ -68,8 +69,8 @@ void setup() {
   esp_now_init();
   esp_now_register_recv_cb(onDataReceived);
 
-  registerPeer(macB);
   registerPeer(macD);
+  resetDedupCache(dedupCache);
 
   M5.Lcd.setTextSize(2);
   M5.Lcd.println("Node A\nWaiting\nfor GO...");
@@ -84,18 +85,24 @@ void loop() {
      (millis() - lastDebounceTime > debounceDelay)) {
     lastDebounceTime = millis();
 
-    ButtonPacket pkt;
-    pkt.nodeId = MY_NODE_ID;
-    pkt.pressTime = millis() - startTime;
-    pkt.hopCount = 0;
+    GamePacket pkt;
+    initPacket(
+      pkt,
+      PACKET_PRESS,
+      myMac,
+      macD,
+      myMac,
+      nextPacketId(packetCounter),
+      millis() - startTime
+    );
 
     esp_now_send(macD, (uint8_t*)&pkt, sizeof(pkt));
-    Serial.printf("Pressed! Reaction time: %lu ms\n", pkt.pressTime);
+    Serial.printf("Pressed! Reaction time: %lu ms\n", pkt.reaction_ms);
 
     M5.Lcd.fillScreen(BLACK);
     M5.Lcd.setCursor(10, 30);
     M5.Lcd.setTextSize(2);
-    M5.Lcd.printf("Sent!\n%lu ms", pkt.pressTime);
+    M5.Lcd.printf("Sent!\n%lu ms", pkt.reaction_ms);
 
     gameStarted = false;
   }
