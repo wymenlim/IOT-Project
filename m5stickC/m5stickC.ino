@@ -4,7 +4,7 @@
 #include "../game_protocol.h"
 
 // C only knows B — out of range of D
-uint8_t myMac[] = {0x4C, 0x75, 0x25, 0xCB, 0x7E, 0x54};
+uint8_t myMac[6];
 uint8_t macB[] = {0x4C, 0x75, 0x25, 0xCB, 0x89, 0x98};
 uint8_t macD[] = {0xD4, 0xD4, 0xDA, 0x85, 0x4D, 0x98};
 
@@ -90,15 +90,11 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   WiFi.mode(WIFI_STA);
+  esp_wifi_get_mac(WIFI_IF_STA, myMac);
 
-  uint8_t actualMac[6];
-  esp_read_mac(actualMac, ESP_MAC_WIFI_STA);
   char actualStr[18];
-  macToStr(actualMac, actualStr);
+  macToStr(myMac, actualStr);
   LOG("Node C | actual MAC: %s", actualStr);
-  char expectedStr[18];
-  macToStr(myMac, expectedStr);
-  LOG("Node C | hardcoded myMac: %s", expectedStr);
 
   if (!configureEspNowChannel()) {
     LOG("ERROR: configureEspNowChannel() FAILED");

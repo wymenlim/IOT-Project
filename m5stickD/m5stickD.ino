@@ -3,7 +3,7 @@
 #include <WiFi.h>
 #include "../game_protocol.h"
 
-uint8_t myMac[] = {0xD4, 0xD4, 0xDA, 0x85, 0x4D, 0x98};
+uint8_t myMac[6];
 uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
 uint8_t macB[] = {0x4C, 0x75, 0x25, 0xCB, 0x89, 0x98};
 uint8_t macC[] = {0x4C, 0x75, 0x25, 0xCB, 0x7E, 0x54};
@@ -212,15 +212,11 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   WiFi.mode(WIFI_STA);
+  esp_wifi_get_mac(WIFI_IF_STA, myMac);
 
-  uint8_t actualMac[6];
-  esp_read_mac(actualMac, ESP_MAC_WIFI_STA);
   char actualStr[18];
-  macToStr(actualMac, actualStr);
+  macToStr(myMac, actualStr);
   LOG("Node D | actual MAC: %s", actualStr);
-  char expectedStr[18];
-  macToStr(myMac, expectedStr);
-  LOG("Node D | hardcoded myMac: %s", expectedStr);
 
   if (!configureEspNowChannel()) {
     LOG("ERROR: configureEspNowChannel() FAILED");
