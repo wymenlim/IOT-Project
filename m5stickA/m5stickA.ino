@@ -15,6 +15,10 @@ uint16_t packetCounter = 0;
 DedupEntry dedupCache[DEDUP_CACHE_SIZE];
 uint8_t dedupIndex = 0;
 
+RouteEntry routeTable[ROUTE_TABLE_SIZE];
+bool       pendingPress = false;
+GamePacket pendingPkt;
+
 void registerPeer(uint8_t* mac) {
   esp_now_peer_info_t peer = {};
   memcpy(peer.peer_addr, mac, 6);
@@ -62,6 +66,28 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
 
   if (!isLocalMac(pkt.dest_mac, myMac)) {
     LOG("DROP: not for me (dest=%s)", destStr);
+    return;
+  }
+
+  if (pkt.type == PACKET_RREP) {
+    char nhStr[18]; macToStr(pkt.sender_mac, nhStr);
+    LOG("RREP: route to D via %s | hop=%d", nhStr, pkt.hop_count);
+    addRoute(routeTable, pkt.origin_mac, pkt.sender_mac, pkt.hop_count);
+
+    if (!esp_now_is_peer_exist(pkt.sender_mac)) {
+      esp_now_peer_info_t p = {};
+      memcpy(p.peer_addr, pkt.sender_mac, 6);
+      p.channel = ESPNOW_CHANNEL; p.encrypt = false;
+      esp_now_add_peer(&p);
+    }
+
+    if (pendingPress) {
+      pendingPress = false;
+      copyMac(pendingPkt.dest_mac, macD);
+      setRelayFields(pendingPkt, myMac);
+      LOG("Sending queued PRESS via %s", nhStr);
+      sendPacket(pkt.sender_mac, pendingPkt, "queued PRESS");
+    }
     return;
   }
 
@@ -125,6 +151,19 @@ void setup() {
   registerPeer(macD);
   resetDedupCache(dedupCache);
 
+  // Register broadcast peer for RREQ floods
+  esp_now_peer_info_t bc = {};
+  memcpy(bc.peer_addr, BROADCAST_MAC, 6);
+  bc.channel = ESPNOW_CHANNEL; bc.encrypt = false;
+  esp_now_add_peer(&bc);
+  resetRouteTable(routeTable);
+
+  // Proactive RREQ for D
+  GamePacket rreq;
+  initPacket(rreq, PACKET_RREQ, myMac, macD, myMac, nextPacketId(packetCounter), 0);
+  LOG("RREQ broadcast for D | id=%u", rreq.packet_id);
+  esp_now_send(BROADCAST_MAC, (uint8_t*)&rreq, sizeof(rreq));
+
   M5.Lcd.setTextSize(2);
   M5.Lcd.println("Node A\nWaiting\nfor GO...");
   LOG("Node A setup complete");
@@ -139,25 +178,35 @@ void loop() {
      (millis() - lastDebounceTime > debounceDelay)) {
     lastDebounceTime = millis();
 
-    GamePacket pkt;
-    initPacket(
-      pkt,
-      PACKET_PRESS,
-      myMac,
-      macD,
-      myMac,
-      nextPacketId(packetCounter),
-      millis() - startTime
-    );
+    int ri = findRoute(routeTable, macD);
+    if (ri >= 0) {
+      GamePacket pkt;
+      initPacket(pkt, PACKET_PRESS, myMac, macD, myMac,
+                 nextPacketId(packetCounter), millis() - startTime);
+      char nhStr[18]; macToStr(routeTable[ri].nextHop, nhStr);
+      LOG("PRESS via %s | reaction_ms=%lu hop=%d id=%u",
+          nhStr, (unsigned long)pkt.reaction_ms, pkt.hop_count, pkt.packet_id);
+      sendPacket(routeTable[ri].nextHop, pkt, "PRESS");
 
-    LOG("PRESS sending to D | reaction_ms=%lu hop=%d id=%u",
-        (unsigned long)pkt.reaction_ms, pkt.hop_count, pkt.packet_id);
-    sendPacket(macD, pkt, "PRESS to D");
+      M5.Lcd.fillScreen(BLACK);
+      M5.Lcd.setCursor(10, 30);
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.printf("Sent!\n%lu ms", pkt.reaction_ms);
+    } else {
+      // No route yet — queue and re-discover
+      initPacket(pendingPkt, PACKET_PRESS, myMac, macD, myMac,
+                 nextPacketId(packetCounter), millis() - startTime);
+      pendingPress = true;
+      GamePacket rreq;
+      initPacket(rreq, PACKET_RREQ, myMac, macD, myMac, nextPacketId(packetCounter), 0);
+      LOG("No route to D, queuing PRESS and broadcasting RREQ | id=%u", rreq.packet_id);
+      esp_now_send(BROADCAST_MAC, (uint8_t*)&rreq, sizeof(rreq));
 
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 30);
-    M5.Lcd.setTextSize(2);
-    M5.Lcd.printf("Sent!\n%lu ms", pkt.reaction_ms);
+      M5.Lcd.fillScreen(BLACK);
+      M5.Lcd.setCursor(10, 30);
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.println("Finding\nroute...");
+    }
 
     gameStarted = false;
   }

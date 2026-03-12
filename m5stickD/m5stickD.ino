@@ -23,6 +23,8 @@ uint16_t packetCounter = 0;
 DedupEntry dedupCache[DEDUP_CACHE_SIZE];
 uint8_t dedupIndex = 0;
 
+RouteEntry routeTable[ROUTE_TABLE_SIZE];
+
 void registerPeer(uint8_t* mac) {
   esp_now_peer_info_t peer = {};
   memcpy(peer.peer_addr, mac, 6);
@@ -78,7 +80,11 @@ void broadcastStart() {
   GamePacket goC;
   initPacket(goC, PACKET_GO, myMac, macC, myMac, nextPacketId(packetCounter), 0);
   LOG("SEND GO to C | id=%u", goC.packet_id);
-  sendPacket(macC, goC, "GO to C");
+  int ri = findRoute(routeTable, macC);
+  const uint8_t* nextHopC = (ri >= 0) ? routeTable[ri].nextHop : macC;
+  char nhStr[18]; macToStr(nextHopC, nhStr);
+  LOG("GO to C via %s (hop=%d)", nhStr, ri >= 0 ? routeTable[ri].hopCount : 0);
+  sendPacket(nextHopC, goC, "GO to C");
 
   roundActive = true;
   M5.Lcd.fillScreen(BLACK);
@@ -102,7 +108,9 @@ void sendResultToPlayers() {
   GamePacket resultC;
   initPacket(resultC, PACKET_RESULT, myMac, macC, myMac, nextPacketId(packetCounter), 0);
   LOG("SEND RESULT to C | id=%u", resultC.packet_id);
-  sendPacket(macC, resultC, "RESULT to C");
+  int ri = findRoute(routeTable, macC);
+  const uint8_t* nextHopC = (ri >= 0) ? routeTable[ri].nextHop : macC;
+  sendPacket(nextHopC, resultC, "RESULT to C");
 }
 
 void declareWinner() {
@@ -164,11 +172,6 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   macToStr(recvInfo->src_addr, srcStr);
   LOG("RECV from %s | len=%d | roundActive=%d", srcStr, len, roundActive);
 
-  if (!roundActive) {
-    LOG("DROP: round not active");
-    return;
-  }
-
   if (len != sizeof(GamePacket)) {
     LOG("DROP: wrong len (got %d, want %d)", len, (int)sizeof(GamePacket));
     return;
@@ -182,6 +185,36 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   LOG("PKT type=%d origin=%s dest=%s hop=%d id=%u reaction_ms=%lu",
       pkt.type, originStr, destStr, pkt.hop_count, pkt.packet_id,
       (unsigned long)pkt.reaction_ms);
+
+  // RREQ handler — works even when round not active
+  if (pkt.type == PACKET_RREQ && isLocalMac(pkt.dest_mac, myMac)) {
+    LOG("RREQ from %s | sending RREP", originStr);
+    if (!esp_now_is_peer_exist(pkt.origin_mac)) {
+      esp_now_peer_info_t p = {};
+      memcpy(p.peer_addr, pkt.origin_mac, 6);
+      p.channel = ESPNOW_CHANNEL; p.encrypt = false;
+      esp_now_add_peer(&p);
+    }
+    GamePacket rrep;
+    initPacket(rrep, PACKET_RREP, myMac, pkt.origin_mac, myMac,
+               nextPacketId(packetCounter), 0);
+    rrep.hop_count = 1;
+    sendPacket(pkt.origin_mac, rrep, "RREP");
+    return;
+  }
+
+  // RREP handler — learn routes to players
+  if (pkt.type == PACKET_RREP && isLocalMac(pkt.dest_mac, myMac)) {
+    char nhStr[18]; macToStr(pkt.sender_mac, nhStr);
+    LOG("RREP: route to %s via %s | hop=%d", originStr, nhStr, pkt.hop_count);
+    addRoute(routeTable, pkt.origin_mac, pkt.sender_mac, pkt.hop_count);
+    return;
+  }
+
+  if (!roundActive) {
+    LOG("DROP: round not active");
+    return;
+  }
 
   if (pkt.type != PACKET_PRESS) {
     LOG("DROP: not a PRESS (type=%d)", pkt.type);
@@ -260,6 +293,23 @@ void setup() {
   registerPeer(macB);
   registerPeer(macC);
   resetDedupCache(dedupCache);
+
+  // Register broadcast peer for RREQ floods
+  esp_now_peer_info_t bc = {};
+  memcpy(bc.peer_addr, BROADCAST_MAC, 6);
+  bc.channel = ESPNOW_CHANNEL; bc.encrypt = false;
+  esp_now_add_peer(&bc);
+
+  // Seed route table with known direct peers, discover C via RREQ
+  resetRouteTable(routeTable);
+  addRoute(routeTable, macA, macA, 1);
+  addRoute(routeTable, macB, macB, 1);
+
+  // Discover route to C (may be out of direct range)
+  GamePacket rreq;
+  initPacket(rreq, PACKET_RREQ, myMac, macC, myMac, nextPacketId(packetCounter), 0);
+  LOG("RREQ broadcast for C | id=%u", rreq.packet_id);
+  esp_now_send(BROADCAST_MAC, (uint8_t*)&rreq, sizeof(rreq));
 
   LOG("Node D server ready");
   resetRound();

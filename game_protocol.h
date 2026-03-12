@@ -117,6 +117,51 @@ inline bool isDuplicateAndRemember(DedupEntry cache[DEDUP_CACHE_SIZE],
   return false;
 }
 
+// Broadcast MAC for RREQ floods
+static const uint8_t BROADCAST_MAC[6] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
+
+#define ROUTE_TABLE_SIZE 4
+
+struct RouteEntry {
+  uint8_t dest[6];
+  uint8_t nextHop[6];
+  uint8_t hopCount;
+  bool    valid;
+};
+
+// Returns index of matching route, or -1
+inline int findRoute(RouteEntry* tbl, const uint8_t* dest) {
+  for (int i = 0; i < ROUTE_TABLE_SIZE; i++)
+    if (tbl[i].valid && macEquals(tbl[i].dest, dest)) return i;
+  return -1;
+}
+
+// Upserts route (replaces if better hop count)
+inline void addRoute(RouteEntry* tbl, const uint8_t* dest,
+                     const uint8_t* nextHop, uint8_t hopCount) {
+  int idx = findRoute(tbl, dest);
+  if (idx < 0) {
+    for (int i = 0; i < ROUTE_TABLE_SIZE; i++)
+      if (!tbl[i].valid) { idx = i; break; }
+  }
+  if (idx < 0) idx = 0; // overwrite slot 0 if full
+  if (!tbl[idx].valid || hopCount < tbl[idx].hopCount) {
+    copyMac(tbl[idx].dest, dest);
+    copyMac(tbl[idx].nextHop, nextHop);
+    tbl[idx].hopCount = hopCount;
+    tbl[idx].valid    = true;
+  }
+}
+
+inline void invalidateRoute(RouteEntry* tbl, const uint8_t* dest) {
+  int idx = findRoute(tbl, dest);
+  if (idx >= 0) tbl[idx].valid = false;
+}
+
+inline void resetRouteTable(RouteEntry* tbl) {
+  for (int i = 0; i < ROUTE_TABLE_SIZE; i++) tbl[i].valid = false;
+}
+
 inline bool configureEspNowChannel() {
   if (esp_wifi_set_promiscuous(true) != ESP_OK) {
     return false;
