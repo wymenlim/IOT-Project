@@ -5,7 +5,6 @@
 
 uint8_t myMac[6];
 uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
-uint8_t macC[] = {0x4C, 0x75, 0x25, 0xCB, 0x7E, 0x54};
 uint8_t macD[] = {0xD4, 0xD4, 0xDA, 0x85, 0x4D, 0x98};
 
 bool lastButtonState = false;
@@ -16,10 +15,6 @@ unsigned long startTime = 0;
 uint16_t packetCounter = 0;
 DedupEntry dedupCache[DEDUP_CACHE_SIZE];
 uint8_t dedupIndex = 0;
-
-RouteEntry routeTable[ROUTE_TABLE_SIZE];
-bool       pendingPress = false;
-GamePacket pendingPkt;
 
 void registerPeer(uint8_t* mac) {
   esp_now_peer_info_t peer = {};
@@ -66,97 +61,6 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
     return;
   }
 
-  // --- RREP for B itself: learn route to D (or other dest) ---
-  if (pkt.type == PACKET_RREP && isLocalMac(pkt.dest_mac, myMac)) {
-    char nhStr[18]; macToStr(pkt.sender_mac, nhStr);
-    LOG("RREP: route to %s via %s | hop=%d", originStr, nhStr, pkt.hop_count);
-    addRoute(routeTable, pkt.origin_mac, pkt.sender_mac, pkt.hop_count);
-
-    if (!esp_now_is_peer_exist(pkt.sender_mac)) {
-      esp_now_peer_info_t p = {};
-      memcpy(p.peer_addr, pkt.sender_mac, 6);
-      p.channel = ESPNOW_CHANNEL; p.encrypt = false;
-      esp_now_add_peer(&p);
-    }
-
-    if (pendingPress) {
-      pendingPress = false;
-      copyMac(pendingPkt.dest_mac, macD);
-      setRelayFields(pendingPkt, myMac);
-      LOG("Sending queued PRESS via %s", nhStr);
-      sendPacket(pkt.sender_mac, pendingPkt, "queued PRESS");
-    }
-    return;
-  }
-
-  // --- Phase 3: Proxy RREP — C asks for D, B answers on D's behalf ---
-  if (pkt.type == PACKET_RREQ && macEquals(pkt.dest_mac, macD)) {
-    if (isLocalMac(pkt.origin_mac, myMac)) return; // ignore own RREQ
-    int ri = findRoute(routeTable, macD);
-    if (ri >= 0) {
-      LOG("Proxy RREP to %s for D | hop=%d", originStr, routeTable[ri].hopCount + 1);
-      if (!esp_now_is_peer_exist(pkt.origin_mac)) {
-        esp_now_peer_info_t p = {};
-        memcpy(p.peer_addr, pkt.origin_mac, 6);
-        p.channel = ESPNOW_CHANNEL; p.encrypt = false;
-        esp_now_add_peer(&p);
-      }
-      GamePacket rrep;
-      initPacket(rrep, PACKET_RREP, macD, pkt.origin_mac, myMac,
-                 nextPacketId(packetCounter), 0);
-      rrep.hop_count = routeTable[ri].hopCount + 1;
-      sendPacket(pkt.origin_mac, rrep, "proxy RREP for D");
-    }
-    return;
-  }
-
-  // --- Phase 4: Proxy RREP — D asks for C, B answers on C's behalf ---
-  if (pkt.type == PACKET_RREQ && macEquals(pkt.dest_mac, macC)) {
-    if (isLocalMac(pkt.origin_mac, myMac)) return; // ignore own RREQ
-    LOG("Proxy RREP to %s for C | hop=2", originStr);
-    if (!esp_now_is_peer_exist(pkt.origin_mac)) {
-      esp_now_peer_info_t p = {};
-      memcpy(p.peer_addr, pkt.origin_mac, 6);
-      p.channel = ESPNOW_CHANNEL; p.encrypt = false;
-      esp_now_add_peer(&p);
-    }
-    GamePacket rrep;
-    initPacket(rrep, PACKET_RREP, macC, pkt.origin_mac, myMac,
-               nextPacketId(packetCounter), 0);
-    rrep.hop_count = 2; // requester→B + B→C
-    sendPacket(pkt.origin_mac, rrep, "proxy RREP for C");
-    return;
-  }
-
-  // --- Phase 3: Relay PRESS from C toward D ---
-  if (pkt.type == PACKET_PRESS && macEquals(pkt.dest_mac, macD) &&
-      !isLocalMac(pkt.origin_mac, myMac)) {
-    int ri = findRoute(routeTable, macD);
-    if (ri >= 0) {
-      LOG("RELAY PRESS from %s to D | reaction_ms=%lu hop=%d",
-          originStr, (unsigned long)pkt.reaction_ms, pkt.hop_count + 1);
-      setRelayFields(pkt, myMac);
-      sendPacket(routeTable[ri].nextHop, pkt, "relay PRESS");
-    }
-    return;
-  }
-
-  // --- Phase 4: Relay GO/RESULT from D to C ---
-  if ((pkt.type == PACKET_GO || pkt.type == PACKET_RESULT) &&
-       macEquals(pkt.dest_mac, macC) && !isLocalMac(pkt.origin_mac, myMac)) {
-    LOG("RELAY %s to C", pkt.type == PACKET_GO ? "GO" : "RESULT");
-    if (!esp_now_is_peer_exist(macC)) {
-      esp_now_peer_info_t p = {};
-      memcpy(p.peer_addr, macC, 6);
-      p.channel = ESPNOW_CHANNEL; p.encrypt = false;
-      esp_now_add_peer(&p);
-    }
-    setRelayFields(pkt, myMac);
-    sendPacket(macC, pkt, "relay GO/RESULT to C");
-    return;
-  }
-
-  // --- B's own game handling ---
   if (pkt.type == PACKET_GO && isLocalMac(pkt.dest_mac, myMac)) {
     startTime = millis();
     gameStarted = true;
@@ -225,19 +129,6 @@ void setup() {
   registerPeer(macD);
   resetDedupCache(dedupCache);
 
-  // Register broadcast peer for RREQ floods
-  esp_now_peer_info_t bc = {};
-  memcpy(bc.peer_addr, BROADCAST_MAC, 6);
-  bc.channel = ESPNOW_CHANNEL; bc.encrypt = false;
-  esp_now_add_peer(&bc);
-  resetRouteTable(routeTable);
-
-  // Proactive RREQ for D
-  GamePacket rreq;
-  initPacket(rreq, PACKET_RREQ, myMac, macD, myMac, nextPacketId(packetCounter), 0);
-  LOG("RREQ broadcast for D | id=%u", rreq.packet_id);
-  esp_now_send(BROADCAST_MAC, (uint8_t*)&rreq, sizeof(rreq));
-
   M5.Lcd.setTextSize(2);
   M5.Lcd.println("Node B\nWaiting\nfor GO...");
   LOG("Node B setup complete");
@@ -252,35 +143,25 @@ void loop() {
      (millis() - lastDebounceTime > debounceDelay)) {
     lastDebounceTime = millis();
 
-    int ri = findRoute(routeTable, macD);
-    if (ri >= 0) {
-      GamePacket pkt;
-      initPacket(pkt, PACKET_PRESS, myMac, macD, myMac,
-                 nextPacketId(packetCounter), millis() - startTime);
-      char nhStr[18]; macToStr(routeTable[ri].nextHop, nhStr);
-      LOG("PRESS via %s | reaction_ms=%lu hop=%d id=%u",
-          nhStr, (unsigned long)pkt.reaction_ms, pkt.hop_count, pkt.packet_id);
-      sendPacket(routeTable[ri].nextHop, pkt, "PRESS");
+    GamePacket pkt;
+    initPacket(
+      pkt,
+      PACKET_PRESS,
+      myMac,
+      macD,
+      myMac,
+      nextPacketId(packetCounter),
+      millis() - startTime
+    );
 
-      M5.Lcd.fillScreen(BLACK);
-      M5.Lcd.setCursor(10, 30);
-      M5.Lcd.setTextSize(2);
-      M5.Lcd.printf("Sent!\n%lu ms", pkt.reaction_ms);
-    } else {
-      // No route yet — queue and re-discover
-      initPacket(pendingPkt, PACKET_PRESS, myMac, macD, myMac,
-                 nextPacketId(packetCounter), millis() - startTime);
-      pendingPress = true;
-      GamePacket rreq;
-      initPacket(rreq, PACKET_RREQ, myMac, macD, myMac, nextPacketId(packetCounter), 0);
-      LOG("No route to D, queuing PRESS and broadcasting RREQ | id=%u", rreq.packet_id);
-      esp_now_send(BROADCAST_MAC, (uint8_t*)&rreq, sizeof(rreq));
+    LOG("PRESS sending to D | reaction_ms=%lu hop=%d id=%u",
+        (unsigned long)pkt.reaction_ms, pkt.hop_count, pkt.packet_id);
+    sendPacket(macD, pkt, "PRESS to D");
 
-      M5.Lcd.fillScreen(BLACK);
-      M5.Lcd.setCursor(10, 30);
-      M5.Lcd.setTextSize(2);
-      M5.Lcd.println("Finding\nroute...");
-    }
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 30);
+    M5.Lcd.setTextSize(2);
+    M5.Lcd.printf("Sent!\n%lu ms", pkt.reaction_ms);
 
     gameStarted = false;
   }
