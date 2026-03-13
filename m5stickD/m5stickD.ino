@@ -2,6 +2,8 @@
 #include <esp_now.h>
 #include <WiFi.h>
 #include "../game_protocol.h"
+#include "../espnow_utils.h"
+#include "../general_utils.h"
 
 uint8_t myMac[6];
 uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
@@ -21,28 +23,6 @@ PressEvent pressC = {0, 0, false};
 bool roundActive = false;
 uint16_t packetCounter = 0;
 SeenEntry seenTable[MAX_SEEN_ENTRIES];
-
-void registerPeer(uint8_t* mac) {
-  esp_now_peer_info_t peer = {};
-  memcpy(peer.peer_addr, mac, 6);
-  peer.channel = ESPNOW_CHANNEL;
-  peer.encrypt = false;
-  char macStr[18];
-  macToStr(mac, macStr);
-  esp_err_t res = esp_now_add_peer(&peer);
-  if (res == ESP_OK) {
-    LOG("Registered peer %s on ch%d", macStr, ESPNOW_CHANNEL);
-  } else {
-    LOG("ERROR: Failed to register peer %s (err=%d)", macStr, res);
-  }
-}
-
-void sendPacket(const uint8_t* mac, GamePacket &pkt, const char* label) {
-  esp_err_t err = esp_now_send(mac, (uint8_t*)&pkt, sizeof(pkt));
-  if (err != ESP_OK) {
-    LOG("ERROR: %s failed immediately (err=%d)", label, err);
-  }
-}
 
 int playerIndexFromMac(const uint8_t originMac[6]) {
   if (macEquals(originMac, macA)) return 0;

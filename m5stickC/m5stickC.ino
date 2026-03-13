@@ -2,9 +2,12 @@
 #include <esp_now.h>
 #include <WiFi.h>
 #include "../game_protocol.h"
+#include "../espnow_utils.h"
+#include "../general_utils.h"
 
 uint8_t myMac[6];
 uint8_t macD[] = {0xD4, 0xD4, 0xDA, 0x85, 0x4D, 0x98};
+uint8_t broadcastMac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 bool lastButtonState = false;
 unsigned long lastDebounceTime = 0;
@@ -13,80 +16,12 @@ bool gameStarted = false;
 unsigned long startTime = 0;
 uint16_t packetCounter = 0;
 SeenEntry seenTable[MAX_SEEN_ENTRIES];
-
-void registerPeer(uint8_t* mac) {
-  esp_now_peer_info_t peer = {};
-  memcpy(peer.peer_addr, mac, 6);
-  peer.channel = ESPNOW_CHANNEL;
-  peer.encrypt = false;
-  char macStr[18];
-  macToStr(mac, macStr);
-  esp_err_t res = esp_now_add_peer(&peer);
-  if (res == ESP_OK) {
-    LOG("Registered peer %s on ch%d", macStr, ESPNOW_CHANNEL);
-  } else {
-    LOG("ERROR: Failed to register peer %s (err=%d)", macStr, res);
-  }
-}
-
-void sendPacket(const uint8_t* mac, GamePacket &pkt, const char* label) {
-  esp_err_t err = esp_now_send(mac, (uint8_t*)&pkt, sizeof(pkt));
-  if (err != ESP_OK) {
-    LOG("ERROR: %s failed immediately (err=%d)", label, err);
-  }
-}
+RouteEntry routeTable[MAX_ROUTE_ENTRIES];
 
 void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len) {
-  char srcStr[18];
-  macToStr(recvInfo->src_addr, srcStr);
-  LOG("RECV from %s | len=%d", srcStr, len);
-
-  if (len != sizeof(GamePacket)) {
-    LOG("DROP: wrong len (got %d, want %d)", len, (int)sizeof(GamePacket));
-    return;
-  }
-
-  GamePacket pkt;
-  memcpy(&pkt, data, sizeof(pkt));
-
-  char originStr[18]; macToStr(pkt.origin_mac, originStr);
-  char destStr[18];   macToStr(pkt.dest_mac, destStr);
-  LOG("PKT type=%d origin=%s dest=%s hop=%d id=%u",
-      pkt.type, originStr, destStr, pkt.hop_count, pkt.packet_id);
-
-  if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id)) {
-    LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
-    return;
-  }
-
-  if (!isLocalMac(pkt.dest_mac, myMac)) {
-    LOG("DROP: not for me (dest=%s)", destStr);
-    return;
-  }
-
-  if (pkt.type == PACKET_GO) {
-    startTime = millis();
-    gameStarted = true;
-    lastButtonState = false;
-    lastDebounceTime = 0;
-    LOG("GO accepted | timer started at %lu ms", startTime);
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 30);
-    M5.Lcd.setTextSize(3);
-    M5.Lcd.println("GO!");
-  } else if (pkt.type == PACKET_RESULT) {
-    gameStarted = false;
-    lastButtonState = false;
-    LOG("RESULT received | round complete, resetting");
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 20);
-    M5.Lcd.setTextSize(2);
-    M5.Lcd.println("Round done");
-    M5.Lcd.setTextSize(1);
-    M5.Lcd.println("Waiting for GO...");
-  } else {
-    LOG("DROP: unhandled type=%d", pkt.type);
-  }
+  handleButtonNodeReceive(recvInfo, data, len, myMac, broadcastMac, packetCounter,
+                          seenTable, routeTable, gameStarted, lastButtonState,
+                          lastDebounceTime, startTime);
 }
 
 void setup() {
@@ -122,7 +57,12 @@ void setup() {
   esp_now_register_recv_cb(onDataReceived);
 
   registerPeer(macD);
+  registerPeer(broadcastMac);
   resetSeenTable(seenTable);
+  resetRouteTable(routeTable);
+
+  delay(100);
+  sendInitialRREQ(myMac, macD, broadcastMac, packetCounter);
 
   M5.Lcd.setTextSize(2);
   M5.Lcd.println("Node C\nWaiting\nfor GO...");
@@ -130,36 +70,6 @@ void setup() {
 }
 
 void loop() {
-  M5.update();
-  if (!gameStarted) return;
-
-  bool currentPress = M5.BtnA.isPressed();
-  if (currentPress && !lastButtonState &&
-     (millis() - lastDebounceTime > debounceDelay)) {
-    lastDebounceTime = millis();
-
-    GamePacket pkt;
-    initPacket(
-      pkt,
-      PACKET_PRESS,
-      myMac,
-      macD,
-      myMac,
-      nextPacketId(packetCounter),
-      millis() - startTime,
-      DEFAULT_TTL
-    );
-
-    LOG("PRESS sending to D | reaction_ms=%lu hop=%d id=%u",
-        (unsigned long)pkt.reaction_ms, pkt.hop_count, pkt.packet_id);
-    sendPacket(macD, pkt, "PRESS to D");
-
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 30);
-    M5.Lcd.setTextSize(2);
-    M5.Lcd.printf("Sent!\n%lu ms", pkt.reaction_ms);
-
-    gameStarted = false;
-  }
-  lastButtonState = currentPress;
+  handleButtonNodeLoop(myMac, macD, packetCounter, gameStarted, lastButtonState,
+                       lastDebounceTime, debounceDelay, startTime);
 }

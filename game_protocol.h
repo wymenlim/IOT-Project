@@ -211,6 +211,7 @@ inline void expireSeenEntries(SeenEntry table[MAX_SEEN_ENTRIES]) {
 inline bool isSeen(SeenEntry table[MAX_SEEN_ENTRIES],
                    const uint8_t origin_mac[6],
                    uint16_t packet_id) {
+  expireSeenEntries(table);
   for (int i = 0; i < MAX_SEEN_ENTRIES; ++i) {
     if (table[i].valid &&
         table[i].packet_id == packet_id &&
