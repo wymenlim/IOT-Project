@@ -44,7 +44,7 @@ static_assert(sizeof(GamePacket) == 27, "GamePacket size mismatch");
 // packed is required to keep the wire format stable across nodes and avoid padding drift.
 
 #define MAX_ROUTE_ENTRIES 10
-#define ROUTE_EXPIRY_MS 10000
+#define ROUTE_EXPIRY_MS 120000
 struct RouteEntry {
   bool valid;
   uint8_t dest_mac[6];

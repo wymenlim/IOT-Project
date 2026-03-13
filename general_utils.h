@@ -70,6 +70,43 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
     return;
   }
 
+  if (pkt.type == PACKET_RREP) {
+
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    if (already_seen) {
+      LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
+      return;
+    }
+
+    int idx = findRoute(routeTable, pkt.origin_mac);
+
+    if (idx >= 0 && pkt.hop_count + 1 >= routeTable[idx].hop_count) {
+        LOG("RREP: not better, drop");
+        return;
+    }
+    addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
+    markSeen(seenTable,pkt.origin_mac,pkt.packet_id);
+
+    LOG("RREP: learned route to %s via %s hops=%d",
+        originStr, srcStr, pkt.hop_count + 1);
+
+    if (isLocalMac(pkt.dest_mac, myMac)) {
+      LOG("RREP: route discovery complete");
+      return;
+    }
+
+    idx = findRoute(routeTable, pkt.dest_mac);
+    if (idx >= 0 && pkt.ttl > 1) {
+      setRelayFields(pkt, myMac);
+      registerPeerIfNeeded(routeTable[idx].next_hop_mac);
+      sendPacket(routeTable[idx].next_hop_mac, pkt, "RREP forward");
+      LOG("RREP: forwarded toward requester");
+    } else {
+      LOG("RREP: DROP no reverse route or TTL exhausted");
+    }
+    return;
+  }
+
   if (!isLocalMac(pkt.dest_mac, myMac)) {
     LOG("DROP: not for me (dest=%s)", destStr);
     return;
