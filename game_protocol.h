@@ -43,10 +43,18 @@ static_assert(sizeof(GamePacket) == 27, "GamePacket size mismatch");
 // sender_mac is kept in-band so relay logic and logs do not depend on callback-only metadata.
 // packed is required to keep the wire format stable across nodes and avoid padding drift.
 
+#define MAX_ROUTE_ENTRIES 10
+#define ROUTE_EXPIRY_MS 10000
+struct RouteEntry {
+  bool valid;
+  uint8_t dest_mac[6];
+  uint8_t next_hop_mac[6]; //where to send packet to next
+  uint8_t hop_count; //how many times packet have hopped (distance)
+  unsigned long expiry_time; // Route lifetime
+};
 
 #define MAX_SEEN_ENTRIES 30
 #define SEEN_EXPIRY_MS 5000
-
 struct SeenEntry {
   uint8_t       origin_mac[6];
   uint16_t      packet_id;
@@ -98,6 +106,89 @@ inline uint16_t nextPacketId(uint16_t &counter) {
     counter = 1;
   }
   return counter;
+}
+
+inline void resetRouteTable(RouteEntry table[MAX_ROUTE_ENTRIES]) {
+  for (int i = 0; i < MAX_ROUTE_ENTRIES; ++i) {
+    table[i].valid = false;
+    table[i].hop_count = 0;
+    table[i].expiry_time = 0;
+  }
+}
+
+inline void expireRoutes(RouteEntry table[MAX_ROUTE_ENTRIES]) {
+  unsigned long now = millis();
+  for (int i = 0; i < MAX_ROUTE_ENTRIES; ++i) {
+    if (table[i].valid && now >= table[i].expiry_time) {
+      table[i].valid = false;
+    }
+  }
+}
+
+inline int findRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
+                     const uint8_t dest_mac[6]) {
+  for (int i = 0; i < MAX_ROUTE_ENTRIES; ++i) {
+    if (table[i].valid && macEquals(table[i].dest_mac, dest_mac)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+inline void invalidateRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
+                            const uint8_t dest_mac[6]) {
+  int idx = findRoute(table, dest_mac);
+  if (idx >= 0) {
+    table[idx].valid = false;
+  }
+}
+
+inline bool addRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
+                     const uint8_t dest_mac[6],
+                     const uint8_t next_hop_mac[6],
+                     uint8_t hop_count) {
+  expireRoutes(table);
+  int idx = findRoute(table, dest_mac);
+
+  if (idx >= 0) {
+    if (hop_count < table[idx].hop_count) {
+      copyMac(table[idx].next_hop_mac, next_hop_mac);
+      table[idx].hop_count = hop_count;
+      table[idx].expiry_time = millis() + ROUTE_EXPIRY_MS;
+      return true;
+    }
+    if (hop_count == table[idx].hop_count &&
+        macEquals(table[idx].next_hop_mac, next_hop_mac)) {
+      table[idx].expiry_time = millis() + ROUTE_EXPIRY_MS;
+      return true;
+    }
+    return false;
+  }
+
+  for (int i = 0; i < MAX_ROUTE_ENTRIES; ++i) {
+    if (!table[i].valid) {
+      table[i].valid = true;
+      copyMac(table[i].dest_mac, dest_mac);
+      copyMac(table[i].next_hop_mac, next_hop_mac);
+      table[i].hop_count = hop_count;
+      table[i].expiry_time = millis() + ROUTE_EXPIRY_MS;
+      return true;
+    }
+  }
+
+  int oldest_idx = 0;
+  for (int i = 1; i < MAX_ROUTE_ENTRIES; ++i) {
+    if (table[i].expiry_time < table[oldest_idx].expiry_time) {
+      oldest_idx = i;
+    }
+  }
+
+  table[oldest_idx].valid = true;
+  copyMac(table[oldest_idx].dest_mac, dest_mac);
+  copyMac(table[oldest_idx].next_hop_mac, next_hop_mac);
+  table[oldest_idx].hop_count = hop_count;
+  table[oldest_idx].expiry_time = millis() + ROUTE_EXPIRY_MS;
+  return true;
 }
 
 inline void resetSeenTable(SeenEntry table[MAX_SEEN_ENTRIES]) {
