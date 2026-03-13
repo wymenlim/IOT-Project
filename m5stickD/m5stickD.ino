@@ -9,6 +9,7 @@ uint8_t myMac[6];
 uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
 uint8_t macB[] = {0x4C, 0x75, 0x25, 0xCB, 0x89, 0x98};
 uint8_t macC[] = {0x4C, 0x75, 0x25, 0xCB, 0x7E, 0x54};
+uint8_t broadcastMac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 struct PressEvent {
   unsigned long reactionMs;
@@ -23,6 +24,7 @@ PressEvent pressC = {0, 0, false};
 bool roundActive = false;
 uint16_t packetCounter = 0;
 SeenEntry seenTable[MAX_SEEN_ENTRIES];
+RouteEntry routeTable[MAX_ROUTE_ENTRIES];
 
 int playerIndexFromMac(const uint8_t originMac[6]) {
   if (macEquals(originMac, macA)) return 0;
@@ -143,11 +145,6 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   macToStr(recvInfo->src_addr, srcStr);
   LOG("RECV from %s | len=%d | roundActive=%d", srcStr, len, roundActive);
 
-  if (!roundActive) {
-    LOG("DROP: round not active");
-    return;
-  }
-
   if (len != sizeof(GamePacket)) {
     LOG("DROP: wrong len (got %d, want %d)", len, (int)sizeof(GamePacket));
     return;
@@ -161,6 +158,45 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   LOG("PKT type=%d origin=%s dest=%s hop=%d id=%u reaction_ms=%lu",
       pkt.type, originStr, destStr, pkt.hop_count, pkt.packet_id,
       (unsigned long)pkt.reaction_ms);
+
+  if (pkt.type == PACKET_RREQ) {
+    if (isLocalMac(pkt.origin_mac, myMac)) {
+      LOG("RREQ: ignore self-origin");
+      return;
+    }
+
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
+    if (already_seen) {
+      LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
+      return;
+    }
+    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+
+    LOG("RREQ: reverse route origin=%s via=%s hops=%d", originStr, srcStr, pkt.hop_count + 1);
+
+    if (isLocalMac(pkt.dest_mac, myMac)) {
+      GamePacket rrep;
+      initPacket(rrep, PACKET_RREP, myMac, pkt.origin_mac, myMac,
+                 nextPacketId(packetCounter), 0, DEFAULT_TTL);
+      registerPeerIfNeeded(recvInfo->src_addr);
+      sendPacket(recvInfo->src_addr, rrep, "RREP");
+      LOG("RREQ: I am dest, sent RREP to %s", srcStr);
+    } else if (pkt.ttl > 1) {
+      setRelayFields(pkt, myMac);
+      delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
+      sendPacket(broadcastMac, pkt, "RREQ relay");
+      LOG("RREQ: relayed (ttl=%d hop=%d)", pkt.ttl, pkt.hop_count);
+    } else {
+      LOG("RREQ: DROP ttl exhausted");
+    }
+    return;
+  }
+
+  if (!roundActive) {
+    LOG("DROP: round not active");
+    return;
+  }
 
   if (pkt.type != PACKET_PRESS) {
     LOG("DROP: not a PRESS (type=%d)", pkt.type);
@@ -238,7 +274,9 @@ void setup() {
   registerPeer(macA);
   registerPeer(macB);
   registerPeer(macC);
+  registerPeer(broadcastMac);
   resetSeenTable(seenTable);
+  resetRouteTable(routeTable);
 
   LOG("Node D server ready");
   resetRound();
