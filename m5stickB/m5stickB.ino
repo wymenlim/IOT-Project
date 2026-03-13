@@ -29,6 +29,7 @@ void setup() {
   M5.begin();
   Serial.begin(115200);
   delay(1000);
+  randomSeed(esp_random());
   WiFi.mode(WIFI_STA);
   esp_wifi_get_mac(WIFI_IF_STA, myMac);
 

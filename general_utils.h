@@ -2,6 +2,9 @@
 
 #include "espnow_utils.h"
 
+#define RREQ_JITTER_MIN_MS 20
+#define RREQ_JITTER_MAX_MS 80
+
 inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
                                     const uint8_t *data,
                                     int len,
@@ -58,6 +61,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
       LOG("RREQ: I am dest, sent RREP to %s", srcStr);
     } else if (pkt.ttl > 1) {
       setRelayFields(pkt, myMac);
+      delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
       sendPacket(broadcastMac, pkt, "RREQ relay");
       LOG("RREQ: relayed (ttl=%d hop=%d)", pkt.ttl, pkt.hop_count);
     } else {
@@ -160,5 +164,6 @@ inline void sendInitialRREQ(const uint8_t* myMac,
   LOG("BOOT: Sending initial RREQ (id=%u ttl=%d)",
       rreq.packet_id, rreq.ttl);
 
+  delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
   sendPacket(broadcastMac, rreq, "BOOT RREQ");
 }
