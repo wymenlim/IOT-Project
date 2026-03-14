@@ -183,13 +183,19 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
       initPacket(rrep, PACKET_RREP, myMac, pkt.origin_mac, myMac,
                  nextPacketId(packetCounter), 0, DEFAULT_TTL);
       registerPeerIfNeeded(recvInfo->src_addr);
-      sendPacket(recvInfo->src_addr, rrep, "RREP");
-      LOG("RREQ: I am dest, sent RREP to %s", srcStr);
+      if (sendPacket(recvInfo->src_addr, rrep, "RREP")) {
+        LOG("RREQ: I am dest, sent RREP to %s", srcStr);
+      } else {
+        LOG("RREQ: failed to send RREP to %s", srcStr);
+      }
     } else if (pkt.ttl > 1) {
       setRelayFields(pkt, myMac);
       delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
-      sendPacket(broadcastMac, pkt, "RREQ relay");
-      LOG("RREQ: relayed (ttl=%d hop=%d)", pkt.ttl, pkt.hop_count);
+      if (sendPacket(broadcastMac, pkt, "RREQ relay")) {
+        LOG("RREQ: relayed (ttl=%d hop=%d)", pkt.ttl, pkt.hop_count);
+      } else {
+        LOG("RREQ: relay send failed");
+      }
     } else {
       LOG("RREQ: DROP ttl exhausted");
     }
@@ -226,13 +232,27 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   PressEvent* slots[] = {&pressA, &pressB, &pressC};
 
   if (slots[playerIndex]->received) {
-    LOG("DROP: already have PRESS from player %s", playerNames[playerIndex]);
+    LOG("DUP PRESS from player %s | re-sending ACK", playerNames[playerIndex]);
+
+    GamePacket ackPkt;
+    initPacket(ackPkt, PACKET_ACK, myMac, pkt.origin_mac, myMac,
+               pkt.packet_id, 0, DEFAULT_TTL);
+    if (!sendViaRoute(routeTable, pkt.origin_mac, ackPkt, "PRESS ACK duplicate")) {
+      LOG("ACK: failed to route back to player %s", playerNames[playerIndex]);
+    }
     return;
   }
 
   *slots[playerIndex] = {pkt.reaction_ms, pkt.hop_count, true};
   LOG("ACCEPTED PRESS from player %s | reaction_ms=%lu hop=%d",
       playerNames[playerIndex], (unsigned long)pkt.reaction_ms, pkt.hop_count);
+
+  GamePacket ackPkt;
+  initPacket(ackPkt, PACKET_ACK, myMac, pkt.origin_mac, myMac,
+             pkt.packet_id, 0, DEFAULT_TTL);
+  if (!sendViaRoute(routeTable, pkt.origin_mac, ackPkt, "PRESS ACK")) {
+    LOG("ACK: failed to route back to player %s", playerNames[playerIndex]);
+  }
 
   bool allReceived = pressA.received && pressB.received && pressC.received;
   LOG("Press state: A=%d B=%d C=%d", pressA.received, pressB.received, pressC.received);

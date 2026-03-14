@@ -14,13 +14,19 @@ unsigned long lastDebounceTime = 0;
 const unsigned long debounceDelay = 50;
 bool gameStarted = false;
 unsigned long startTime = 0;
+bool pendingPressValid = false;
+bool awaitingAck = false;
+unsigned long ackDeadline = 0;
+GamePacket pendingPress = {};
+unsigned long lastRouteRequestTime = 0;
 uint16_t packetCounter = 0;
 SeenEntry seenTable[MAX_SEEN_ENTRIES];
 RouteEntry routeTable[MAX_ROUTE_ENTRIES];
 
 void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len) {
   handleButtonNodeReceive(recvInfo, data, len, myMac, broadcastMac, packetCounter,
-                          seenTable, routeTable, gameStarted, lastButtonState,
+                          seenTable, routeTable, gameStarted, pendingPressValid,
+                          awaitingAck, ackDeadline, pendingPress, lastButtonState,
                           lastDebounceTime, startTime);
 }
 
@@ -71,6 +77,8 @@ void setup() {
 }
 
 void loop() {
-  handleButtonNodeLoop(myMac, serverMac, packetCounter, routeTable, gameStarted,
-                       lastButtonState, lastDebounceTime, debounceDelay, startTime);
+  handleButtonNodeLoop(myMac, serverMac, broadcastMac, packetCounter, routeTable,
+                       gameStarted, pendingPressValid, awaitingAck, ackDeadline,
+                       pendingPress, lastButtonState, lastDebounceTime,
+                       lastRouteRequestTime, debounceDelay, startTime);
 }
