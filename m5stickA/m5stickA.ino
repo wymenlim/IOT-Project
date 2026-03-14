@@ -71,6 +71,6 @@ void setup() {
 }
 
 void loop() {
-  handleButtonNodeLoop(myMac, serverMac, packetCounter, gameStarted, lastButtonState,
-                       lastDebounceTime, debounceDelay, startTime);
+  handleButtonNodeLoop(myMac, serverMac, packetCounter, routeTable, gameStarted,
+                       lastButtonState, lastDebounceTime, debounceDelay, startTime);
 }

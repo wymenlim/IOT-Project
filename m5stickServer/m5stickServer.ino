@@ -1,9 +1,9 @@
 #include <M5StickCPlus.h>
 #include <esp_now.h>
 #include <WiFi.h>
-#include "../game_protocol.h"
-#include "../espnow_utils.h"
-#include "../general_utils.h"
+#include "game_protocol.h"
+#include "espnow_utils.h"
+#include "general_utils.h"
 
 uint8_t myMac[6];
 uint8_t macA[] = {0x0C, 0x8B, 0x95, 0xA8, 0x1D, 0x2C};
@@ -45,21 +45,24 @@ void resetRound() {
   LOG("--- Round reset. Press D button to START ---");
 }
 
+bool sendGoToPlayer(const uint8_t destMac[6], const char *playerName) {
+  GamePacket goPkt;
+  initPacket(goPkt, PACKET_GO, myMac, destMac, myMac,
+             nextPacketId(packetCounter), 0, DEFAULT_TTL);
+  char label[24];
+  snprintf(label, sizeof(label), "GO to %s", playerName);
+  return sendViaRoute(routeTable, destMac, goPkt, label);
+}
+
 void broadcastStart() {
-  GamePacket goA;
-  initPacket(goA, PACKET_GO, myMac, macA, myMac, nextPacketId(packetCounter), 0,DEFAULT_TTL);
-  LOG("SEND GO to A | id=%u", goA.packet_id);
-  sendPacket(macA, goA, "GO to A");
+  bool sentA = sendGoToPlayer(macA, "A");
+  bool sentB = sendGoToPlayer(macB, "B");
+  bool sentC = sendGoToPlayer(macC, "C");
 
-  GamePacket goB;
-  initPacket(goB, PACKET_GO, myMac, macB, myMac, nextPacketId(packetCounter), 0,DEFAULT_TTL);
-  LOG("SEND GO to B | id=%u", goB.packet_id);
-  sendPacket(macB, goB, "GO to B");
-
-  GamePacket goC;
-  initPacket(goC, PACKET_GO, myMac, macC, myMac, nextPacketId(packetCounter), 0,DEFAULT_TTL);
-  LOG("SEND GO to C | id=%u", goC.packet_id);
-  sendPacket(macC, goC, "GO to C");
+  if (!(sentA && sentB && sentC)) {
+    LOG("GO: aborting round start because at least one player has no route");
+    return;
+  }
 
   roundActive = true;
   M5.Lcd.fillScreen(BLACK);

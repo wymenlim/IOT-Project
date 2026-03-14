@@ -153,7 +153,6 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
 inline void handleButtonNodeLoop(const uint8_t *myMac,
                                  const uint8_t *serverMac,
                                  uint16_t &packetCounter,
-                                 RouteEntry routeTable[MAX_ROUTE_ENTRIES],
                                  bool &gameStarted,
                                  bool &lastButtonState,
                                  unsigned long &lastDebounceTime,
@@ -183,10 +182,7 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
 
     LOG("PRESS sending to server | reaction_ms=%lu hop=%d id=%u",
         (unsigned long)pkt.reaction_ms, pkt.hop_count, pkt.packet_id);
-    if (!sendViaRoute(routeTable, serverMac, pkt, "PRESS to server")) {
-      LOG("PRESS: route unavailable; dropping packet");
-      return;
-    }
+    sendPacket(serverMac, pkt, "PRESS to server");
 
     M5.Lcd.fillScreen(BLACK);
     M5.Lcd.setCursor(10, 30);
