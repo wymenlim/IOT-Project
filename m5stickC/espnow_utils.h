@@ -27,11 +27,13 @@ inline void registerPeerIfNeeded(const uint8_t* mac) {
   }
 }
 
-inline void sendPacket(const uint8_t* mac, GamePacket &pkt, const char* label) {
+inline bool sendPacket(const uint8_t* mac, GamePacket &pkt, const char* label) {
   esp_err_t err = esp_now_send(mac, (uint8_t*)&pkt, sizeof(pkt));
   if (err != ESP_OK) {
     LOG("ERROR: %s failed immediately (err=%d)", label, err);
+    return false;
   }
+  return true;
 }
 
 inline bool sendViaRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
@@ -60,7 +62,9 @@ inline bool sendViaRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
   char nextHopStr[18];
   macToStr(table[idx].next_hop_mac, nextHopStr);
   registerPeerIfNeeded(table[idx].next_hop_mac);
-  sendPacket(table[idx].next_hop_mac, pkt, label);
+  if (!sendPacket(table[idx].next_hop_mac, pkt, label)) {
+    return false;
+  }
   LOG("%s: via %s toward %s (ttl=%d hop=%d route_hops=%d)",
       label, nextHopStr, destStr, pkt.ttl, pkt.hop_count, table[idx].hop_count);
   return true;

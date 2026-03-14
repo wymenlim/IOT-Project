@@ -17,6 +17,8 @@ unsigned long startTime = 0;
 bool pendingPressValid = false;
 bool awaitingAck = false;
 unsigned long ackDeadline = 0;
+ButtonUiEvent uiEvent = BUTTON_UI_NONE;
+unsigned long deliveredReactionMs = 0;
 GamePacket pendingPress = {};
 unsigned long lastRouteRequestTime = 0;
 uint16_t packetCounter = 0;
@@ -26,8 +28,8 @@ RouteEntry routeTable[MAX_ROUTE_ENTRIES];
 void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len) {
   handleButtonNodeReceive(recvInfo, data, len, myMac, broadcastMac, packetCounter,
                           seenTable, routeTable, gameStarted, pendingPressValid,
-                          awaitingAck, ackDeadline, pendingPress, lastButtonState,
-                          lastDebounceTime, startTime);
+                          awaitingAck, ackDeadline, uiEvent, deliveredReactionMs,
+                          pendingPress, lastButtonState, lastDebounceTime, startTime);
 }
 
 void setup() {
@@ -79,6 +81,6 @@ void setup() {
 void loop() {
   handleButtonNodeLoop(myMac, serverMac, broadcastMac, packetCounter, routeTable,
                        gameStarted, pendingPressValid, awaitingAck, ackDeadline,
-                       pendingPress, lastButtonState, lastDebounceTime,
+                       uiEvent, deliveredReactionMs, pendingPress, lastButtonState, lastDebounceTime,
                        lastRouteRequestTime, debounceDelay, startTime);
 }

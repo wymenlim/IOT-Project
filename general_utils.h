@@ -5,7 +5,14 @@
 #define RREQ_JITTER_MIN_MS 20
 #define RREQ_JITTER_MAX_MS 80
 #define ROUTE_REDISCOVERY_MS 3000
-#define PRESS_ACK_TIMEOUT_MS 1500
+#define PRESS_ACK_TIMEOUT_MS 5000
+
+enum ButtonUiEvent : uint8_t {
+  BUTTON_UI_NONE = 0,
+  BUTTON_UI_GO,
+  BUTTON_UI_RESULT,
+  BUTTON_UI_DELIVERED,
+};
 
 inline void sendRouteRequest(const uint8_t* myMac,
                              const uint8_t* serverMac,
@@ -42,6 +49,8 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
                                     bool &pendingPressValid,
                                     bool &awaitingAck,
                                     unsigned long &ackDeadline,
+                                    ButtonUiEvent &uiEvent,
+                                    unsigned long &deliveredReactionMs,
                                     GamePacket &pendingPress,
                                     bool &lastButtonState,
                                     unsigned long &lastDebounceTime,
@@ -127,20 +136,9 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
 
     if (isLocalMac(pkt.dest_mac, myMac)) {
       LOG("RREP: route discovery complete");
-      if (pendingPressValid) {
+      if (pendingPressValid && !awaitingAck) {
         LOG("PRESS retry pending | id=%u reaction_ms=%lu",
             pendingPress.packet_id, (unsigned long)pendingPress.reaction_ms);
-        if (sendViaRoute(routeTable, pendingPress.dest_mac, pendingPress, "PRESS retry")) {
-          awaitingAck = true;
-          ackDeadline = millis() + PRESS_ACK_TIMEOUT_MS;
-          M5.Lcd.fillScreen(BLACK);
-          M5.Lcd.setCursor(10, 30);
-          M5.Lcd.setTextSize(2);
-          M5.Lcd.println("Sent!");
-          M5.Lcd.println("Wait ACK");
-        } else {
-          LOG("PRESS retry failed despite RREP completion");
-        }
       }
       return;
     }
@@ -169,13 +167,10 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
     pendingPressValid = false;
     awaitingAck = false;
     ackDeadline = 0;
+    uiEvent = BUTTON_UI_GO;
     lastButtonState = false;
     lastDebounceTime = 0;
     LOG("GO accepted | timer started at %lu ms", startTime);
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 30);
-    M5.Lcd.setTextSize(3);
-    M5.Lcd.println("GO!");
     return;
   }
 
@@ -221,25 +216,18 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
     awaitingAck = false;
     ackDeadline = 0;
     gameStarted = false;
+    deliveredReactionMs = pendingPress.reaction_ms;
+    uiEvent = BUTTON_UI_DELIVERED;
     lastButtonState = false;
     LOG("ACK received | press delivery confirmed (id=%u)", pkt.packet_id);
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 30);
-    M5.Lcd.setTextSize(2);
-    M5.Lcd.printf("Delivered!\n%lu ms", pendingPress.reaction_ms);
   } else if (pkt.type == PACKET_RESULT) {
     gameStarted = false;
     pendingPressValid = false;
     awaitingAck = false;
     ackDeadline = 0;
+    uiEvent = BUTTON_UI_RESULT;
     lastButtonState = false;
     LOG("RESULT received | round complete, resetting");
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 20);
-    M5.Lcd.setTextSize(2);
-    M5.Lcd.println("Round done");
-    M5.Lcd.setTextSize(1);
-    M5.Lcd.println("Waiting for GO...");
   } else {
     LOG("DROP: unhandled type=%d", pkt.type);
   }
@@ -254,6 +242,8 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
                                  bool &pendingPressValid,
                                  bool &awaitingAck,
                                  unsigned long &ackDeadline,
+                                 ButtonUiEvent &uiEvent,
+                                 unsigned long &deliveredReactionMs,
                                  GamePacket &pendingPress,
                                  bool &lastButtonState,
                                  unsigned long &lastDebounceTime,
@@ -261,6 +251,25 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
                                  unsigned long debounceDelay,
                                  unsigned long startTime) {
   M5.update();
+  if (uiEvent != BUTTON_UI_NONE) {
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 20);
+    if (uiEvent == BUTTON_UI_GO) {
+      M5.Lcd.setTextSize(3);
+      M5.Lcd.println("GO!");
+    } else if (uiEvent == BUTTON_UI_RESULT) {
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.println("Round done");
+      M5.Lcd.setTextSize(1);
+      M5.Lcd.println("Waiting for GO...");
+    } else if (uiEvent == BUTTON_UI_DELIVERED) {
+      M5.Lcd.setCursor(10, 30);
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.printf("Delivered!\n%lu ms", deliveredReactionMs);
+    }
+    uiEvent = BUTTON_UI_NONE;
+  }
+
   if (!gameStarted) {
     return;
   }

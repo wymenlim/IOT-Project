@@ -20,8 +20,12 @@ struct PressEvent {
 PressEvent pressA = {0, 0, false};
 PressEvent pressB = {0, 0, false};
 PressEvent pressC = {0, 0, false};
+bool playerActiveA = false;
+bool playerActiveB = false;
+bool playerActiveC = false;
 
 bool roundActive = false;
+bool winnerPending = false;
 uint16_t packetCounter = 0;
 SeenEntry seenTable[MAX_SEEN_ENTRIES];
 RouteEntry routeTable[MAX_ROUTE_ENTRIES];
@@ -37,7 +41,11 @@ void resetRound() {
   pressA = {0, 0, false};
   pressB = {0, 0, false};
   pressC = {0, 0, false};
+  playerActiveA = false;
+  playerActiveB = false;
+  playerActiveC = false;
   roundActive = false;
+  winnerPending = false;
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 20);
   M5.Lcd.setTextSize(2);
@@ -59,38 +67,49 @@ void broadcastStart() {
   bool sentB = sendGoToPlayer(macB, "B");
   bool sentC = sendGoToPlayer(macC, "C");
 
-  if (!(sentA && sentB && sentC)) {
-    LOG("GO: aborting round start because at least one player has no route");
+  if (!(sentA || sentB || sentC)) {
+    LOG("GO: aborting round start because no players have a route");
     return;
   }
 
+  playerActiveA = sentA;
+  playerActiveB = sentB;
+  playerActiveC = sentC;
   roundActive = true;
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 20);
   M5.Lcd.setTextSize(3);
   M5.Lcd.println("GO!");
-  LOG("Round is live. Waiting for PRESS from A, B, C.");
+  LOG("Round is live. Waiting for active players: A=%d B=%d C=%d",
+      playerActiveA, playerActiveB, playerActiveC);
 }
 
 void sendResultToPlayers() {
-  GamePacket resultA;
-  initPacket(resultA, PACKET_RESULT, myMac, macA, myMac, nextPacketId(packetCounter), 0,DEFAULT_TTL);
-  LOG("SEND RESULT to A | id=%u", resultA.packet_id);
-  sendPacket(macA, resultA, "RESULT to A");
+  if (playerActiveA) {
+    GamePacket resultA;
+    initPacket(resultA, PACKET_RESULT, myMac, macA, myMac, nextPacketId(packetCounter), 0, DEFAULT_TTL);
+    LOG("SEND RESULT to A | id=%u", resultA.packet_id);
+    sendPacket(macA, resultA, "RESULT to A");
+  }
 
-  GamePacket resultB;
-  initPacket(resultB, PACKET_RESULT, myMac, macB, myMac, nextPacketId(packetCounter), 0,DEFAULT_TTL);
-  LOG("SEND RESULT to B | id=%u", resultB.packet_id);
-  sendPacket(macB, resultB, "RESULT to B");
+  if (playerActiveB) {
+    GamePacket resultB;
+    initPacket(resultB, PACKET_RESULT, myMac, macB, myMac, nextPacketId(packetCounter), 0, DEFAULT_TTL);
+    LOG("SEND RESULT to B | id=%u", resultB.packet_id);
+    sendPacket(macB, resultB, "RESULT to B");
+  }
 
-  GamePacket resultC;
-  initPacket(resultC, PACKET_RESULT, myMac, macC, myMac, nextPacketId(packetCounter), 0,DEFAULT_TTL);
-  LOG("SEND RESULT to C | id=%u", resultC.packet_id);
-  sendPacket(macC, resultC, "RESULT to C");
+  if (playerActiveC) {
+    GamePacket resultC;
+    initPacket(resultC, PACKET_RESULT, myMac, macC, myMac, nextPacketId(packetCounter), 0, DEFAULT_TTL);
+    LOG("SEND RESULT to C | id=%u", resultC.packet_id);
+    sendPacket(macC, resultC, "RESULT to C");
+  }
 }
 
 void declareWinner() {
   roundActive = false;
+  winnerPending = false;
 
   struct Entry { const char* name; PressEvent* e; };
   Entry entries[] = {{"A", &pressA}, {"B", &pressB}, {"C", &pressC}};
@@ -110,6 +129,10 @@ void declareWinner() {
       LOG("  Player %s | reactionMs=%lu | hop=%d | diff=+%lu ms",
           e.name, e.e->reactionMs, e.e->hopCount,
           e.e->reactionMs - earliest);
+    } else if ((strcmp(e.name, "A") == 0 && !playerActiveA) ||
+               (strcmp(e.name, "B") == 0 && !playerActiveB) ||
+               (strcmp(e.name, "C") == 0 && !playerActiveC)) {
+      LOG("  Player %s | not active this round", e.name);
     } else {
       LOG("  Player %s | did not press", e.name);
     }
@@ -133,6 +156,10 @@ void declareWinner() {
   for (auto& e : entries) {
     if (e.e->received) {
       M5.Lcd.printf("%s: %lums hop:%d\n", e.name, e.e->reactionMs, e.e->hopCount);
+    } else if ((strcmp(e.name, "A") == 0 && !playerActiveA) ||
+               (strcmp(e.name, "B") == 0 && !playerActiveB) ||
+               (strcmp(e.name, "C") == 0 && !playerActiveC)) {
+      M5.Lcd.printf("%s: inactive\n", e.name);
     } else {
       M5.Lcd.printf("%s: no press\n", e.name);
     }
@@ -230,6 +257,12 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
 
   const char* playerNames[] = {"A", "B", "C"};
   PressEvent* slots[] = {&pressA, &pressB, &pressC};
+  bool playerActive[] = {playerActiveA, playerActiveB, playerActiveC};
+
+  if (!playerActive[playerIndex]) {
+    LOG("DROP: player %s not active in this round", playerNames[playerIndex]);
+    return;
+  }
 
   if (slots[playerIndex]->received) {
     LOG("DUP PRESS from player %s | re-sending ACK", playerNames[playerIndex]);
@@ -254,11 +287,16 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
     LOG("ACK: failed to route back to player %s", playerNames[playerIndex]);
   }
 
-  bool allReceived = pressA.received && pressB.received && pressC.received;
-  LOG("Press state: A=%d B=%d C=%d", pressA.received, pressB.received, pressC.received);
+  bool allReceived = (!playerActiveA || pressA.received) &&
+                     (!playerActiveB || pressB.received) &&
+                     (!playerActiveC || pressC.received);
+  LOG("Press state: A=%d/%d B=%d/%d C=%d/%d",
+      pressA.received, playerActiveA,
+      pressB.received, playerActiveB,
+      pressC.received, playerActiveC);
 
   if (allReceived) {
-    declareWinner();
+    winnerPending = true;
   }
 }
 
@@ -307,6 +345,11 @@ void setup() {
 
 void loop() {
   M5.update();
+  if (winnerPending) {
+    declareWinner();
+    return;
+  }
+
   if (M5.BtnA.wasPressed()) {
     if (!roundActive) {
       LOG("D button pressed | starting round");
