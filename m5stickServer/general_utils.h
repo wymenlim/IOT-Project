@@ -261,6 +261,21 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
                                  unsigned long debounceDelay,
                                  unsigned long startTime) {
   M5.update();
+  if (M5.BtnB.wasPressed()) {
+    invalidateRoute(routeTable, serverMac);
+    lastRouteRequestTime = millis();
+    LOG("MANUAL RREQ: button pressed, restarting route discovery");
+    sendRouteRequest(myMac, serverMac, broadcastMac, packetCounter, "MANUAL RREQ");
+    if (!gameStarted && !pendingPressValid && !awaitingAck) {
+      M5.Lcd.fillScreen(BLACK);
+      M5.Lcd.setCursor(10, 20);
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.println("Rediscovering");
+      M5.Lcd.setTextSize(1);
+      M5.Lcd.println("Waiting for route...");
+    }
+  }
+
   if (uiEvent != BUTTON_UI_NONE) {
     M5.Lcd.fillScreen(BLACK);
     M5.Lcd.setCursor(10, 20);
