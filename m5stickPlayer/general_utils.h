@@ -15,6 +15,13 @@ enum ButtonUiEvent : uint8_t {
   BUTTON_UI_DELIVERED,
 };
 
+// Result state tracking for RESULT display
+struct ResultState {
+  uint8_t playerId;
+  uint8_t resultCode;  // 0=win, 1=lose, 2=tie
+  uint8_t tiePartnerId;
+};
+
 inline void sendRouteRequest(const uint8_t* myMac,
                              const uint8_t* broadcastMac,
                              uint16_t &packetCounter,
@@ -56,7 +63,8 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
                                     bool &lastButtonState,
                                     unsigned long &lastDebounceTime,
                                     unsigned long &startTime,
-                                    uint8_t *serverMac) {
+                                    uint8_t *serverMac,
+                                    ResultState &resultState) {
   char srcStr[18];
   macToStr(recvInfo->src_addr, srcStr);
   LOG("RECV from %s | len=%d", srcStr, len);
@@ -253,7 +261,14 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
     ackDeadline = 0;
     uiEvent = BUTTON_UI_RESULT;
     lastButtonState = false;
-    LOG("RESULT received | round complete, resetting");
+    
+    // Decode result information from reaction_ms field
+    resultState.playerId = decodeResultPlayerId(pkt.reaction_ms);
+    resultState.resultCode = decodeResultCode(pkt.reaction_ms);
+    resultState.tiePartnerId = decodeResultTiePartnerId(pkt.reaction_ms);
+    
+    LOG("RESULT received | playerId=%d resultCode=%d tiePartnerId=%d | round complete, resetting",
+        resultState.playerId, resultState.resultCode, resultState.tiePartnerId);
   } else {
     LOG("DROP: unhandled type=%d", pkt.type);
   }
@@ -275,7 +290,8 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
                                  unsigned long &lastRouteRequestTime,
                                  unsigned long debounceDelay,
                                  unsigned long startTime,
-                                 uint8_t *serverMac) {
+                                 uint8_t *serverMac,
+                                 const ResultState &resultState) {
   M5.update();
   if (M5.BtnB.wasPressed()) {
     lastRouteRequestTime = millis();
@@ -300,6 +316,19 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
     } else if (uiEvent == BUTTON_UI_RESULT) {
       M5.Lcd.setTextSize(2);
       M5.Lcd.println("Round done");
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.setCursor(10, 50);
+      M5.Lcd.printf("Player ID: %d\n", resultState.playerId);
+      
+      // Display result status
+      if (resultState.resultCode == RESULT_WIN) {
+        M5.Lcd.println("You Win!");
+      } else if (resultState.resultCode == RESULT_TIE) {
+        M5.Lcd.printf("Tie with P%d\n", resultState.tiePartnerId);
+      } else {  // RESULT_LOSE
+        M5.Lcd.println("You Lose");
+      }
+      
       M5.Lcd.setTextSize(1);
       M5.Lcd.println("Waiting for GO...");
     } else if (uiEvent == BUTTON_UI_DELIVERED) {

@@ -182,10 +182,57 @@ void broadcastStart() {
 }
 
 void sendResultToPlayers() {
+  // Find fastest reaction time among players who pressed
+  unsigned long fastestTime = ULONG_MAX;
+  for (int i = 0; i < activePlayerCount; i++) {
+    if (playerPresses[i].received && playerPresses[i].reactionMs < fastestTime) {
+      fastestTime = playerPresses[i].reactionMs;
+    }
+  }
+
+  // Count how many players tied at the fastest time
+  int tiedCount = 0;
+  int tiedPlayers[MAX_PLAYERS];
+  for (int i = 0; i < activePlayerCount; i++) {
+    if (playerPresses[i].received && playerPresses[i].reactionMs == fastestTime) {
+      tiedPlayers[tiedCount++] = i;
+    }
+  }
+
+  // Send RESULT packet to each player with their status
   for (int i = 0; i < activePlayerCount; i++) {
     GamePacket resultPkt;
+    uint8_t resultCode;
+    uint8_t tiePartnerId = 0;
+
+    if (!playerPresses[i].received) {
+      // Player didn't press - they lose
+      resultCode = RESULT_LOSE;
+    } else if (tiedCount > 1) {
+      // Multiple winners (tie)
+      if (playerPresses[i].reactionMs == fastestTime) {
+        resultCode = RESULT_TIE;
+        // Store first other tied player ID for display
+        for (int j = 0; j < tiedCount; j++) {
+          if (tiedPlayers[j] != i) {
+            tiePartnerId = tiedPlayers[j];
+            break;
+          }
+        }
+      } else {
+        resultCode = RESULT_LOSE;
+      }
+    } else {
+      // Single winner
+      resultCode = (playerPresses[i].reactionMs == fastestTime) ? RESULT_WIN : RESULT_LOSE;
+    }
+
+    // Encode player ID and result code in reaction_ms field
+    uint32_t encodedResult = encodeResult(i, resultCode, tiePartnerId);
+    
     initPacket(resultPkt, PACKET_RESULT, myMac, players[i].mac, myMac, 
-               nextPacketId(packetCounter), 0, DEFAULT_TTL);
+               nextPacketId(packetCounter), encodedResult, DEFAULT_TTL);
+    
     char label[32];
     snprintf(label, sizeof(label), "RESULT to player %d", i);
     if (!sendViaRoute(routeTable, players[i].mac, resultPkt, label)) {
@@ -198,13 +245,20 @@ void declareWinner() {
   roundActive = false;
   winnerPending = false;
 
-  const char* winner = nullptr;
-  unsigned long earliest = ULONG_MAX;
-  
+  // Find fastest reaction time
+  unsigned long fastest = ULONG_MAX;
   for (int i = 0; i < activePlayerCount; i++) {
-    if (playerPresses[i].received && playerPresses[i].reactionMs < earliest) {
-      earliest = playerPresses[i].reactionMs;
-      winner = (const char*)(intptr_t)i; // Store index as pointer
+    if (playerPresses[i].received && playerPresses[i].reactionMs < fastest) {
+      fastest = playerPresses[i].reactionMs;
+    }
+  }
+
+  // Find all winners
+  int winnerCount = 0;
+  int winners[MAX_PLAYERS];
+  for (int i = 0; i < activePlayerCount; i++) {
+    if (playerPresses[i].received && playerPresses[i].reactionMs == fastest) {
+      winners[winnerCount++] = i;
     }
   }
 
@@ -215,29 +269,43 @@ void declareWinner() {
     if (playerPresses[i].received) {
       LOG("  Player %d (%s) | reactionMs=%lu | hop=%d | diff=+%lu ms",
           i, macStr, playerPresses[i].reactionMs, playerPresses[i].hopCount,
-          playerPresses[i].reactionMs - earliest);
+          playerPresses[i].reactionMs - fastest);
     } else {
       LOG("  Player %d (%s) | did not press", i, macStr);
     }
   }
   
-  if (winner) {
-    int winnerIdx = (intptr_t)winner;
-    LOG("  >> WINNER: Player %d <<", winnerIdx);
+  if (winnerCount > 0) {
+    if (winnerCount == 1) {
+      LOG("  >> WINNER: Player %d <<", winners[0]);
+    } else {
+      LOG("  >> TIE: Players", "");
+      for (int i = 0; i < winnerCount; i++) {
+        LOG("     Player %d", winners[i]);
+      }
+    }
   } else {
-    LOG("  >> NO WINNER <<");
+    LOG("  >> NO WINNER (no presses received) <<", "");
   }
   LOG("====================");
 
+  // Display results on server
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 10);
   M5.Lcd.setTextSize(2);
-  if (winner) {
-    int winnerIdx = (intptr_t)winner;
-    M5.Lcd.printf("Winner: P%d!\n\n", winnerIdx);
+  if (winnerCount == 1) {
+    M5.Lcd.printf("Winner: P%d!\n\n", winners[0]);
+  } else if (winnerCount > 1) {
+    M5.Lcd.printf("TIE!\n");
+    M5.Lcd.setTextSize(1);
+    for (int i = 0; i < winnerCount; i++) {
+      M5.Lcd.printf("P%d ", winners[i]);
+    }
+    M5.Lcd.println();
   } else {
     M5.Lcd.println("No winner\n");
   }
+  
   M5.Lcd.setTextSize(1);
   for (int i = 0; i < activePlayerCount; i++) {
     if (playerPresses[i].received) {

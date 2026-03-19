@@ -29,6 +29,34 @@ enum PacketType : uint8_t {
   PACKET_AUTH_RESP = 9,
 };
 
+// Result codes for RESULT packets (encoded in reaction_ms field)
+enum ResultCode : uint8_t {
+  RESULT_WIN = 0,
+  RESULT_LOSE = 1,
+  RESULT_TIE = 2,
+};
+
+// Encoding helpers for RESULT packets (reaction_ms field layout):
+// Byte 0: player_id (0-255)
+// Byte 1: result code (0=win, 1=lose, 2=tie) + padding
+// Byte 2: tie_partner_id (0-255) for TIE results
+// Byte 3: reserved
+inline uint32_t encodeResult(uint8_t playerId, uint8_t resultCode, uint8_t tiePartnerId = 0) {
+  return ((uint32_t)playerId) | (((uint32_t)resultCode) << 8) | (((uint32_t)tiePartnerId) << 16);
+}
+
+inline uint8_t decodeResultPlayerId(uint32_t encoded) {
+  return (uint8_t)(encoded & 0xFF);
+}
+
+inline uint8_t decodeResultCode(uint32_t encoded) {
+  return (uint8_t)((encoded >> 8) & 0xFF);
+}
+
+inline uint8_t decodeResultTiePartnerId(uint32_t encoded) {
+  return (uint8_t)((encoded >> 16) & 0xFF);
+}
+
 #define ESPNOW_CHANNEL 1
 #define DEFAULT_TTL 6
 struct GamePacket {
