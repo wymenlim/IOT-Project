@@ -508,13 +508,6 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
       return;
     }
 
-    // Auto-register player if not already registered
-    registerPlayer(pkt.origin_mac);
-    int regIdx = findPlayerIndex(pkt.origin_mac);
-    if (regIdx >= 0) {
-      // Keepalive RREQ does NOT count as game activity, only keeps route alive
-    }
-    
     bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     if (already_seen) {
@@ -575,6 +568,23 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
         LOG("RREP: forward failed");
       }
     }
+    return;
+  }
+
+  if (pkt.type == PACKET_AUTH_RESP) {
+    if (isLocalMac(pkt.origin_mac, myMac)) {
+      LOG("AUTH_RESP: ignore self-origin");
+      return;
+    }
+    if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id)) {
+      LOG("AUTH_RESP: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
+      return;
+    }
+    addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
+    registerPeerIfNeeded(recvInfo->src_addr);
+    registerPlayer(pkt.origin_mac);
+    LOG("AUTH_RESP: explicit join from %s | registered", originStr);
+    if (!roundActive) drawIdleStatus();
     return;
   }
 
