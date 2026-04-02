@@ -129,13 +129,13 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
       return;
     }
 
-    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     if (already_seen) {
       LOG("AUTH_REQ: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
-    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     copyMac(serverMac, pkt.origin_mac);
     LOG("AUTH_REQ: learned server route via %s hops=%d", srcStr, pkt.hop_count + 1);
 
@@ -161,13 +161,13 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
       LOG("AUTH_RESP: ignore self-origin");
       return;
     }
-    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     if (already_seen) {
       LOG("AUTH_RESP: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
-    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     if (pkt.ttl > 1) {
       setRelayFields(pkt, myMac);
       delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
@@ -185,13 +185,13 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
       return;
     }
 
-    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     if (already_seen) {
       LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
-    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
 
     LOG("RREQ: reverse route origin=%s via=%s hops=%d", originStr, srcStr, pkt.hop_count + 1);
 
@@ -221,7 +221,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
 
   else if (pkt.type == PACKET_RREP) {
 
-    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     if (already_seen) {
       LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
@@ -234,7 +234,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
         return;
     }
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
-    markSeen(seenTable,pkt.origin_mac,pkt.packet_id);
+    markSeen(seenTable,pkt.origin_mac,pkt.type,pkt.packet_id);
 
     LOG("RREP: learned route to %s via %s hops=%d",
         originStr, srcStr, pkt.hop_count + 1);
@@ -260,7 +260,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
   }
 
   if (pkt.type == PACKET_GO) {
-    if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id)) {
+    if (seenCheck(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id)) {
       LOG("GO: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
@@ -291,7 +291,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
   }
 
   if (pkt.type == PACKET_PRESS && !isLocalMac(pkt.dest_mac, myMac)) {
-    if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id)) {
+    if (seenCheck(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id)) {
       LOG("PRESS: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
@@ -301,7 +301,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
   }
 
   if (pkt.type == PACKET_ACK && !isLocalMac(pkt.dest_mac, myMac)) {
-    if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id)) {
+    if (seenCheck(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id)) {
       LOG("ACK: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
@@ -311,7 +311,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
   }
 
   if (pkt.type == PACKET_RESULT && !isLocalMac(pkt.dest_mac, myMac)) {
-    if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id)) {
+    if (seenCheck(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id)) {
       LOG("RESULT: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }

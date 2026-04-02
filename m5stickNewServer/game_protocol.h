@@ -99,6 +99,7 @@ struct RouteEntry {
 
 struct SeenEntry {
   uint8_t       origin_mac[6];
+  uint8_t       packet_type;
   uint16_t      packet_id;
   unsigned long expiry_time;
   bool          valid;
@@ -201,8 +202,8 @@ inline bool addRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
       table[idx].expiry_time = millis() + ROUTE_EXPIRY_MS;
       return true;
     }
-    if (hop_count == table[idx].hop_count &&
-        macEquals(table[idx].next_hop_mac, next_hop_mac)) {
+    if (hop_count == table[idx].hop_count) {
+      copyMac(table[idx].next_hop_mac, next_hop_mac);
       table[idx].expiry_time = millis() + ROUTE_EXPIRY_MS;
       return true;
     }
@@ -238,6 +239,7 @@ inline bool addRoute(RouteEntry table[MAX_ROUTE_ENTRIES],
 inline void resetSeenTable(SeenEntry table[MAX_SEEN_ENTRIES]) {
   for (int i = 0; i < MAX_SEEN_ENTRIES; ++i) {
     table[i].valid = false;
+    table[i].packet_type = 0;
     table[i].packet_id = 0;
     table[i].expiry_time = 0;
   }
@@ -254,10 +256,12 @@ inline void expireSeenEntries(SeenEntry table[MAX_SEEN_ENTRIES]) {
 
 inline bool isSeen(SeenEntry table[MAX_SEEN_ENTRIES],
                    const uint8_t origin_mac[6],
+                   uint8_t packet_type,
                    uint16_t packet_id) {
   expireSeenEntries(table);
   for (int i = 0; i < MAX_SEEN_ENTRIES; ++i) {
     if (table[i].valid &&
+        table[i].packet_type == packet_type &&
         table[i].packet_id == packet_id &&
         macEquals(table[i].origin_mac, origin_mac)) {
       return true;
@@ -268,9 +272,11 @@ inline bool isSeen(SeenEntry table[MAX_SEEN_ENTRIES],
 
 inline void markSeen(SeenEntry table[MAX_SEEN_ENTRIES],
                      const uint8_t origin_mac[6],
+                     uint8_t packet_type,
                      uint16_t packet_id) {
   for (int i = 0; i < MAX_SEEN_ENTRIES; ++i) {
     if (table[i].valid &&
+        table[i].packet_type == packet_type &&
         table[i].packet_id == packet_id &&
         macEquals(table[i].origin_mac, origin_mac)) {
       return;
@@ -280,6 +286,7 @@ inline void markSeen(SeenEntry table[MAX_SEEN_ENTRIES],
   for (int i = 0; i < MAX_SEEN_ENTRIES; ++i) {
     if (!table[i].valid) {
       table[i].valid = true;
+      table[i].packet_type = packet_type;
       table[i].packet_id = packet_id;
       table[i].expiry_time = millis() + SEEN_EXPIRY_MS;
       copyMac(table[i].origin_mac, origin_mac);
@@ -296,6 +303,7 @@ inline void markSeen(SeenEntry table[MAX_SEEN_ENTRIES],
   }
 
   table[oldest_idx].valid = true;
+  table[oldest_idx].packet_type = packet_type;
   table[oldest_idx].packet_id = packet_id;
   table[oldest_idx].expiry_time = millis() + SEEN_EXPIRY_MS;
   copyMac(table[oldest_idx].origin_mac, origin_mac);
@@ -304,12 +312,13 @@ inline void markSeen(SeenEntry table[MAX_SEEN_ENTRIES],
 
 inline bool seenCheck(SeenEntry table[MAX_SEEN_ENTRIES],
                       const uint8_t origin_mac[6],
+                      uint8_t packet_type,
                       uint16_t packet_id) {
   expireSeenEntries(table);
-  if (isSeen(table, origin_mac, packet_id)) {
+  if (isSeen(table, origin_mac, packet_type, packet_id)) {
     return true;
   }
-  markSeen(table, origin_mac, packet_id);
+  markSeen(table, origin_mac, packet_type, packet_id);
   return false;
 }
 

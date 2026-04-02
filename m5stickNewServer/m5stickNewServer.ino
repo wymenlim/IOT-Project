@@ -682,14 +682,14 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
       return;
     }
 
-    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     if (already_seen)
     {
       LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
     }
-    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
 
     LOG("RREQ: reverse route origin=%s via=%s hops=%d", originStr, srcStr, pkt.hop_count + 1);
 
@@ -730,7 +730,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
 
   if (pkt.type == PACKET_RREP)
   {
-    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
     if (already_seen)
     {
       LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
@@ -745,7 +745,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
     }
 
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
-    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
 
     LOG("RREP: learned route to %s via %s hops=%d",
         originStr, srcStr, pkt.hop_count + 1);
@@ -771,7 +771,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
       LOG("AUTH_RESP: ignore self-origin");
       return;
     }
-    if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id))
+    if (seenCheck(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id))
     {
       LOG("AUTH_RESP: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
       return;
@@ -803,7 +803,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
     return;
   }
 
-  if (seenCheck(seenTable, pkt.origin_mac, pkt.packet_id))
+  if (seenCheck(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id))
   {
     LOG("DROP: duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
     return;
