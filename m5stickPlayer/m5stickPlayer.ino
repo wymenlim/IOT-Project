@@ -26,14 +26,16 @@ SeenEntry seenTable[MAX_SEEN_ENTRIES];
 RouteEntry routeTable[MAX_ROUTE_ENTRIES];
 ResultState resultState = {0, 0, 0};
 
-void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len) {
+void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int len)
+{
   handleButtonNodeReceive(recvInfo, data, len, myMac, broadcastMac, packetCounter,
                           seenTable, routeTable, gameStarted, pendingPressValid,
                           awaitingAck, ackDeadline, uiEvent, deliveredReactionMs,
                           pendingPress, lastButtonState, lastDebounceTime, startTime, serverMac, resultState);
 }
 
-void setup() {
+void setup()
+{
   M5.begin();
   Serial.begin(115200);
   delay(1000);
@@ -45,30 +47,39 @@ void setup() {
   macToStr(myMac, actualStr);
   LOG("Player Node | actual MAC: %s", actualStr);
 
-  if (!configureEspNowChannel()) {
+  if (!configureEspNowChannel())
+  {
     LOG("ERROR: configureEspNowChannel() FAILED");
-  } else {
+  }
+  else
+  {
     LOG("WiFi channel locked to %d", ESPNOW_CHANNEL);
   }
 
-  if (esp_now_init() != ESP_OK) {
+  if (esp_now_init() != ESP_OK)
+  {
     LOG("ERROR: esp_now_init() FAILED — no traffic will flow");
-  } else {
+  }
+  else
+  {
     LOG("esp_now_init() OK");
   }
 
-  if (esp_now_set_pmk(ESPNOW_PMK) != ESP_OK) {
+  if (esp_now_set_pmk(ESPNOW_PMK) != ESP_OK)
+  {
     LOG("ERROR: esp_now_set_pmk() FAILED");
-  } else {
+  }
+  else
+  {
     LOG("ESP-NOW PMK set OK");
   }
 
-  esp_now_register_send_cb([](const wifi_tx_info_t *info, esp_now_send_status_t status) {
-    char macStr[18];
-    macToStr(info->dest_mac, macStr);
-    LOG("SEND to %s: %s", macStr, 
-        status == ESP_NOW_SEND_SUCCESS ? "OK" : "FAIL (no ack — wrong MAC or out of range?)");
-  });
+  esp_now_register_send_cb([](const wifi_tx_info_t *info, esp_now_send_status_t status)
+                           {
+  char macStr[18];
+  macToStr(info->des_addr, macStr);
+  LOG("SEND to %s: %s", macStr,
+      status == ESP_NOW_SEND_SUCCESS ? "OK" : "FAIL (no ack - wrong MAC or out of range?)"); });
 
   esp_now_register_recv_cb(onDataReceived);
 
@@ -85,7 +96,8 @@ void setup() {
   LOG("Player setup complete");
 }
 
-void loop() {
+void loop()
+{
   handleButtonNodeLoop(myMac, broadcastMac, packetCounter, routeTable,
                        gameStarted, pendingPressValid, awaitingAck, ackDeadline,
                        uiEvent, deliveredReactionMs, pendingPress, lastButtonState, lastDebounceTime,
