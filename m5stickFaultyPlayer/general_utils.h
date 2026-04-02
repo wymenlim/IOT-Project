@@ -13,6 +13,7 @@ enum ButtonUiEvent : uint8_t {
   BUTTON_UI_GO,
   BUTTON_UI_RESULT,
   BUTTON_UI_DELIVERED,
+  BUTTON_UI_ROUTE_READY,
 };
 
 // Result state tracking for RESULT display
@@ -239,6 +240,9 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
 
     if (isLocalMac(pkt.dest_mac, myMac)) {
       LOG("RREP: route discovery complete");
+      if (!gameStarted && !pendingPressValid && !awaitingAck) {
+        uiEvent = BUTTON_UI_ROUTE_READY;
+      }
       if (pendingPressValid && !awaitingAck) {
         LOG("PRESS retry pending | id=%u reaction_ms=%lu",
             pendingPress.packet_id, (unsigned long)pendingPress.reaction_ms);
@@ -424,6 +428,12 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
       M5.Lcd.setCursor(10, 30);
       M5.Lcd.setTextSize(2);
       M5.Lcd.printf("Delivered!\n%lu ms", deliveredReactionMs);
+    } else if (uiEvent == BUTTON_UI_ROUTE_READY) {
+      M5.Lcd.setTextSize(2);
+      M5.Lcd.println("Route Ready");
+      M5.Lcd.setTextSize(1);
+      M5.Lcd.println("Server reachable");
+      M5.Lcd.println("Waiting for GO...");
     }
     uiEvent = BUTTON_UI_NONE;
   }
