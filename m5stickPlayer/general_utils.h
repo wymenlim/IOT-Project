@@ -54,6 +54,17 @@ inline void sendRouteRequest(const uint8_t* myMac,
   sendPacket(broadcastMac, rreq, label);
 }
 
+inline void sendJoinIntent(const uint8_t* myMac,
+                           const uint8_t* broadcastMac,
+                           uint16_t &packetCounter) {
+  GamePacket pkt;
+  initPacket(pkt, PACKET_AUTH_RESP, myMac, broadcastMac, myMac,
+             nextPacketId(packetCounter), 0, DEFAULT_TTL);
+  LOG("JOIN INTENT: sending AUTH_RESP (id=%u ttl=%d)", pkt.packet_id, pkt.ttl);
+  delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
+  sendPacket(broadcastMac, pkt, "JOIN INTENT");
+}
+
 inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
                                     const uint8_t *data,
                                     int len,
@@ -97,6 +108,12 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
     return;
   }
 
+  // Register sender as peer so we can receive encrypted unicast from them later.
+  // ESP-NOW encrypted unicast requires mutual peer registration; without this the
+  // GO packet (sent as encrypted unicast by the server) is silently dropped before
+  // the receive callback fires, leaving the player stuck at "Waiting for GO...".
+  registerPeerIfNeeded(recvInfo->src_addr);
+
   char originStr[18];
   macToStr(pkt.origin_mac, originStr);
   char destStr[18];
@@ -121,6 +138,7 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
     LOG("AUTH_REQ: learned server route via %s hops=%d", srcStr, pkt.hop_count + 1);
 
     sendRouteRequest(myMac, serverMac, broadcastMac, packetCounter, "DISCOVERY RREQ");
+    sendJoinIntent(myMac, broadcastMac, packetCounter);
 
     if (pkt.ttl > 1) {
       setRelayFields(pkt, myMac);
@@ -132,6 +150,29 @@ inline void handleButtonNodeReceive(const esp_now_recv_info *recvInfo,
       }
     } else {
       LOG("AUTH_REQ: DROP ttl exhausted");
+    }
+    return;
+  }
+
+  if (pkt.type == PACKET_AUTH_RESP) {
+    if (isLocalMac(pkt.origin_mac, myMac)) {
+      LOG("AUTH_RESP: ignore self-origin");
+      return;
+    }
+    bool already_seen = isSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
+    if (already_seen) {
+      LOG("AUTH_RESP: DROP duplicate (origin=%s id=%u)", originStr, pkt.packet_id);
+      return;
+    }
+    markSeen(seenTable, pkt.origin_mac, pkt.packet_id);
+    if (pkt.ttl > 1) {
+      setRelayFields(pkt, myMac);
+      delay(random(RREQ_JITTER_MIN_MS, RREQ_JITTER_MAX_MS + 1));
+      sendPacket(broadcastMac, pkt, "AUTH_RESP relay");
+      LOG("AUTH_RESP: relayed (ttl=%d hop=%d)", pkt.ttl, pkt.hop_count);
+    } else {
+      LOG("AUTH_RESP: DROP ttl exhausted");
     }
     return;
   }
@@ -339,6 +380,7 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
     LOG("MANUAL RREQ: button pressed, restarting route discovery");
     const uint8_t *destMac = hasKnownServerMac(serverMac) ? serverMac : broadcastMac;
     sendRouteRequest(myMac, destMac, broadcastMac, packetCounter, "MANUAL RREQ");
+    sendJoinIntent(myMac, broadcastMac, packetCounter);
     if (!gameStarted && !pendingPressValid && !awaitingAck) {
       M5.Lcd.fillScreen(BLACK);
       M5.Lcd.setCursor(10, 20);
@@ -379,6 +421,13 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
       M5.Lcd.printf("Delivered!\n%lu ms", deliveredReactionMs);
     }
     uiEvent = BUTTON_UI_NONE;
+  }
+
+  // Periodic route keepalive (send even during games to prevent timeout on stuck GO screen)
+  if (millis() - lastRouteRequestTime >= ROUTE_REDISCOVERY_MS) {
+    lastRouteRequestTime = millis();
+    const uint8_t *destMac = hasKnownServerMac(serverMac) ? serverMac : broadcastMac;
+    sendRouteRequest(myMac, destMac, broadcastMac, packetCounter, "KEEPALIVE RREQ");
   }
 
   if (!gameStarted) {
@@ -475,4 +524,5 @@ inline void sendInitialRREQ(const uint8_t* myMac,
                             const uint8_t* broadcastMac,
                             uint16_t &packetCounter) {
   sendRouteRequest(myMac, broadcastMac, broadcastMac, packetCounter, "BOOT RREQ");
+  sendJoinIntent(myMac, broadcastMac, packetCounter);
 }

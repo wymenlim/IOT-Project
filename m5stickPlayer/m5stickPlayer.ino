@@ -57,6 +57,12 @@ void setup() {
     LOG("esp_now_init() OK");
   }
 
+  if (esp_now_set_pmk(ESPNOW_PMK) != ESP_OK) {
+    LOG("ERROR: esp_now_set_pmk() FAILED");
+  } else {
+    LOG("ESP-NOW PMK set OK");
+  }
+
   esp_now_register_send_cb([](const uint8_t *mac_addr, esp_now_send_status_t status) {
     char macStr[18];
     macToStr(mac_addr, macStr);

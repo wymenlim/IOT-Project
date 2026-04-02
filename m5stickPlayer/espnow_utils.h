@@ -9,14 +9,22 @@ inline void registerPeer(uint8_t* mac) {
   esp_now_peer_info_t peer = {};
   memcpy(peer.peer_addr, mac, 6);
   peer.channel = ESPNOW_CHANNEL;
-  peer.encrypt = false;
+
+  bool isBroadcast = (mac[0] == 0xFF && mac[1] == 0xFF && mac[2] == 0xFF &&
+                      mac[3] == 0xFF && mac[4] == 0xFF && mac[5] == 0xFF);
+  if (isBroadcast) {
+    peer.encrypt = false;
+  } else {
+    peer.encrypt = true;
+    memcpy(peer.lmk, ESPNOW_LMK, 16);
+  }
 
   char macStr[18];
   macToStr(mac, macStr);
 
   esp_err_t res = esp_now_add_peer(&peer);
   if (res == ESP_OK) {
-    LOG("Registered peer %s on ch%d", macStr, ESPNOW_CHANNEL);
+    LOG("Registered peer %s on ch%d encrypt=%s", macStr, ESPNOW_CHANNEL, isBroadcast ? "off" : "on");
   } else {
     LOG("ERROR: Failed to register peer %s (err=%d)", macStr, res);
   }

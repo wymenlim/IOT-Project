@@ -59,10 +59,11 @@ inline uint8_t decodeResultTiePartnerId(uint32_t encoded) {
 
 #define ESPNOW_CHANNEL 1
 #define DEFAULT_TTL 6
+#define AUTH_HASH_LEN 8
 struct GamePacket {
   uint8_t type;
   uint8_t version;
-  uint8_t auth_hash[4];
+  uint8_t auth_hash[AUTH_HASH_LEN];
   uint8_t origin_mac[6];
   uint8_t dest_mac[6];
   uint8_t sender_mac[6];
@@ -72,7 +73,7 @@ struct GamePacket {
   uint8_t ttl;
 } __attribute__((packed));
 
-static_assert(sizeof(GamePacket) == 32, "GamePacket size mismatch");
+static_assert(sizeof(GamePacket) == 36, "GamePacket size mismatch");
 // reaction_ms is elapsed time from GO reception to button press, not wall-clock time.
 // sender_mac is kept in-band so relay logic and logs do not depend on callback-only metadata.
 // packed is required to keep the wire format stable across nodes and avoid padding drift.
@@ -80,7 +81,7 @@ static_assert(sizeof(GamePacket) == 32, "GamePacket size mismatch");
 // version ensures protocol compatibility across nodes.
 
 #define MAX_ROUTE_ENTRIES 10
-#define ROUTE_EXPIRY_MS 120000
+#define ROUTE_EXPIRY_MS 10000
 struct RouteEntry {
   bool valid;
   uint8_t dest_mac[6];
@@ -125,7 +126,7 @@ inline void initPacket(GamePacket &pkt,
                        uint8_t ttl) {
   pkt.type = type;
   pkt.version = PROTOCOL_VERSION;
-  memset(pkt.auth_hash, 0, 4);
+  memset(pkt.auth_hash, 0, AUTH_HASH_LEN);
   copyMac(pkt.origin_mac, origin_mac);
   copyMac(pkt.dest_mac, dest_mac);
   copyMac(pkt.sender_mac, sender_mac);
