@@ -63,10 +63,10 @@ void setup() {
     LOG("ESP-NOW PMK set OK");
   }
 
-  esp_now_register_send_cb([](const uint8_t *mac_addr, esp_now_send_status_t status) {
+  esp_now_register_send_cb([](const wifi_tx_info_t *info, esp_now_send_status_t status) {
     char macStr[18];
-    macToStr(mac_addr, macStr);
-    LOG("SEND to %s: %s", macStr,
+    macToStr(info->dest_mac, macStr);
+    LOG("SEND to %s: %s", macStr, 
         status == ESP_NOW_SEND_SUCCESS ? "OK" : "FAIL (no ack — wrong MAC or out of range?)");
   });
 
