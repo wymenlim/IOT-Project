@@ -7,8 +7,6 @@
 
 uint8_t myMac[6];
 uint8_t broadcastMac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-uint8_t faultyPlayerMac[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-const uint8_t *disallowedNeighbors[] = {faultyPlayerMac};
 
 #define MAX_PLAYERS 10
 
@@ -39,46 +37,6 @@ unsigned long roundStartTime = 0;  // Risk #2 fix: track round start for timeout
 PlayerInfo players[MAX_PLAYERS];
 PressEvent playerPresses[MAX_PLAYERS];
 int activePlayerCount = 0;
-
-bool hasConfiguredMac(const uint8_t mac[6]) {
-  for (int i = 0; i < 6; ++i) {
-    if (mac[i] != 0x00) {
-      return true;
-    }
-  }
-  return false;
-}
-
-bool isDisallowedNeighbor(const uint8_t candidate[6]) {
-  const size_t blockedCount = sizeof(disallowedNeighbors) / sizeof(disallowedNeighbors[0]);
-  for (size_t i = 0; i < blockedCount; ++i) {
-    if (!hasConfiguredMac(disallowedNeighbors[i])) {
-      continue;
-    }
-    if (macEquals(candidate, disallowedNeighbors[i])) {
-      return true;
-    }
-  }
-  return false;
-}
-
-void logDisallowedNeighbors() {
-  const size_t blockedCount = sizeof(disallowedNeighbors) / sizeof(disallowedNeighbors[0]);
-  if (blockedCount == 0) {
-    LOG("Demo topology: no blocked neighbors");
-    return;
-  }
-
-  LOG("Demo topology: blocked neighbors for Server");
-  for (size_t i = 0; i < blockedCount; ++i) {
-    char macStr[18];
-    macToStr(disallowedNeighbors[i], macStr);
-    LOG("  blocked[%u] = %s%s",
-        (unsigned)i,
-        macStr,
-        hasConfiguredMac(disallowedNeighbors[i]) ? "" : " (placeholder, update me)");
-  }
-}
 
 int countRoundPlayers() {
   int count = 0;
@@ -455,11 +413,6 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   macToStr(recvInfo->src_addr, srcStr);
   LOG("RECV from %s | len=%d | roundActive=%d", srcStr, len, roundActive);
 
-  if (isDisallowedNeighbor(recvInfo->src_addr)) {
-    LOG("DROP: source %s is blocked for Server", srcStr);
-    return;
-  }
-
   if (len != sizeof(GamePacket)) {
     LOG("DROP: wrong len (got %d, want %d)", len, (int)sizeof(GamePacket));
     return;
@@ -654,14 +607,8 @@ void setup() {
   esp_now_register_recv_cb(onDataReceived);
 
   registerPeer(broadcastMac);
-  for (size_t i = 0; i < sizeof(disallowedNeighbors) / sizeof(disallowedNeighbors[0]); ++i) {
-    if (hasConfiguredMac(disallowedNeighbors[i])) {
-      registerPeer((uint8_t*)disallowedNeighbors[i]);
-    }
-  }
   resetSeenTable(seenTable);
   resetRouteTable(routeTable);
-  logDisallowedNeighbors();
 
   LOG("Server ready - waiting for player discovery (up to %d players)", MAX_PLAYERS);
   resetRound();

@@ -2,19 +2,6 @@
 
 A fair, low-latency, distributed multiplayer button-press game built on ESP-NOW and AODV routing, where the winner is determined by true reaction time — not packet arrival order.
 
-## Demoing Multi-Hop Indoors
-
-The current firmware can be configured to simulate out-of-range links even when all devices are physically close together.
-
-In the checked-in demo topology:
-
-- `Node A` only accepts packets from `Node B`
-- `Node B` only accepts packets from `Node A` and `Node C`
-- `Node C` only accepts packets from `Node B` and `Server`
-- `Server` only accepts packets from `Node C`
-
-That forces traffic to route as `A -> B -> C -> Server` instead of taking direct one-hop shortcuts across the room.
-
 # Protocol Reference
 
 This document describes the packet types used in the project, the high-level packet flow during route discovery and gameplay, and how each packet type is handled by button nodes and the server.
