@@ -25,6 +25,7 @@ ButtonUiEvent uiEvent = BUTTON_UI_NONE;
 unsigned long deliveredReactionMs = 0;
 GamePacket pendingPress = {};
 unsigned long lastRouteRequestTime = 0;
+unsigned long lastJoinIntentTime = 0;
 uint16_t packetCounter = 0;
 SeenEntry seenTable[MAX_SEEN_ENTRIES];
 RouteEntry routeTable[MAX_ROUTE_ENTRIES];
@@ -165,5 +166,5 @@ void loop()
   handleButtonNodeLoop(myMac, broadcastMac, packetCounter, routeTable,
                        gameStarted, pendingPressValid, awaitingAck, ackDeadline,
                        uiEvent, deliveredReactionMs, pendingPress, lastButtonState, lastDebounceTime,
-                       lastRouteRequestTime, debounceDelay, startTime, serverMac, resultState);
+                       lastRouteRequestTime, lastJoinIntentTime, debounceDelay, startTime, serverMac, resultState);
 }

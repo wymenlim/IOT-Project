@@ -6,6 +6,7 @@
 #define RREQ_JITTER_MIN_MS 20
 #define RREQ_JITTER_MAX_MS 80
 #define ROUTE_REDISCOVERY_MS 3000
+#define JOIN_INTENT_REFRESH_MS 15000
 #define PRESS_ACK_TIMEOUT_MS 5000
 
 enum ButtonUiEvent : uint8_t {
@@ -379,6 +380,7 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
                                  bool &lastButtonState,
                                  unsigned long &lastDebounceTime,
                                  unsigned long &lastRouteRequestTime,
+                                 unsigned long &lastJoinIntentTime,
                                  unsigned long debounceDelay,
                                  unsigned long startTime,
                                  uint8_t *serverMac,
@@ -386,6 +388,7 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
   M5.update();
   if (M5.BtnB.wasPressed()) {
     lastRouteRequestTime = millis();
+    lastJoinIntentTime = millis();
     LOG("MANUAL RREQ: button pressed, restarting route discovery");
     const uint8_t *destMac = hasKnownServerMac(serverMac) ? serverMac : broadcastMac;
     sendRouteRequest(myMac, destMac, broadcastMac, packetCounter, "MANUAL RREQ");
@@ -443,6 +446,10 @@ inline void handleButtonNodeLoop(const uint8_t *myMac,
     lastRouteRequestTime = millis();
     const uint8_t *destMac = hasKnownServerMac(serverMac) ? serverMac : broadcastMac;
     sendRouteRequest(myMac, destMac, broadcastMac, packetCounter, "KEEPALIVE RREQ");
+    if (millis() - lastJoinIntentTime >= JOIN_INTENT_REFRESH_MS) {
+      lastJoinIntentTime = millis();
+      sendJoinIntent(myMac, broadcastMac, packetCounter);
+    }
   }
 
   if (!gameStarted) {
