@@ -11,7 +11,6 @@ const uint8_t faultyPlayerMac[6] = {0x4C, 0x75, 0x25, 0xCB, 0x85, 0x90};
 const unsigned long FAULTY_GO_DELAY_MS = 1000;
 #define MAX_PLAYERS 10
 #define PLAYER_REMOVE_TIMEOUT_MS 10000
-#define PLAYER_IDLE_ACTIVITY_TIMEOUT_MS 120000
 
 // ============ DYNAMIC PLAYER MANAGEMENT ============
 struct PlayerInfo
@@ -21,8 +20,7 @@ struct PlayerInfo
   bool hasRoute;
   bool online; // Risk #4 fix: track if player is online
   unsigned long discoveryTime;
-  unsigned long lastHeartbeat;        // Risk #4 fix: track last route refresh
-  unsigned long lastGameActivityTime; // Track last PRESS or game participation (for idle timeout)
+  unsigned long lastHeartbeat; // Risk #4 fix: track last route refresh
 };
 
 struct PressEvent
@@ -150,12 +148,11 @@ void registerPlayer(const uint8_t playerMac[6])
     players[activePlayerCount].hasRoute = false;
     players[activePlayerCount].online = false; // Risk #4 fix: initialize online status
     players[activePlayerCount].discoveryTime = millis();
-    players[activePlayerCount].lastHeartbeat = millis();        // Risk #4 fix: initialize heartbeat
-    players[activePlayerCount].lastGameActivityTime = millis(); // Initialize idle timer at registration
+    players[activePlayerCount].lastHeartbeat = millis(); // Risk #4 fix: initialize heartbeat
 
     char macStr[18];
     macToStr(playerMac, macStr);
-    LOG("New player registered: %s (%d total) | idle timer started", macStr, activePlayerCount + 1);
+    LOG("New player registered: %s (%d total)", macStr, activePlayerCount + 1);
     activePlayerCount++;
   }
   else
@@ -313,7 +310,7 @@ int removeDisconnectedPlayers()
 
   for (int i = 0; i < activePlayerCount;)
   {
-    // Remove if offline (route expired)
+    // Remove if offline long enough.
     if (!players[i].online)
     {
       unsigned long offlineFor = now - players[i].lastHeartbeat;
@@ -323,21 +320,6 @@ int removeDisconnectedPlayers()
         macToStr(players[i].mac, macStr);
         LOG("Removing disconnected player idx=%d mac=%s offline=%lu ms",
             i, macStr, offlineFor);
-        removePlayerAt(i);
-        removedCount++;
-        continue;
-      }
-    }
-    // Also remove if idle (no game activity for 2 minutes)
-    else
-    {
-      unsigned long idleFor = now - players[i].lastGameActivityTime;
-      if (idleFor > PLAYER_IDLE_ACTIVITY_TIMEOUT_MS)
-      {
-        char macStr[18];
-        macToStr(players[i].mac, macStr);
-        LOG("Removing idle player idx=%d mac=%s no_game_activity=%lu ms",
-            i, macStr, idleFor);
         removePlayerAt(i);
         removedCount++;
         continue;
@@ -842,9 +824,6 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   // the ACK follows the current multi-hop path even if the topology changed.
   addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
   touchPlayerHeartbeat(pkt.origin_mac, "PRESS");
-
-  // Update game activity timestamp (PRESS indicates actual participation)
-  players[playerIdx].lastGameActivityTime = millis();
 
   if (!players[playerIdx].active)
   {
