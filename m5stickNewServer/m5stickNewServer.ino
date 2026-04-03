@@ -8,6 +8,7 @@
 uint8_t myMac[6];
 uint8_t broadcastMac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 const uint8_t faultyPlayerMac[6] = {0x4C, 0x75, 0x25, 0xCB, 0x85, 0x90};
+const unsigned long FAULTY_GO_DELAY_MS = 1000;
 #define MAX_PLAYERS 10
 #define PLAYER_REMOVE_TIMEOUT_MS 10000
 #define PLAYER_IDLE_ACTIVITY_TIMEOUT_MS 120000
@@ -175,6 +176,24 @@ int findPlayerIndex(const uint8_t playerMac[6])
   return -1;
 }
 
+void touchPlayerHeartbeat(const uint8_t playerMac[6], const char *reason)
+{
+  int idx = findPlayerIndex(playerMac);
+  if (idx < 0)
+  {
+    return;
+  }
+
+  players[idx].lastHeartbeat = millis();
+  if (!players[idx].online)
+  {
+    players[idx].online = true;
+    char macStr[18];
+    macToStr(players[idx].mac, macStr);
+    LOG("Player %d back ONLINE (%s heartbeat): %s", idx, reason, macStr);
+  }
+}
+
 void updatePlayerRoute(const uint8_t playerMac[6])
 {
   int idx = findPlayerIndex(playerMac);
@@ -199,49 +218,42 @@ int countValidRoutes()
 }
 
 // ============ RISK #4 FIX: Online Status Tracking ============
-// Update player online status based on active routes
+// Update player online status based on recent heartbeat activity.
 void updatePlayerOnlineStatus()
 {
-  // Keep route table fresh before checking per-player route validity.
+  // Keep route table fresh for routing decisions elsewhere.
   expireRoutes(routeTable);
   unsigned long now = millis();
 
   for (int i = 0; i < activePlayerCount; i++)
   {
-    int routeIdx = findRoute(routeTable, players[i].mac);
-
-    if (routeIdx >= 0)
+    unsigned long timeSinceHeartbeat = now - players[i].lastHeartbeat;
+    bool shouldBeOnline = (timeSinceHeartbeat <= PLAYER_HEARTBEAT_TIMEOUT_MS);
+    if (shouldBeOnline)
     {
-      // Route exists - update heartbeat and mark online
-      players[i].lastHeartbeat = now;
       if (!players[i].online)
       {
         char macStr[18];
         macToStr(players[i].mac, macStr);
-        LOG("Player %d online (route found): %s", i, macStr);
+        LOG("Player %d online (heartbeat age=%lu ms): %s", i, timeSinceHeartbeat, macStr);
       }
       players[i].online = true;
     }
     else
     {
-      // Route expired - check if heartbeat timeout has passed
-      unsigned long timeSinceHeartbeat = now - players[i].lastHeartbeat;
-      if (timeSinceHeartbeat > PLAYER_HEARTBEAT_TIMEOUT_MS)
+      if (players[i].online)
       {
-        if (players[i].online)
-        {
-          char macStr[18];
-          macToStr(players[i].mac, macStr);
-          LOG("Player %d marked OFFLINE (no route for %lu ms): %s", i, timeSinceHeartbeat, macStr);
-        }
-        players[i].online = false;
+        char macStr[18];
+        macToStr(players[i].mac, macStr);
+        LOG("Player %d marked OFFLINE (no heartbeat for %lu ms): %s", i, timeSinceHeartbeat, macStr);
       }
+      players[i].online = false;
     }
   }
 }
 
 // ============ RISK #2 FIX: Check if all ONLINE players have pressed ============
-// Only wait for responses from players that are online (have active routes)
+// Only wait for responses from players that are active and online.
 bool allReceivedFromOnlinePlayers()
 {
   for (int i = 0; i < activePlayerCount; i++)
@@ -347,6 +359,13 @@ bool sendGoToPlayer(const uint8_t destMac[6], int playerIdx)
   {
     LOG("GO: player %d (%s) has NO ROUTE - dropping", playerIdx, macStr);
     return false;
+  }
+
+  if (hasConfiguredMac(faultyPlayerMac) && macEquals(destMac, faultyPlayerMac))
+  {
+    LOG("GO: injecting %lu ms demo delay for faulty player %d (%s)",
+        FAULTY_GO_DELAY_MS, playerIdx, macStr);
+    delay(FAULTY_GO_DELAY_MS);
   }
 
   GamePacket goPkt;
@@ -690,6 +709,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
       return;
     }
     markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
+    touchPlayerHeartbeat(pkt.origin_mac, "RREQ");
 
     LOG("RREQ: reverse route origin=%s via=%s hops=%d", originStr, srcStr, pkt.hop_count + 1);
 
@@ -746,6 +766,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
 
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     markSeen(seenTable, pkt.origin_mac, pkt.type, pkt.packet_id);
+    touchPlayerHeartbeat(pkt.origin_mac, "RREP");
 
     LOG("RREP: learned route to %s via %s hops=%d",
         originStr, srcStr, pkt.hop_count + 1);
@@ -779,6 +800,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
     addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
     registerPeerIfNeeded(recvInfo->src_addr);
     registerPlayer(pkt.origin_mac);
+    touchPlayerHeartbeat(pkt.origin_mac, "AUTH_RESP");
     LOG("AUTH_RESP: explicit join from %s | registered", originStr);
     if (!roundActive)
       drawIdleStatus();
@@ -819,6 +841,7 @@ void onDataReceived(const esp_now_recv_info *recvInfo, const uint8_t *data, int 
   // Refresh the player route from the hop that actually delivered PRESS so
   // the ACK follows the current multi-hop path even if the topology changed.
   addRoute(routeTable, pkt.origin_mac, recvInfo->src_addr, pkt.hop_count + 1);
+  touchPlayerHeartbeat(pkt.origin_mac, "PRESS");
 
   // Update game activity timestamp (PRESS indicates actual participation)
   players[playerIdx].lastGameActivityTime = millis();
