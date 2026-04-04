@@ -81,7 +81,7 @@ static_assert(sizeof(GamePacket) == 36, "GamePacket size mismatch");
 // version ensures protocol compatibility across nodes.
 
 #define MAX_ROUTE_ENTRIES 10
-#define ROUTE_EXPIRY_MS 120000
+#define ROUTE_EXPIRY_MS 10000
 struct RouteEntry {
   bool valid;
   uint8_t dest_mac[6];
