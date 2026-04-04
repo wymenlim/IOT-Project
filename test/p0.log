@@ -1,0 +1,1890 @@
+
+load:0x40080400,len:3500
+entry 0x400805b4
+E (318) gpio: gpio_
+load:0x40080400,len:3500
+entry 0x400805b4
+E (318) gpio: gpio_[  1744] Player Node | actual MAC: 0C:8B:95:A8:1D:2C
+[  1744] Wake cause: cold boot
+[  1746] WiFi channel locked to 1
+[  1746] esp_now_init() OK
+[  1747] ESP-NOW PMK set OK
+[  1757] Registered peer FF:FF:FF:FF:FF:FF on ch1 encrypt=off
+[  1857] BOOT RREQ: Sending RREQ (id=1 ttl=6)
+[  1879] JOIN INTENT: sending AUTH_RESP (id=2 ttl=6)
+[  1881] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1920] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1931] Player setup complete
+[  2036] RECV from D4:D4:DA:85:4D:98 | len=36
+[  2037] Registered peer D4:D4:DA:85:4D:98 on ch1 encrypt=on
+[  2037] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=1
+[  2047] RREQ: ignore self-origin
+[  3000] KEEPALIVE RREQ: Sending RREQ (id=3 ttl=6)
+[  3050] SEND to FF:FF:FF:FF:FF:FF: OK
+[  3114] RECV from D4:D4:DA:85:4D:98 | len=36
+[  3115] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=3
+[  3115] RREQ: ignore self-origin
+[  6000] KEEPALIVE RREQ: Sending RREQ (id=4 ttl=6)
+[  6075] SEND to FF:FF:FF:FF:FF:FF: OK
+[  6121] RECV from D4:D4:DA:85:4D:98 | len=36
+[  6121] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=4
+[  6121] RREQ: ignore self-origin
+[  9000] KEEPALIVE RREQ: Sending RREQ (id=5 ttl=6)
+[  9041] SEND to FF:FF:FF:FF:FF:FF: OK
+[  9128] RECV from D4:D4:DA:85:4D:98 | len=36
+[  9128] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=5
+[  9128] RREQ: ignore self-origin
+[ 12000] KEEPALIVE RREQ: Sending RREQ (id=6 ttl=6)
+[ 12038] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 12101] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 12101] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=6
+[ 12101] RREQ: ignore self-origin
+[ 15000] KEEPALIVE RREQ: Sending RREQ (id=7 ttl=6)
+[ 15046] JOIN INTENT: sending AUTH_RESP (id=8 ttl=6)
+[ 15048] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15091] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 15091] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=7
+[ 15091] RREQ: ignore self-origin
+[ 15103] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 18000] KEEPALIVE RREQ: Sending RREQ (id=9 ttl=6)
+[ 18047] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 18090] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 18090] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=9
+[ 18090] RREQ: ignore self-origin
+[ 21000] KEEPALIVE RREQ: Sending RREQ (id=10 ttl=6)
+[ 21055] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 21091] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 21091] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=10
+[ 21091] RREQ: ignore self-origin
+[ 24000] KEEPALIVE RREQ: Sending RREQ (id=11 ttl=6)
+[ 24058] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 24116] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 24116] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=11
+[ 24116] RREQ: ignore self-origin
+[ 27000] KEEPALIVE RREQ: Sending RREQ (id=12 ttl=6)
+[ 27068] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 27135] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 27135] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=12
+[ 27135] RREQ: ignore self-origin
+[ 30000] KEEPALIVE RREQ: Sending RREQ (id=13 ttl=6)
+[ 30050] JOIN INTENT: sending AUTH_RESP (id=14 ttl=6)
+[ 30051] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30101] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30186] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 30186] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=13
+[ 30186] RREQ: ignore self-origin
+[ 31931] Idle timeout reached | entering deep sleep (wake: BtnB GPIO39 low)
+ets Jun  8 2016 00:22:57
+
+rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4876
+ho 0 tail 12 room 4
+load:0x40078000,len:16560
+load:0x40080400,len:3500
+entry 0x400805b4
+E (49) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)
+E (49) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)
+M5StickCPlus initializing...OK
+[  1687] Player Node | actual MAC: 0C:8B:95:A8:1D:2C
+[  1687] Wake cause: EXT0 (BtnB)
+[  1688] WiFi channel locked to 1
+[  1689] esp_now_init() OK
+[  1689] ESP-NOW PMK set OK
+[  1700] Registered peer FF:FF:FF:FF:FF:FF on ch1 encrypt=off
+[  1800] BOOT RREQ: Sending RREQ (id=1 ttl=6)
+[  1849] JOIN INTENT: sending AUTH_RESP (id=2 ttl=6)
+[  1851] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1886] RECV from D4:D4:DA:85:4D:98 | len=36
+[  1887] Registered peer D4:D4:DA:85:4D:98 on ch1 encrypt=on
+[  1887] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=1
+[  1897] RREQ: ignore self-origin
+[  1909] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1918] Player setup complete
+[  3000] KEEPALIVE RREQ: Sending RREQ (id=3 ttl=6)
+[  3040] SEND to FF:FF:FF:FF:FF:FF: OK
+[  3124] RECV from D4:D4:DA:85:4D:98 | len=36
+[  3125] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=3
+[  3125] RREQ: ignore self-origin
+[  6000] KEEPALIVE RREQ: Sending RREQ (id=4 ttl=6)
+[  6072] SEND to FF:FF:FF:FF:FF:FF: OK
+[  6121] RECV from D4:D4:DA:85:4D:98 | len=36
+[  6122] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=4
+[  6122] RREQ: ignore self-origin
+[  7136] RECV from 4C:75:25:CB:89:98 | len=36
+[  7136] Registered peer 4C:75:25:CB:89:98 on ch1 encrypt=on
+[  7137] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=1
+[  7147] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  7226] RREQ: relayed (ttl=5 hop=1)
+[  7226] RECV from 4C:75:25:CB:89:98 | len=36
+[  7227] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=2
+[  7303] AUTH_RESP: relayed (ttl=5 hop=1)
+[  7304] SEND to FF:FF:FF:FF:FF:FF: OK
+[  7305] SEND to FF:FF:FF:FF:FF:FF: OK
+[  7421] RECV from D4:D4:DA:85:4D:98 | len=36
+[  7421] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=1
+[  7421] DROP: duplicate (origin=4C:75:25:CB:89:98 id=1)
+[  8313] RECV from 4C:75:25:CB:89:98 | len=36
+[  8314] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=3
+[  8314] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  8369] RREQ: relayed (ttl=5 hop=1)
+[  8370] SEND to FF:FF:FF:FF:FF:FF: OK
+[  8458] RECV from D4:D4:DA:85:4D:98 | len=36
+[  8459] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=3
+[  8459] DROP: duplicate (origin=4C:75:25:CB:89:98 id=3)
+[  9000] KEEPALIVE RREQ: Sending RREQ (id=5 ttl=6)
+[  9033] SEND to FF:FF:FF:FF:FF:FF: OK
+[  9074] RECV from D4:D4:DA:85:4D:98 | len=36
+[  9075] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=5
+[  9075] RREQ: ignore self-origin
+[  9117] RECV from 4C:75:25:CB:89:98 | len=36
+[  9117] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=5
+[  9117] RREQ: ignore self-origin
+[ 11325] RECV from 4C:75:25:CB:89:98 | len=36
+[ 11326] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=4
+[ 11326] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 11397] RREQ: relayed (ttl=5 hop=1)
+[ 11398] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 11475] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 11476] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=4
+[ 11476] DROP: duplicate (origin=4C:75:25:CB:89:98 id=4)
+[ 12000] KEEPALIVE RREQ: Sending RREQ (id=6 ttl=6)
+[ 12065] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 12143] RECV from 4C:75:25:CB:89:98 | len=36
+[ 12144] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=6
+[ 12144] RREQ: ignore self-origin
+[ 12168] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 12168] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=6
+[ 12168] RREQ: ignore self-origin
+[ 14358] RECV from 4C:75:25:CB:89:98 | len=36
+[ 14358] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=5
+[ 14359] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 14395] RREQ: relayed (ttl=5 hop=1)
+[ 14396] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 14487] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 14488] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=5
+[ 14488] DROP: duplicate (origin=4C:75:25:CB:89:98 id=5)
+[ 15000] KEEPALIVE RREQ: Sending RREQ (id=7 ttl=6)
+[ 15048] JOIN INTENT: sending AUTH_RESP (id=8 ttl=6)
+[ 15049] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15097] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15168] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 15168] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=7
+[ 15168] RREQ: ignore self-origin
+[ 15179] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15179] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=7
+[ 15189] RREQ: ignore self-origin
+[ 15190] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15190] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=8
+[ 15200] AUTH_RESP: ignore self-origin
+[ 17329] RECV from 4C:75:25:CB:89:98 | len=36
+[ 17329] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=6
+[ 17330] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 17420] RREQ: relayed (ttl=5 hop=1)
+[ 17422] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 17506] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 17507] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=6
+[ 17507] DROP: duplicate (origin=4C:75:25:CB:89:98 id=6)
+[ 18000] KEEPALIVE RREQ: Sending RREQ (id=9 ttl=6)
+[ 18028] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 18066] RECV from 4C:75:25:CB:89:98 | len=36
+[ 18067] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=9
+[ 18067] RREQ: ignore self-origin
+[ 18079] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 18079] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=9
+[ 18089] RREQ: ignore self-origin
+[ 20337] RECV from 4C:75:25:CB:89:98 | len=36
+[ 20337] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=7
+[ 20338] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 20405] RREQ: relayed (ttl=5 hop=1)
+[ 20405] RECV from 4C:75:25:CB:89:98 | len=36
+[ 20406] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=8
+[ 20440] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 20444] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 20445] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 20542] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 20543] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=7
+[ 20543] DROP: duplicate (origin=4C:75:25:CB:89:98 id=7)
+[ 21000] KEEPALIVE RREQ: Sending RREQ (id=10 ttl=6)
+[ 21022] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 21058] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 21059] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=10
+[ 21059] RREQ: ignore self-origin
+[ 21114] RECV from 4C:75:25:CB:89:98 | len=36
+[ 21115] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=10
+[ 21115] RREQ: ignore self-origin
+[ 22042] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 22042] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=2
+[ 22042] GO accepted | timer started at 22042 ms | server MAC captured
+[ 23112] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 23113] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=3
+[ 23113] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 23125] SEND to 4C:75:25:CB:89:98: OK
+[ 23326] RECV from 4C:75:25:CB:89:98 | len=36
+[ 23327] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=9
+[ 23327] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 23380] RREQ: relayed (ttl=5 hop=1)
+[ 23381] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 23404] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 23404] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=4
+[ 23405] RREP: not better, drop
+[ 24000] KEEPALIVE RREQ: Sending RREQ (id=11 ttl=6)
+[ 24046] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 24069] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 24070] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=5
+[ 24070] RREP: not better, drop
+[ 24115] RECV from 4C:75:25:CB:89:98 | len=36
+[ 24115] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=11
+[ 24116] RREQ: ignore self-origin
+[ 26324] RECV from 4C:75:25:CB:89:98 | len=36
+[ 26324] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=10
+[ 26325] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 26364] RREQ: relayed (ttl=5 hop=1)
+[ 26365] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 26391] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 26391] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=6
+[ 26391] RREP: not better, drop
+[ 27000] KEEPALIVE RREQ: Sending RREQ (id=12 ttl=6)
+[ 27064] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 27087] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 27088] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=7
+[ 27088] RREP: not better, drop
+[ 27100] RECV from 4C:75:25:CB:89:98 | len=36
+[ 27100] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=12
+[ 27101] RREQ: ignore self-origin
+[ 29359] RECV from 4C:75:25:CB:89:98 | len=36
+[ 29359] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=11
+[ 29360] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 29435] RREQ: relayed (ttl=5 hop=1)
+[ 29436] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 29459] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 29460] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=8
+[ 29460] RREP: not better, drop
+[ 30000] KEEPALIVE RREQ: Sending RREQ (id=13 ttl=6)
+[ 30052] JOIN INTENT: sending AUTH_RESP (id=14 ttl=6)
+[ 30053] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30076] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 30077] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=9
+[ 30077] RREP: not better, drop
+[ 30113] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30113] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=13
+[ 30114] RREQ: ignore self-origin
+[ 30125] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30156] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30157] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=14
+[ 30157] AUTH_RESP: ignore self-origin
+[ 32003] RECV from 4C:75:25:CB:89:98 | len=36
+[ 32003] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=12
+[ 32004] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 32016] SEND to D4:D4:DA:85:4D:98: OK
+[ 32039] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 32039] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=12
+[ 32040] ACK forward: via 4C:75:2[ 56304] RECV from 4C:75:25:CB:89:98 | len=36
+[ 56304] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=23
+[ 56304] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 56370] RREQ: relayed (ttl=5 hop=1)
+[ 56371] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 56394] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 56394] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=28
+[ 56395] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 56405] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 56416] RREP: forwarded toward requester
+[ 56417] SEND to 4C:75:25:CB:89:98: OK
+[ 57000] KEEPALIVE RREQ: Sending RREQ (id=25 ttl=6)
+[ 57036] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 57059] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 57059] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=29
+[ 57060] RREP: not better, drop
+[ 57118] RECV from 4C:75:25:CB:89:98 | len=36
+[ 57118] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=25
+[ 57119] RREQ: ignore self-origin
+[ 59347] RECV from 4C:75:25:CB:89:98 | len=36
+[ 59348] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=24
+[ 59348] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 59398] RREQ: relayed (ttl=5 hop=1)
+[ 59403] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 59425] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 59426] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=30
+[ 59426] RREP: not better, drop
+[ 60000] KEEPALIVE RREQ: Sending RREQ (id=26 ttl=6)
+[ 60065] JOIN INTENT: sending AUTH_RESP (id=27 ttl=6)
+[ 60066] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 60089] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 60090] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=31
+[ 60090] RREP: not better, drop
+[ 60114] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 60225] RECV from 4C:75:25:CB:89:98 | len=36
+[ 60225] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=26
+[ 60225] RREQ: ignore self-origin
+[ 60236] RECV from 4C:75:25:CB:89:98 | len=36
+[ 60236] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=27
+[ 60246] AUTH_RESP: ignore self-origin
+[ 63000] KEEPALIVE RREQ: Sending RREQ (id=28 ttl=6)
+[ 63051] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 63074] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 63075] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=32
+[ 63075] RREP: not better, drop
+[ 66000] KEEPALIVE RREQ: Sending RREQ (id=29 ttl=6)
+[ 66066] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 66089] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 66090] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=33
+[ 66090] RREP: not better, drop
+[ 66599] Idle timeout reached | entering deep sleep (wake: BtnB GPIO39 low)
+ets Jun  8 2016 00:22:57
+
+rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4876
+ho 0 tail 12 room 4
+load:0x40078000,len:16560
+load:0x40080400,len:3500
+entry 0x400805b4
+E (49) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)
+E (49) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)
+M5StickCPlus initializing...OK
+[  1687] Player Node | actual MAC: 0C:8B:95:A8:1D:2C
+[  1687] Wake cause: EXT0 (BtnB)
+[  1688] WiFi channel locked to 1
+[  1689] esp_now_init() OK
+[  1689] ESP-NOW PMK set OK
+[  1700] Registered peer FF:FF:FF:FF:FF:FF on ch1 encrypt=off
+[  1800] BOOT RREQ: Sending RREQ (id=1 ttl=6)
+[  1837] JOIN INTENT: sending AUTH_RESP (id=2 ttl=6)
+[  1839] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1880] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1889] Player setup complete
+[  1982] RECV from D4:D4:DA:85:4D:98 | len=36
+[  1983] Registered peer D4:D4:DA:85:4D:98 on ch1 encrypt=on
+[  1983] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=1
+[  1994] RREQ: ignore self-origin
+[  2007] RECV from 4C:75:25:CB:89:98 | len=36
+[  2008] Registered peer 4C:75:25:CB:89:98 on ch1 encrypt=on
+[  2008] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=13
+[  2018] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  2098] RREQ: relayed (ttl=5 hop=1)
+[  2098] RECV from 4C:75:25:CB:89:98 | len=36
+[  2099] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=1
+[  2109] RREQ: ignore self-origin
+[  2109] RECV from 4C:75:25:CB:89:98 | len=36
+[  2110] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=14
+[  2186] AUTH_RESP: relayed (ttl=5 hop=1)
+[  2186] RECV from 4C:75:25:CB:89:98 | len=36
+[  2186] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=2
+[  2197] AUTH_RESP: ignore self-origin
+[  2198] SEND to FF:FF:FF:FF:FF:FF: OK
+[  2199] SEND to FF:FF:FF:FF:FF:FF: OK
+[  2290] RECV from D4:D4:DA:85:4D:98 | len=36
+[  2290] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=13
+[  2290] DROP: duplicate (origin=4C:75:25:CB:89:98 id=13)
+[  3000] KEEPALIVE RREQ: Sending RREQ (id=3 ttl=6)
+[  3064] SEND to FF:FF:FF:FF:FF:FF: OK
+[  3122] RECV from 4C:75:25:CB:89:98 | len=36
+[  3122] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=3
+[  3122] RREQ: ignore self-origin
+[  3154] RECV from D4:D4:DA:85:4D:98 | len=36
+[  3154] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=3
+[  3154] RREQ: ignore self-origin
+[  6000] KEEPALIVE RREQ: Sending RREQ (id=4 ttl=6)
+[  6061] SEND to FF:FF:FF:FF:FF:FF: OK
+[  6141] RECV from D4:D4:DA:85:4D:98 | len=36
+[  6141] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=4
+[  6142] RREQ: ignore self-origin
+[  7561] RECV from 4C:75:25:CB:89:98 | len=36
+[  7561] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=1
+[  7562] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  7617] RREQ: relayed (ttl=5 hop=1)
+[  7617] RECV from 4C:75:25:CB:89:98 | len=36
+[  7618] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=2
+[  7689] AUTH_RESP: relayed (ttl=5 hop=1)
+[  7690] SEND to FF:FF:FF:FF:FF:FF: OK
+[  7691] SEND to FF:FF:FF:FF:FF:FF: OK
+[  7792] RECV from D4:D4:DA:85:4D:98 | len=36
+[  7793] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=1
+[  7793] DROP: duplicate (origin=4C:75:25:CB:89:98 id=1)
+[  8762] RECV from 4C:75:25:CB:89:98 | len=36
+[  8762] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=3
+[  8762] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  8798] RREQ: relayed (ttl=5 hop=1)
+[  8802] SEND to FF:FF:FF:FF:FF:FF: OK
+[  8890] RECV from D4:D4:DA:85:4D:98 | len=36
+[  8890] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=3
+[  8891] DROP: duplicate (origin=4C:75:25:CB:89:98 id=3)
+[  9000] KEEPALIVE RREQ: Sending RREQ (id=5 ttl=6)
+[  9061] SEND to FF:FF:FF:FF:FF:FF: OK
+[  9141] RECV from D4:D4:DA:85:4D:98 | len=36
+[  9142] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=5
+[  9142] RREQ: ignore self-origin
+[  9152] RECV from 4C:75:25:CB:89:98 | len=36
+[  9152] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=5
+[  9163] RREQ: ignore self-origin
+[ 11769] RECV from 4C:75:25:CB:89:98 | len=36
+[ 11769] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=4
+[ 11769] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 11859] RREQ: relayed (ttl=5 hop=1)
+[ 11860] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 11933] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 11933] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=4
+[ 11934] DROP: duplicate (origin=4C:75:25:CB:89:98 id=4)
+[ 12000] KEEPALIVE RREQ: Sending RREQ (id=6 ttl=6)
+[ 12080] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 12146] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 12146] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=6
+[ 12147] RREQ: ignore self-origin
+[ 12158] RECV from 4C:75:25:CB:89:98 | len=36
+[ 12158] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=6
+[ 12169] RREQ: ignore self-origin
+[ 13482] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 13482] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=36
+[ 13482] GO accepted | timer started at 13482 ms | server MAC captured
+[ 14551] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 14551] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=37
+[ 14552] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 14564] SEND to 4C:75:25:CB:89:98: OK
+[ 14747] RECV from 4C:75:25:CB:89:98 | len=36
+[ 14747] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=5
+[ 14747] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 14815] RREQ: relayed (ttl=5 hop=1)
+[ 14816] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 14845] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 14846] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=38
+[ 14846] RREP: not better, drop
+[ 15000] KEEPALIVE RREQ: Sending RREQ (id=7 ttl=6)
+[ 15022] JOIN INTENT: sending AUTH_RESP (id=8 ttl=6)
+[ 15023] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15045] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15046] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 15047] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=39
+[ 15057] RREP: not better, drop
+[ 15152] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15153] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=7
+[ 15153] RREQ: ignore self-origin
+[ 15163] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15164] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=8
+[ 15174] AUTH_RESP: ignore self-origin
+[ 23754] RECV from 4C:75:25:CB:89:98 | len=36
+[ 23754] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=10
+[ 23754] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 23829] RREQ: relayed (ttl=5 hop=1)
+[ 23830] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 23853] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 23854] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=46
+[ 23854] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 23864] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 23875] RREP: forwarded toward requester
+[ 23876] SEND to 4C:75:25:CB:89:98: OK
+[ 24000] KEEPALIVE RREQ: Sending RREQ (id=12 ttl=6)
+[ 24042] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 24065] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 24066] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=47
+[ 24066] RREP: not better, drop
+[ 24112] RECV from 4C:75:25:CB:89:98 | len=36
+[ 24112] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=12
+[ 24112] RREQ: ignore self-origin
+[ 26764] RECV from 4C:75:25:CB:89:98 | len=36
+[ 26764] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=11
+[ 26764] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 26838] RREQ: relayed (ttl=5 hop=1)
+[ 26839] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 26869] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 26870] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=48
+[ 26870] RREP: not better, drop
+[ 27000] KEEPALIVE RREQ: Sending RREQ (id=13 ttl=6)
+[ 27078] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 27101] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 27102] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=49
+[ 27102] RREP: not better, drop
+[ 27115] RECV from 4C:75:25:CB:89:98 | len=36
+[ 27115] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=13
+[ 27115] RREQ: ignore self-origin
+[ 29773] RECV from 4C:75:25:CB:89:98 | len=36
+[ 29774] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=12
+[ 29774] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 29845] RREQ: relayed (ttl=5 hop=1)
+[ 29846] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 29871] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 29871] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=50
+[ 29871] RREP: not better, drop
+[ 30000] KEEPALIVE RREQ: Sending RREQ (id=14 ttl=6)
+[ 30071] JOIN INTENT: sending AUTH_RESP (id=15 ttl=6)
+[ 30072] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30098] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 30099] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=51
+[ 30099] RREP: not better, drop
+[ 30122] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30168] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30168] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=14
+[ 30168] RREQ: ignore self-origin
+[ 30178] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30179] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=15
+[ 30189] AUTH_RESP: ignore self-origin
+[ 32756] RECV from 4C:75:25:CB:89:98 | len=36
+[ 32757] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=13
+[ 32757] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 32841] RREQ: relayed (ttl=5 hop=1)
+[ 32842] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 32865] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 32866] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=52
+[ 32866] RREP: not better, drop
+[ 33000] KEEPALIVE RREQ: Sending RREQ (id=16 ttl=6)
+[ 33054] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 33077] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 33078] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=53
+[ 33078] RREP: not better, drop
+[ 33132] RECV from 4C:75:25:CB:89:98 | len=36
+[ 33132] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=16
+[ 33132] RREQ: ignore self-origin
+[ 35726] RECV from 4C:75:25:CB:89:98 | len=36
+[ 35726] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=14
+[ 35727] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 35766] RREQ: relayed (ttl=5 hop=1)
+[ 35767] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 35790] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 35791] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=54
+[ 35791] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 35802] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 35812] RREP: forwarded toward requester
+[ 35812] RECV from 4C:75:25:CB:89:98 | len=36
+[ 35823] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=15
+[ 35893] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 35894] SEND to 4C:75:25:CB:89:98: OK
+[ 35895] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 36000] KEEPALIVE RREQ: Sending RREQ (id=17 ttl=6)
+[ 36025] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 36048] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 36048] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=55
+[ 36049] RREP: not better, drop
+[ 36102] RECV from 4C:75:25:CB:89:98 | len=36
+[ 36102] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=17
+[ 36102] RREQ: ignore self-origin
+[ 38728] RECV from 4C:75:25:CB:89:98 | len=36
+[ 38729] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=16
+[ 38729] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 38790] RREQ: relayed (ttl=5 hop=1)
+[ 38791] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 38814] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 38815] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=56
+[ 38815] RREP: not better, drop
+[ 39000] KEEPALIVE RREQ: Sending RREQ (id=18 ttl=6)
+[ 39033] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 39056] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 39057] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=57
+[ 39057] RREP: not better, drop
+[ 39110] RECV from 4C:75:25:CB:89:98 | len=36
+[ 39110] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=18
+[ 39110] RREQ: ignore self-origin
+[ 41744] RECV from 4C:75:25:CB:89:98 | len=36
+[ 41745] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=17
+[ 41745] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 41792] RREQ: relayed (ttl=5 hop=1)
+[ 41793] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 41817] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 41817] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=58
+[ 41817] RREP: not better, drop
+[ 42000] KEEPALIVE RREQ: Sending RREQ (id=19 ttl=6)
+[ 42050] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 42075] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 42075] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=59
+[ 42075] RREP: not better, drop
+[ 42137] RECV from 4C:75:25:CB:89:98 | len=36
+[ 42137] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=19
+[ 42137] RREQ: ignore self-origin
+[ 44737] RECV from 4C:75:25:CB:89:98 | len=36
+[ 44738] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=18
+[ 44738] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 44793] RREQ: relayed (ttl=5 hop=1)
+[ 44794] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 44817] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 44817] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=60
+[ 44818] RREP: not better, drop
+[ 45000] KEEPALIVE RREQ: Sending RREQ (id=20 ttl=6)
+[ 45041] JOIN INTENT: sending AUTH_RESP (id=21 ttl=6)
+[ 45044] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 45067] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 45068] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=61
+[ 45068] RREP: not better, drop
+[ 45079] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 45167] RECV from 4C:75:25:CB:89:98 | len=36
+[ 45167] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=20
+[ 45167] RREQ: ignore self-origin
+[ 45177] RECV from 4C:75:25:CB:89:98 | len=36
+[ 45178] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=21
+[ 45188] AUTH_RESP: ignore self-origin
+[ 46844] Idle timeout reached | entering deep sleep (wake: BtnB GPIO39 low)
+ets Jun  8 2016 00:22:57
+
+rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 188777542, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:4876
+ho 0 tail 12 room 4
+load:0x40078000,len:16560
+load:0x40080400,len:3500
+entry 0x400805b4
+E (49) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)
+E (49) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)
+M5StickCPlus initializing...OK
+[  1687] Player Node | actual MAC: 0C:8B:95:A8:1D:2C
+[  1687] Wake cause: EXT0 (BtnB)
+[  1688] WiFi channel locked to 1
+[  1689] esp_now_init() OK
+[  1689] ESP-NOW PMK set OK
+[  1700] Registered peer FF:FF:FF:FF:FF:FF on ch1 encrypt=off
+[  1800] BOOT RREQ: Sending RREQ (id=1 ttl=6)
+[  1831] JOIN INTENT: sending AUTH_RESP (id=2 ttl=6)
+[  1833] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1867] SEND to FF:FF:FF:FF:FF:FF: OK
+[  1878] Player setup complete
+[  1930] RECV from D4:D4:DA:85:4D:98 | len=36
+[  1931] Registered peer D4:D4:DA:85:4D:98 on ch1 encrypt=on
+[  1931] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=1
+[  1941] RREQ: ignore self-origin
+[  3000] KEEPALIVE RREQ: Sending RREQ (id=3 ttl=6)
+[  3044] SEND to FF:FF:FF:FF:FF:FF: OK
+[  3123] RECV from D4:D4:DA:85:4D:98 | len=36
+[  3123] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=3
+[  3124] RREQ: ignore self-origin
+[  5451] RECV from 4C:75:25:CB:89:98 | len=36
+[  5451] Registered peer 4C:75:25:CB:89:98 on ch1 encrypt=on
+[  5451] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=1
+[  5462] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  5541] RREQ: relayed (ttl=5 hop=1)
+[  5541] RECV from 4C:75:25:CB:89:98 | len=36
+[  5542] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=2
+[  5618] AUTH_RESP: relayed (ttl=5 hop=1)
+[  5619] SEND to FF:FF:FF:FF:FF:FF: OK
+[  5620] SEND to FF:FF:FF:FF:FF:FF: OK
+[  5767] RECV from D4:D4:DA:85:4D:98 | len=36
+[  5767] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=1
+[  5768] DROP: duplicate (origin=4C:75:25:CB:89:98 id=1)
+[  6000] KEEPALIVE RREQ: Sending RREQ (id=4 ttl=6)
+[  6053] SEND to FF:FF:FF:FF:FF:FF: OK
+[  6104] RECV from D4:D4:DA:85:4D:98 | len=36
+[  6104] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=4
+[  6104] RREQ: ignore self-origin
+[  6135] RECV from 4C:75:25:CB:89:98 | len=36
+[  6135] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=4
+[  6135] RREQ: ignore self-origin
+[  6601] RECV from 4C:75:25:CB:89:98 | len=36
+[  6602] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=3
+[  6602] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  6657] RREQ: relayed (ttl=5 hop=1)
+[  6660] SEND to FF:FF:FF:FF:FF:FF: OK
+[  6704] RECV from D4:D4:DA:85:4D:98 | len=36
+[  6704] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=2 id=3
+[  6705] DROP: duplicate (origin=4C:75:25:CB:89:98 id=3)
+[  8380] RECV from D4:D4:DA:85:4D:98 | len=36
+[  8380] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=63
+[  8380] GO accepted | timer started at 8380 ms | server MAC captured
+[  9000] KEEPALIVE RREQ: Sending RREQ (id=5 ttl=6)
+[  9060] SEND to FF:FF:FF:FF:FF:FF: OK
+[  9083] RECV from D4:D4:DA:85:4D:98 | len=36
+[  9084] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=64
+[  9084] RREP: not better, drop
+[  9138] RECV from 4C:75:25:CB:89:98 | len=36
+[  9139] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=5
+[  9139] RREQ: ignore self-origin
+[  9451] RECV from D4:D4:DA:85:4D:98 | len=36
+[  9451] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=65
+[  9452] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[  9464] SEND to 4C:75:25:CB:89:98: OK
+[  9627] RECV from 4C:75:25:CB:89:98 | len=36
+[  9628] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=4
+[  9628] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[  9699] RREQ: relayed (ttl=5 hop=1)
+[  9700] SEND to FF:FF:FF:FF:FF:FF: OK
+[  9727] RECV from D4:D4:DA:85:4D:98 | len=36
+[  9728] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=66
+[  9728] RREP: not better, drop
+[ 12000] KEEPALIVE RREQ: Sending RREQ (id=6 ttl=6)
+[ 12072] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 12095] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 12096] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=67
+[ 12096] RREP: not better, drop
+[ 12129] RECV from 4C:75:25:CB:89:98 | len=36
+[ 12130] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=6
+[ 12130] RREQ: ignore self-origin
+[ 12634] RECV from 4C:75:25:CB:89:98 | len=36
+[ 12635] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=5
+[ 12635] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 12671] RREQ: relayed (ttl=5 hop=1)
+[ 12672] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 12697] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 12697] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=68
+[ 12697] RREP: not better, drop
+[ 15000] KEEPALIVE RREQ: Sending RREQ (id=7 ttl=6)
+[ 15070] JOIN INTENT: sending AUTH_RESP (id=8 ttl=6)
+[ 15071] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15094] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 15095] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=69
+[ 15095] RREP: not better, drop
+[ 15144] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15145] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=7
+[ 15145] RREQ: ignore self-origin
+[ 15156] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15184] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15185] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=8
+[ 15185] AUTH_RESP: ignore self-origin
+[ 15627] RECV from 4C:75:25:CB:89:98 | len=36
+[ 15628] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=6
+[ 15628] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 15718] RREQ: relayed (ttl=5 hop=1)
+[ 15719] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 15742] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 15743] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=70
+[ 15743] RREP: not better, drop
+[ 18000] KEEPALIVE RREQ: Sending RREQ (id=9 ttl=6)
+[ 18029] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 18052] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 18053] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=71
+[ 18053] RREP: not better, drop
+[ 18123] RECV from 4C:75:25:CB:89:98 | len=36
+[ 18124] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=9
+[ 18124] RREQ: ignore self-origin
+[ 18625] RECV from 4C:75:25:CB:89:98 | len=36
+[ 18626] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=7
+[ 18626] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 18693] RREQ: relayed (ttl=5 hop=1)
+[ 18693] RECV from 4C:75:25:CB:89:98 | len=36
+[ 18694] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=8
+[ 18728] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 18729] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 18730] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 18773] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 18773] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=72
+[ 18774] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 18784] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 18795] RREP: forwarded toward requester
+[ 18796] SEND to 4C:75:25:CB:89:98: OK
+[ 18869] PRESS sending to server | reaction_ms=10489 hop=0 id=10
+[ 18870] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[ 18871] SEND to D4:D4:DA:85:4D:98: OK
+[ 18894] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 18895] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=10
+[ 18895] ACK received | press delivery confirmed (id=10)
+[ 18940] RECV from 4C:75:25:CB:89:98 | len=36
+[ 18941] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=9
+[ 18941] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 18953] SEND to D4:D4:DA:85:4D:98: OK
+[ 18976] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 18977] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=9
+[ 18977] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 18989] SEND to 4C:75:25:CB:89:98: OK
+[ 19035] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 19035] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=73
+[ 19035] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[ 19046] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 19056] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=74
+[ 19057] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 19069] SEND to 4C:75:25:CB:89:98: OK
+[ 21000] KEEPALIVE RREQ: Sending RREQ (id=11 ttl=6)
+[ 21055] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 21078] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 21079] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=75
+[ 21079] RREP: not better, drop
+[ 21124] RECV from 4C:75:25:CB:89:98 | len=36
+[ 21125] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=11
+[ 21125] RREQ: ignore self-origin
+[ 21620] RECV from 4C:75:25:CB:89:98 | len=36
+[ 21621] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=10
+[ 21621] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 21674] RREQ: relayed (ttl=5 hop=1)
+[ 21675] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 21698] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 21699] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=76
+[ 21699] RREP: not better, drop
+[ 24000] KEEPALIVE RREQ: Sending RREQ (id=12 ttl=6)
+[ 24055] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 24078] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 24079] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=77
+[ 24079] RREP: not better, drop
+[ 24091] RECV from 4C:75:25:CB:89:98 | len=36
+[ 24092] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=12
+[ 24092] RREQ: ignore self-origin
+[ 24609] RECV from 4C:75:25:CB:89:98 | len=36
+[ 24610] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=11
+[ 24610] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 24649] RREQ: relayed (ttl=5 hop=1)
+[ 24650] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 24673] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 24674] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=78
+[ 24674] RREP: not better, drop
+[ 27000] KEEPALIVE RREQ: Sending RREQ (id=13 ttl=6)
+[ 27045] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 27068] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 27069] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=79
+[ 27069] RREP: not better, drop
+[ 27100] RECV from 4C:75:25:CB:89:98 | len=36
+[ 27101] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=13
+[ 27101] RREQ: ignore self-origin
+[ 27618] RECV from 4C:75:25:CB:89:98 | len=36
+[ 27619] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=12
+[ 27619] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 27694] RREQ: relayed (ttl=5 hop=1)
+[ 27695] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 27718] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 27719] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=80
+[ 27719] RREP: not better, drop
+[ 30000] KEEPALIVE RREQ: Sending RREQ (id=14 ttl=6)
+[ 30040] JOIN INTENT: sending AUTH_RESP (id=15 ttl=6)
+[ 30041] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30064] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 30065] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=81
+[ 30065] RREP: not better, drop
+[ 30082] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30083] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=14
+[ 30083] RREQ: ignore self-origin
+[ 30105] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30172] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30173] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=15
+[ 30173] AUTH_RESP: ignore self-origin
+[ 30618] RECV from 4C:75:25:CB:89:98 | len=36
+[ 30619] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=13
+[ 30619] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 30692] RREQ: relayed (ttl=5 hop=1)
+[ 30693] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 30720] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 30720] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=82
+[ 30720] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 30731] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 30741] RREP: forwarded toward requester
+[ 30743] SEND to 4C:75:25:CB:89:98: OK
+[ 33000] KEEPALIVE RREQ: Sending RREQ (id=16 ttl=6)
+[ 33034] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 33057] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 33058] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=83
+[ 33058] RREP: not better, drop
+[ 33117] RECV from 4C:75:25:CB:89:98 | len=36
+[ 33117] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=16
+[ 33117] RREQ: ignore self-origin
+[ 33614] RECV from 4C:75:25:CB:89:98 | len=36
+[ 33615] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=14
+[ 33615] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 33686] RREQ: relayed (ttl=5 hop=1)
+[ 33686] RECV from 4C:75:25:CB:89:98 | len=36
+[ 33687] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=15
+[ 33771] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 33772] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 33773] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 33843] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 33843] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=84
+[ 33844] RREP: not better, drop
+[ 36000] KEEPALIVE RREQ: Sending RREQ (id=17 ttl=6)
+[ 36075] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 36098] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 36099] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=85
+[ 36099] RREP: not better, drop
+[ 36148] RECV from 4C:75:25:CB:89:98 | len=36
+[ 36149] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=17
+[ 36149] RREQ: ignore self-origin
+[ 36587] RECV from 4C:75:25:CB:89:98 | len=36
+[ 36588] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=16
+[ 36588] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 36627] RREQ: relayed (ttl=5 hop=1)
+[ 36628] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 36655] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 36655] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=86
+[ 36655] RREP: not better, drop
+[ 39000] KEEPALIVE RREQ: Sending RREQ (id=18 ttl=6)
+[ 39032] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 39055] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 39056] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=87
+[ 39056] RREP: not better, drop
+[ 39121] RECV from 4C:75:25:CB:89:98 | len=36
+[ 39121] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=18
+[ 39122] RREQ: ignore self-origin
+[ 39606] RECV from 4C:75:25:CB:89:98 | len=36
+[ 39607] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=17
+[ 39607] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 39687] RREQ: relayed (ttl=5 hop=1)
+[ 39690] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 39713] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 39713] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=88
+[ 39713] RREP: not better, drop
+[ 42000] KEEPALIVE RREQ: Sending RREQ (id=19 ttl=6)
+[ 42073] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 42096] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 42097] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=89
+[ 42097] RREP: not better, drop
+[ 42114] RECV from 4C:75:25:CB:89:98 | len=36
+[ 42115] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=19
+[ 42115] RREQ: ignore self-origin
+[ 42590] RECV from 4C:75:25:CB:89:98 | len=36
+[ 42591] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=18
+[ 42591] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 42652] RREQ: relayed (ttl=5 hop=1)
+[ 42655] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 42678] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 42679] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=90
+[ 42679] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 42689] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 42700] RREP: forwarded toward requester
+[ 42705] SEND to 4C:75:25:CB:89:98: OK
+[ 43796] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 43797] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=91
+[ 43797] GO accepted | timer started at 43797 ms | server MAC captured
+[ 44867] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 44867] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=92
+[ 44867] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 44880] SEND to 4C:75:25:CB:89:98: OK
+[ 45000] KEEPALIVE RREQ: Sending RREQ (id=20 ttl=6)
+[ 45050] JOIN INTENT: sending AUTH_RESP (id=21 ttl=6)
+[ 45056] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 45079] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 45079] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=93
+[ 45079] RREP: not better, drop
+[ 45093] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 45199] RECV from 4C:75:25:CB:89:98 | len=36
+[ 45200] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=20
+[ 45200] RREQ: ignore self-origin
+[ 45210] RECV from 4C:75:25:CB:89:98 | len=36
+[ 45211] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=21
+[ 45221] AUTH_RESP: ignore self-origin
+[ 45600] RECV from 4C:75:25:CB:89:98 | len=36
+[ 45601] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=19
+[ 45601] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 45648] RREQ: relayed (ttl=5 hop=1)
+[ 45649] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 45675] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 45675] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=94
+[ 45675] RREP: not better, drop
+[ 46537] RECV from 4C:75:25:CB:89:98 | len=36
+[ 46537] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=20
+[ 46538] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 46552] SEND to D4:D4:DA:85:4D:98: OK
+[ 46552] PRESS sending to server | reaction_ms=2755 hop=0 id=22
+[ 46563] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[ 46565] SEND to D4:D4:DA:85:4D:98: OK
+[ 46575] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 46576] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=20
+[ 46586] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 46598] SEND to 4C:75:25:CB:89:98: OK
+[ 46617] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 46618] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=22
+[ 46618] ACK received | press delivery confirmed (id=22)
+[ 46666] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 46666] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=95
+[ 46666] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[ 46677] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 46687] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=96
+[ 46688] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 46698] RECV from 4C:75:25:CB:89:98 | len=36
+[ 46699] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=21
+[ 46709] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 46764] RREQ: relayed (ttl=5 hop=1)
+[ 46766] SEND to 4C:75:25:CB:89:98: OK
+[ 46766] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 46789] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 46790] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=97
+[ 46790] RREP: not better, drop
+[ 48000] KEEPALIVE RREQ: Sending RREQ (id=23 ttl=6)
+[ 48031] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 48054] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 48055] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=98
+[ 48055] RREP: not better, drop
+[ 48082] RECV from 4C:75:25:CB:89:98 | len=36
+[ 48083] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=23
+[ 48083] RREQ: ignore self-origin
+[ 49646] RECV from 4C:75:25:CB:89:98 | len=36
+[ 49647] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=22
+[ 49647] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 49727] RREQ: relayed (ttl=5 hop=1)
+[ 49727] RECV from 4C:75:25:CB:89:98 | len=36
+[ 49728] PKT type=9 origin=4C:75:25:CB:89:98[ 49818] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 49819] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 49820] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 49890] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 49890] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=99
+[ 49891] RREP: not better, drop
+[ 51000] KEEPALIVE RREQ: Sending RREQ (id=24 ttl=6)
+[ 51078] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 51102] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 51103] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=100
+[ 51103] RREP: not better, drop
+[ 51135] RECV from 4C:75:25:CB:89:98 | len=36
+[ 51136] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=24
+[ 51136] RREQ: ignore self-origin
+[ 51647] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 51647] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=101
+[ 51647] GO accepted | timer started at 51647 ms | server MAC captured
+[ 52672] RECV from 4C:75:25:CB:89:98 | len=36
+[ 52673] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=24
+[ 52673] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 52738] RREQ: relayed (ttl=5 hop=1)
+[ 52738] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 52739] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=102
+[ 52749] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 52751] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 52761] SEND to 4C:75:25:CB:89:98: OK
+[ 52775] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 52776] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=103
+[ 52776] RREP: not better, drop
+[ 53150] PRESS sending to server | reaction_ms=1503 hop=0 id=25
+[ 53151] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[ 53153] SEND to D4:D4:DA:85:4D:98: OK
+[ 53176] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 53176] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=25
+[ 53176] ACK received | press delivery confirmed (id=25)
+[ 53836] RECV from 4C:75:25:CB:89:98 | len=36
+[ 53837] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=25
+[ 53837] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 53849] SEND to D4:D4:DA:85:4D:98: OK
+[ 53872] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 53873] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=25
+[ 53873] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 53885] SEND to 4C:75:25:CB:89:98: OK
+[ 53931] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 53931] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=104
+[ 53931] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[ 53942] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 53952] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=105
+[ 53953] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 53965] SEND to 4C:75:25:CB:89:98: OK
+[ 54000] KEEPALIVE RREQ: Sending RREQ (id=26 ttl=6)
+[ 54078] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 54101] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 54102] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=106
+[ 54102] RREP: not better, drop
+[ 54160] RECV from 4C:75:25:CB:89:98 | len=36
+[ 54161] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=26
+[ 54161] RREQ: ignore self-origin
+[ 55655] RECV from 4C:75:25:CB:89:98 | len=36
+[ 55656] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=26
+[ 55656] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 55706] RREQ: relayed (ttl=5 hop=1)
+[ 55710] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 55733] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 55733] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=107
+[ 55733] RREP: not better, drop
+[ 57000] KEEPALIVE RREQ: Sending RREQ (id=27 ttl=6)
+[ 57074] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 57098] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 57098] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=108
+[ 57099] RREP: not better, drop
+[ 57166] RECV from 4C:75:25:CB:89:98 | len=36
+[ 57167] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=27
+[ 57167] RREQ: ignore self-origin
+[ 58677] RECV from 4C:75:25:CB:89:98 | len=36
+[ 58678] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=27
+[ 58678] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 58720] RREQ: relayed (ttl=5 hop=1)
+[ 58721] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 58744] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 58744] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=109
+[ 58745] RREP: not better, drop
+[ 60000] KEEPALIVE RREQ: Sending RREQ (id=28 ttl=6)
+[ 60038] JOIN INTENT: sending AUTH_RESP (id=29 ttl=6)
+[ 60039] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 60064] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 60064] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=110
+[ 60064] RREP: not better, drop
+[ 60076] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 60157] RECV from 4C:75:25:CB:89:98 | len=36
+[ 60158] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=28
+[ 60158] RREQ: ignore self-origin
+[ 60168] RECV from 4C:75:25:CB:89:98 | len=36
+[ 60169] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=29
+[ 60179] AUTH_RESP: ignore self-origin
+[ 61676] RECV from 4C:75:25:CB:89:98 | len=36
+[ 61677] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=28
+[ 61677] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 61709] RREQ: relayed (ttl=5 hop=1)
+[ 61712] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 61735] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 61735] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=111
+[ 61735] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 61746] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 61756] RREP: forwarded toward requester
+[ 61758] SEND to 4C:75:25:CB:89:98: OK
+[ 63000] KEEPALIVE RREQ: Sending RREQ (id=30 ttl=6)
+[ 63050] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 63078] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 63078] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=112
+[ 63079] RREP: not better, drop
+[ 63094] RECV from 4C:75:25:CB:89:98 | len=36
+[ 63095] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=30
+[ 63095] RREQ: ignore self-origin
+[ 63656] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 63656] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=113
+[ 63657] GO accepted | timer started at 63657 ms | server MAC captured
+[ 64658] RECV from 4C:75:25:CB:89:98 | len=36
+[ 64659] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=29
+[ 64659] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 64721] RREQ: relayed (ttl=5 hop=1)
+[ 64721] RECV from 4C:75:25:CB:89:98 | len=36
+[ 64722] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=30
+[ 64799] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 64799] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 64800] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=114
+[ 64810] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 64811] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 64821] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 64824] SEND to 4C:75:25:CB:89:98: OK
+[ 64825] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 64825] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=115
+[ 64835] RREP: not better, drop
+[ 65597] RECV from 4C:75:25:CB:89:98 | len=36
+[ 65598] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=31
+[ 65598] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 65610] SEND to D4:D4:DA:85:4D:98: OK
+[ 65638] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 65639] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=31
+[ 65639] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 65651] SEND to 4C:75:25:CB:89:98: OK
+[ 66000] KEEPALIVE RREQ: Sending RREQ (id=31 ttl=6)
+[ 66050] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 66073] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 66074] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=116
+[ 66074] RREP: not better, drop
+[ 66084] RECV from 4C:75:25:CB:89:98 | len=36
+[ 66085] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=31
+[ 66095] RREQ: ignore self-origin
+[ 66745] PRESS sending to server | reaction_ms=3088 hop=0 id=32
+[ 66745] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[ 66747] SEND to D4:D4:DA:85:4D:98: OK
+[ 66771] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 66772] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=32
+[ 66772] ACK received | press delivery confirmed (id=32)
+[ 66828] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 66829] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=117
+[ 66829] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[ 66839] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 66850] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=118
+[ 66850] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 66869] SEND to 4C:75:25:CB:89:98: OK
+[ 67634] RECV from 4C:75:25:CB:89:98 | len=36
+[ 67635] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=32
+[ 67635] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 67703] RREQ: relayed (ttl=5 hop=1)
+[ 67704] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 67727] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 67728] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=119
+[ 67728] RREP: not better, drop
+[ 69000] KEEPALIVE RREQ: Sending RREQ (id=33 ttl=6)
+[ 69062] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 69085] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 69086] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=120
+[ 69086] RREP: not better, drop
+[ 69126] RECV from 4C:75:25:CB:89:98 | len=36
+[ 69127] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=33
+[ 69127] RREQ: ignore self-origin
+[ 70652] RECV from 4C:75:25:CB:89:98 | len=36
+[ 70653] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=33
+[ 70653] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 70692] RREQ: relayed (ttl=5 hop=1)
+[ 70693] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 70717] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 70718] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=121
+[ 70718] RREP: not better, drop
+[ 72000] KEEPALIVE RREQ: Sending RREQ (id=34 ttl=6)
+[ 72026] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 72049] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 72050] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=122
+[ 72050] RREP: not better, drop
+[ 72105] RECV from 4C:75:25:CB:89:98 | len=36
+[ 72106] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=34
+[ 72106] RREQ: ignore self-origin
+[ 73641] RECV from 4C:75:25:CB:89:98 | len=36
+[ 73641] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=34
+[ 73642] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 73719] RREQ: relayed (ttl=5 hop=1)
+[ 73720] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 73743] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 73744] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=123
+[ 73744] RREP: not better, drop
+[ 75000] KEEPALIVE RREQ: Sending RREQ (id=35 ttl=6)
+[ 75029] JOIN INTENT: sending AUTH_RESP (id=36 ttl=6)
+[ 75030] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 75056] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 75056] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=124
+[ 75056] RREP: not better, drop
+[ 75100] RECV from 4C:75:25:CB:89:98 | len=36
+[ 75101] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=35
+[ 75101] RREQ: ignore self-origin
+[ 75111] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 75146] RECV from 4C:75:25:CB:89:98 | len=36
+[ 75147] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=36
+[ 75147] AUTH_RESP: ignore self-origin
+[ 76674] RECV from 4C:75:25:CB:89:98 | len=36
+[ 76674] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=35
+[ 76675] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 76727] RREQ: relayed (ttl=5 hop=1)
+[ 76728] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 76751] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 76752] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=125
+[ 76752] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[ 76762] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 76773] RREP: forwarded toward requester
+[ 76774] SEND to 4C:75:25:CB:89:98: OK
+[ 78000] KEEPALIVE RREQ: Sending RREQ (id=37 ttl=6)
+[ 78058] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 78081] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 78082] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=126
+[ 78082] RREP: not better, drop
+[ 78137] RECV from 4C:75:25:CB:89:98 | len=36
+[ 78138] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=37
+[ 78138] RREQ: ignore self-origin
+[ 78661] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 78661] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=127
+[ 78661] GO accepted | timer started at 78661 ms | server MAC captured
+[ 79671] RECV from 4C:75:25:CB:89:98 | len=36
+[ 79672] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=36
+[ 79672] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 79740] RREQ: relayed (ttl=5 hop=1)
+[ 79740] RECV from 4C:75:25:CB:89:98 | len=36
+[ 79741] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=37
+[ 79822] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 79822] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 79822] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=128
+[ 79833] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 79844] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 79845] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 79847] SEND to 4C:75:25:CB:89:98: OK
+[ 79889] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 79889] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=129
+[ 79889] RREP: not better, drop
+[ 80773] PRESS sending to server | reaction_ms=2112 hop=0 id=38
+[ 80773] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[ 80775] SEND to D4:D4:DA:85:4D:98: OK
+[ 80798] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 80798] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=38
+[ 80799] ACK received | press delivery confirmed (id=38)
+[ 81000] KEEPALIVE RREQ: Sending RREQ (id=39 ttl=6)
+[ 81036] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 81060] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 81060] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=130
+[ 81060] RREP: not better, drop
+[ 81090] RECV from 4C:75:25:CB:89:98 | len=36
+[ 81091] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=39
+[ 81091] RREQ: ignore self-origin
+[ 82004] RECV from 4C:75:25:CB:89:98 | len=36
+[ 82005] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=38
+[ 82005] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 82020] SEND to D4:D4:DA:85:4D:98: OK
+[ 82043] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 82043] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=38
+[ 82044] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 82056] SEND to 4C:75:25:CB:89:98: OK
+[ 82101] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 82102] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=131
+[ 82102] RESULT received | playerId=0 resultCode=0 tiePartnerId=0 | round complete, resetting
+[ 82112] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 82123] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=132
+[ 82123] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 82137] SEND to 4C:75:25:CB:89:98: OK
+[ 82662] RECV from 4C:75:25:CB:89:98 | len=36
+[ 82663] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=39
+[ 82663] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 82733] RREQ: relayed (ttl=5 hop=1)
+[ 82734] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 82757] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 82758] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=133
+[ 82758] RREP: not better, drop
+[ 84000] KEEPALIVE RREQ: Sending RREQ (id=40 ttl=6)
+[ 84021] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 84044] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 84045] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=134
+[ 84045] RREP: not better, drop
+[ 84091] RECV from 4C:75:25:CB:89:98 | len=36
+[ 84092] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=40
+[ 84092] RREQ: ignore self-origin
+[ 85657] RECV from 4C:75:25:CB:89:98 | len=36
+[ 85657] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=40
+[ 85658] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 85745] RREQ: relayed (ttl=5 hop=1)
+[ 85746] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 85770] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 85771] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=135
+[ 85771] RREP: not better, drop
+[ 87000] KEEPALIVE RREQ: Sending RREQ (id=41 ttl=6)
+[ 87056] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 87079] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 87080] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=136
+[ 87080] RREP: not better, drop
+[ 87141] RECV from 4C:75:25:CB:89:98 | len=36
+[ 87141] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=41
+[ 87142] RREQ: ignore self-origin
+[ 88638] RECV from 4C:75:25:CB:89:98 | len=36
+[ 88638] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=41
+[ 88638] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 88683] RREQ: relayed (ttl=5 hop=1)
+[ 88684] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 88707] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 88708] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=137
+[ 88708] RREP: not better, drop
+[ 90000] KEEPALIVE RREQ: Sending RREQ (id=42 ttl=6)
+[ 90063] JOIN INTENT: sending AUTH_RESP (id=43 ttl=6)
+[ 90067] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 90090] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 90090] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=138
+[ 90090] RREP: not better, drop
+[ 90134] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 90226] RECV from 4C:75:25:CB:89:98 | len=36
+[ 90227] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=42
+[ 90227] RREQ: ignore self-origin
+[ 90237] RECV from 4C:75:25:CB:89:98 | len=36
+[ 90237] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=43
+[ 90248] AUTH_RESP: ignore self-origin
+[ 90518] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 90518] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=139
+[ 90519] GO accepted | timer started at 90519 ms | server MAC captured
+[ 91587] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 91588] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=140
+[ 91588] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 91603] SEND to 4C:75:25:CB:89:98: OK
+[ 91678] RECV from 4C:75:25:CB:89:98 | len=36
+[ 91679] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=42
+[ 91679] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 91718] RREQ: relayed (ttl=5 hop=1)
+[ 91719] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 91742] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 91743] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=141
+[ 91743] RREP: not better, drop
+[ 92600] PRESS sending to server | reaction_ms=2081 hop=0 id=44
+[ 92600] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[ 92602] SEND to D4:D4:DA:85:4D:98: OK
+[ 92627] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 92627] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=44
+[ 92627] ACK received | press delivery confirmed (id=44)
+[ 93000] KEEPALIVE RREQ: Sending RREQ (id=45 ttl=6)
+[ 93036] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 93059] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 93060] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=142
+[ 93060] RREP: not better, drop
+[ 93082] RECV from 4C:75:25:CB:89:98 | len=36
+[ 93083] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=45
+[ 93083] RREQ: ignore self-origin
+[ 93856] RECV from 4C:75:25:CB:89:98 | len=36
+[ 93856] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=43
+[ 93857] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 93869] SEND to D4:D4:DA:85:4D:98: OK
+[ 93891] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 93892] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=43
+[ 93892] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 93905] SEND to 4C:75:25:CB:89:98: OK
+[ 93952] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 93952] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=143
+[ 93952] RESULT received | playerId=0 resultCode=0 tiePartnerId=0 | round complete, resetting
+[ 93963] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 93973] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=144
+[ 93974] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 93986] SEND to 4C:75:25:CB:89:98: OK
+[ 94670] RECV from 4C:75:25:CB:89:98 | len=36
+[ 94671] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=44
+[ 94671] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 94735] RREQ: relayed (ttl=5 hop=1)
+[ 94735] RECV from 4C:75:25:CB:89:98 | len=36
+[ 94736] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=45
+[ 94768] AUTH_RESP: relayed (ttl=5 hop=1)
+[ 94769] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 94770] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 94840] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 94840] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=145
+[ 94840] RREP: not better, drop
+[ 96000] KEEPALIVE RREQ: Sending RREQ (id=46 ttl=6)
+[ 96077] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 96100] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 96101] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=146
+[ 96101] RREP: not better, drop
+[ 96118] RECV from 4C:75:25:CB:89:98 | len=36
+[ 96119] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=46
+[ 96119] RREQ: ignore self-origin
+[ 97639] RECV from 4C:75:25:CB:89:98 | len=36
+[ 97639] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=46
+[ 97640] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[ 97687] RREQ: relayed (ttl=5 hop=1)
+[ 97689] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 97712] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 97712] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=147
+[ 97712] RREP: not better, drop
+[ 98203] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 98203] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=148
+[ 98203] GO accepted | timer started at 98203 ms | server MAC captured
+[ 99000] KEEPALIVE RREQ: Sending RREQ (id=47 ttl=6)
+[ 99083] SEND to FF:FF:FF:FF:FF:FF: OK
+[ 99106] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 99106] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=149
+[ 99106] RREP: not better, drop
+[ 99149] RECV from 4C:75:25:CB:89:98 | len=36
+[ 99150] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=47
+[ 99150] RREQ: ignore self-origin
+[ 99273] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 99274] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=150
+[ 99274] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 99288] SEND to 4C:75:25:CB:89:98: OK
+[ 99778] RECV from 4C:75:25:CB:89:98 | len=36
+[ 99779] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=47
+[ 99779] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[ 99792] SEND to D4:D4:DA:85:4D:98: OK
+[ 99814] RECV from D4:D4:DA:85:4D:98 | len=36
+[ 99815] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=47
+[ 99815] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[ 99827] SEND to 4C:75:25:CB:89:98: OK
+[100262] PRESS sending to server | reaction_ms=2059 hop=0 id=48
+[100263] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[100264] SEND to D4:D4:DA:85:4D:98: OK
+[100288] RECV from D4:D4:DA:85:4D:98 | len=36
+[100288] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=48
+[100288] ACK received | press delivery confirmed (id=48)
+[100352] RECV from D4:D4:DA:85:4D:98 | len=36
+[100352] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=151
+[100352] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[100363] RECV from D4:D4:DA:85:4D:98 | len=36
+[100373] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=152
+[100374] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[100387] SEND to 4C:75:25:CB:89:98: OK
+[100637] RECV from 4C:75:25:CB:89:98 | len=36
+[100638] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=48
+[100638] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[100678] RREQ: relayed (ttl=5 hop=1)
+[100679] SEND to FF:FF:FF:FF:FF:FF: OK
+[100702] RECV from D4:D4:DA:85:4D:98 | len=36
+[100703] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=153
+[100703] RREP: not better, drop
+[102000] KEEPALIVE RREQ: Sending RREQ (id=49 ttl=6)
+[102022] SEND to FF:FF:FF:FF:FF:FF: OK
+[102048] RECV from D4:D4:DA:85:4D:98 | len=36
+[102048] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=154
+[102048] RREP: not better, drop
+[102059] RECV from 4C:75:25:CB:89:98 | len=36
+[102059] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=49
+[102069] RREQ: ignore self-origin
+[103634] RECV from 4C:75:25:CB:89:98 | len=36
+[103634] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=49
+[103635] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[103724] RREQ: relayed (ttl=5 hop=1)
+[103728] SEND to FF:FF:FF:FF:FF:FF: OK
+[103751] RECV from D4:D4:DA:85:4D:98 | len=36
+[103751] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=155
+[103751] RREP: not better, drop
+[103827] RECV from D4:D4:DA:85:4D:98 | len=36
+[103827] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=156
+[103827] GO accepted | timer started at 103827 ms | server MAC captured
+[104897] RECV from D4:D4:DA:85:4D:98 | len=36
+[104898] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=157
+[104898] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[104910] SEND to 4C:75:25:CB:89:98: OK
+[105000] KEEPALIVE RREQ: Sending RREQ (id=50 ttl=6)
+[105023] JOIN INTENT: sending AUTH_RESP (id=51 ttl=6)
+[105024] SEND to FF:FF:FF:FF:FF:FF: OK
+[105047] RECV from D4:D4:DA:85:4D:98 | len=36
+[105048] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=158
+[105048] RREP: not better, drop
+[105073] RECV from 4C:75:25:CB:89:98 | len=36
+[105074] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=50
+[105074] RREQ: ignore self-origin
+[105100] SEND to FF:FF:FF:FF:FF:FF: OK
+[105132] RECV from 4C:75:25:CB:89:98 | len=36
+[105133] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=51
+[105133] AUTH_RESP: ignore self-origin
+[105788] PRESS sending to server | reaction_ms=1961 hop=0 id=52
+[105789] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[105791] SEND to D4:D4:DA:85:4D:98: OK
+[105813] RECV from D4:D4:DA:85:4D:98 | len=36
+[105814] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=52
+[105814] ACK received | press delivery confirmed (id=52)
+[105841] RECV from 4C:75:25:CB:89:98 | len=36
+[105842] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=50
+[105842] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[105856] SEND to D4:D4:DA:85:4D:98: OK
+[105882] RECV from D4:D4:DA:85:4D:98 | len=36
+[105882] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=50
+[105883] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[105895] SEND to 4C:75:25:CB:89:98: OK
+[105939] RECV from D4:D4:DA:85:4D:98 | len=36
+[105939] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=159
+[105939] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[105950] RECV from D4:D4:DA:85:4D:98 | len=36
+[105960] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=160
+[105961] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[105975] SEND to 4C:75:25:CB:89:98: OK
+[106635] RECV from 4C:75:25:CB:89:98 | len=36
+[106636] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=51
+[106636] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[106675] RREQ: relayed (ttl=5 hop=1)
+[106676] SEND to FF:FF:FF:FF:FF:FF: OK
+[106703] RECV from D4:D4:DA:85:4D:98 | len=36
+[106704] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=161
+[106704] RREP: not better, drop
+[108000] KEEPALIVE RREQ: Sending RREQ (id=53 ttl=6)
+[108066] SEND to FF:FF:FF:FF:FF:FF: OK
+[108089] RECV from D4:D4:DA:85:4D:98 | len=36
+[108090] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=162
+[108090] RREP: not better, drop
+[108157] RECV from 4C:75:25:CB:89:98 | len=36
+[108158] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=53
+[108158] RREQ: ignore self-origin
+[109654] RECV from 4C:75:25:CB:89:98 | len=36
+[109654] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=52
+[109655] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[109698] RREQ: relayed (ttl=5 hop=1)
+[109699] SEND to FF:FF:FF:FF:FF:FF: OK
+[109711] RECV from 4C:75:25:CB:89:98 | len=36
+[109712] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=53
+[109786] AUTH_RESP: relayed (ttl=5 hop=1)
+[109786] RECV from D4:D4:DA:85:4D:98 | len=36
+[109787] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=163
+[109797] RREP: not better, drop
+[109798] SEND to FF:FF:FF:FF:FF:FF: OK
+[111000] KEEPALIVE RREQ: Sending RREQ (id=54 ttl=6)
+[111044] SEND to FF:FF:FF:FF:FF:FF: OK
+[111067] RECV from D4:D4:DA:85:4D:98 | len=36
+[111068] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=164
+[111068] RREP: not better, drop
+[111085] RECV from 4C:75:25:CB:89:98 | len=36
+[111086] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=54
+[111086] RREQ: ignore self-origin
+[111747] RECV from D4:D4:DA:85:4D:98 | len=36
+[111747] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=165
+[111747] GO accepted | timer started at 111747 ms | server MAC captured
+[112657] RECV from 4C:75:25:CB:89:98 | len=36
+[112657] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=54
+[112658] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[112688] RREQ: relayed (ttl=5 hop=1)
+[112689] SEND to FF:FF:FF:FF:FF:FF: OK
+[112712] RECV from D4:D4:DA:85:4D:98 | len=36
+[112713] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=166
+[112713] RREP: not better, drop
+[112797] PRESS sending to server | reaction_ms=1050 hop=0 id=55
+[112797] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[112800] SEND to D4:D4:DA:85:4D:98: OK
+[112817] RECV from D4:D4:DA:85:4D:98 | len=36
+[112818] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=167
+[112818] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[112833] SEND to 4C:75:25:CB:89:98: OK
+[112858] RECV from 4C:75:25:CB:89:98 | len=36
+[112859] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=55
+[112859] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[112871] SEND to D4:D4:DA:85:4D:98: OK
+[112894] RECV from D4:D4:DA:85:4D:98 | len=36
+[112894] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=55
+[112895] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[112907] SEND to 4C:75:25:CB:89:98: OK
+[114000] KEEPALIVE RREQ: Sending RREQ (id=56 ttl=6)
+[114028] SEND to FF:FF:FF:FF:FF:FF: OK
+[114051] RECV from D4:D4:DA:85:4D:98 | len=36
+[114052] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=168
+[114052] RREP: not better, drop
+[114073] RECV from 4C:75:25:CB:89:98 | len=36
+[114074] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=56
+[114074] RREQ: ignore self-origin
+[115649] RECV from 4C:75:25:CB:89:98 | len=36
+[115649] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=56
+[115650] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[115708] RREQ: relayed (ttl=5 hop=1)
+[115711] SEND to FF:FF:FF:FF:FF:FF: OK
+[115734] RECV from D4:D4:DA:85:4D:98 | len=36
+[115734] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=169
+[115734] RREP: not better, drop
+[117000] KEEPALIVE RREQ: Sending RREQ (id=57 ttl=6)
+[117023] SEND to FF:FF:FF:FF:FF:FF: OK
+[117046] RECV from D4:D4:DA:85:4D:98 | len=36
+[117047] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=170
+[117047] RREP: not better, drop
+[117109] RECV from 4C:75:25:CB:89:98 | len=36
+[117109] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=57
+[117110] RREQ: ignore self-origin
+[117808] ACK timeout | restarting route discovery for pending PRESS
+[117808] PRESS RREQ: Sending RREQ (id=58 ttl=6)
+[117917] PRESS retry: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[117940] SEND to FF:FF:FF:FF:FF:FF: OK
+[117941] SEND to D4:D4:DA:85:4D:98: OK
+[117972] RECV from 4C:75:25:CB:89:98 | len=36
+[117973] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=58
+[117973] RREQ: ignore self-origin
+[117995] RECV from D4:D4:DA:85:4D:98 | len=36
+[117995] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=171
+[117995] RREP: not better, drop
+[118030] RECV from D4:D4:DA:85:4D:98 | len=36
+[118031] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=55
+[118031] ACK received | press delivery confirmed (id=55)
+[118054] RECV from D4:D4:DA:85:4D:98 | len=36
+[118054] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=172
+[118055] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[118065] RECV from D4:D4:DA:85:4D:98 | len=36
+[118076] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=173
+[118076] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[118088] SEND to 4C:75:25:CB:89:98: OK
+[118645] RECV from 4C:75:25:CB:89:98 | len=36
+[118646] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=57
+[118646] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[118704] RREQ: relayed (ttl=5 hop=1)
+[118705] SEND to FF:FF:FF:FF:FF:FF: OK
+[118728] RECV from D4:D4:DA:85:4D:98 | len=36
+[118728] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=174
+[118729] RREP: not better, drop
+[120808] KEEPALIVE RREQ: Sending RREQ (id=59 ttl=6)
+[120849] JOIN INTENT: sending AUTH_RESP (id=60 ttl=6)
+[120850] SEND to FF:FF:FF:FF:FF:FF: OK
+[120873] RECV from D4:D4:DA:85:4D:98 | len=36
+[120874] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=175
+[120874] RREP: not better, drop
+[120900] SEND to FF:FF:FF:FF:FF:FF: OK
+[120969] RECV from 4C:75:25:CB:89:98 | len=36
+[120969] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=59
+[120970] RREQ: ignore self-origin
+[120980] RECV from 4C:75:25:CB:89:98 | len=36
+[120980] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=60
+[120991] AUTH_RESP: ignore self-origin
+[121633] RECV from 4C:75:25:CB:89:98 | len=36
+[121633] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=58
+[121634] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[121676] RREQ: relayed (ttl=5 hop=1)
+[121677] SEND to FF:FF:FF:FF:FF:FF: OK
+[121700] RECV from D4:D4:DA:85:4D:98 | len=36
+[121701] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=176
+[121701] RREP: not better, drop
+[123808] KEEPALIVE RREQ: Sending RREQ (id=61 ttl=6)
+[123866] SEND to FF:FF:FF:FF:FF:FF: OK
+[123889] RECV from D4:D4:DA:85:4D:98 | len=36
+[123890] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=177
+[123890] RREP: not better, drop
+[123910] RECV from 4C:75:25:CB:89:98 | len=36
+[123910] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=61
+[123911] RREQ: ignore self-origin
+[124638] RECV from 4C:75:25:CB:89:98 | len=36
+[124638] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=59
+[124639] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[124703] RREQ: relayed (ttl=5 hop=1)
+[124704] SEND to FF:FF:FF:FF:FF:FF: OK
+[124705] RECV from 4C:75:25:CB:89:98 | len=36
+[124706] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=60
+[124782] AUTH_RESP: relayed (ttl=5 hop=1)
+[124782] RECV from D4:D4:DA:85:4D:98 | len=36
+[124783] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=178
+[124793] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[124793] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[124804] RREP: forwarded toward requester
+[124815] SEND to FF:FF:FF:FF:FF:FF: OK
+[124816] SEND to 4C:75:25:CB:89:98: OK
+[126593] RECV from D4:D4:DA:85:4D:98 | len=36
+[126593] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=179
+[126593] GO accepted | timer started at 126593 ms | server MAC captured
+[126808] KEEPALIVE RREQ: Sending RREQ (id=62 ttl=6)
+[126851] SEND to FF:FF:FF:FF:FF:FF: OK
+[126874] RECV from D4:D4:DA:85:4D:98 | len=36
+[126875] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=180
+[126875] RREP: not better, drop
+[126917] RECV from 4C:75:25:CB:89:98 | len=36
+[126917] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=62
+[126918] RREQ: ignore self-origin
+[127663] RECV from D4:D4:DA:85:4D:98 | len=36
+[127663] PKT type=3 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=181
+[127664] GO forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[127676] SEND to 4C:75:25:CB:89:98: OK
+[127693] RECV from 4C:75:25:CB:89:98 | len=36
+[127693] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=61
+[127693] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[127782] RREQ: relayed (ttl=5 hop=1)
+[127783] SEND to FF:FF:FF:FF:FF:FF: OK
+[127806] RECV from D4:D4:DA:85:4D:98 | len=36
+[127806] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=182
+[127807] RREP: not better, drop
+[128494] RECV from 4C:75:25:CB:89:98 | len=36
+[128495] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=62
+[128495] PRESS forward: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=5 hop=1 route_hops=1)
+[128504] PRESS sending to server | reaction_ms=1911 hop=0 id=63
+[128512] SEND to D4:D4:DA:85:4D:98: OK
+[128516] PRESS to server: via D4:D4:DA:85:4D:98 toward D4:D4:DA:85:4D:98 (ttl=6 hop=0 route_hops=1)
+[128518] SEND to D4:D4:DA:85:4D:98: OK
+[128570] RECV from D4:D4:DA:85:4D:98 | len=36
+[128570] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=62
+[128571] ACK forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[128581] RECV from D4:D4:DA:85:4D:98 | len=36
+[128592] PKT type=6 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=63
+[128592] ACK received | press delivery confirmed (id=63)
+[128592] ACK timeout | restarting route discovery for pending PRESS
+[128602] PRESS RREQ: Sending RREQ (id=64 ttl=6)
+[128602] SEND to 4C:75:25:CB:89:98: OK
+[128625] RECV from D4:D4:DA:85:4D:98 | len=36
+[128626] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=183
+[128626] RESULT received | playerId=0 resultCode=1 tiePartnerId=0 | round complete, resetting
+[128636] RECV from D4:D4:DA:85:4D:98 | len=36
+[128647] PKT type=7 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=184
+[128647] RESULT forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[128659] SEND to 4C:75:25:CB:89:98: OK
+[128676] RECV from 4C:75:25:CB:89:98 | len=36
+[128677] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=63
+[128677] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[128757] RREQ: relayed (ttl=5 hop=1)
+[128757] SEND to FF:FF:FF:FF:FF:FF: OK
+[128758] RECV from D4:D4:DA:85:4D:98 | len=36
+[128758] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=185
+[128768] RREP: not better, drop
+[128769] RECV from 4C:75:25:CB:89:98 | len=36
+[128779] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=64
+[128779] RREQ: ignore self-origin
+[128790] SEND to FF:FF:FF:FF:FF:FF: OK
+[128792] RECV from D4:D4:DA:85:4D:98 | len=36
+[128793] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=186
+[128803] RREP: not better, drop
+[131592] KEEPALIVE RREQ: Sending RREQ (id=65 ttl=6)
+[131657] SEND to FF:FF:FF:FF:FF:FF: OK
+[131680] RECV from D4:D4:DA:85:4D:98 | len=36
+[131681] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=187
+[131681] RREP: not better, drop
+[131748] RECV from 4C:75:25:CB:89:98 | len=36
+[131748] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=64
+[131749] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[131826] RREQ: relayed (ttl=5 hop=1)
+[131826] RECV from 4C:75:25:CB:89:98 | len=36
+[131827] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=65
+[131837] RREQ: ignore self-origin
+[131838] SEND to FF:FF:FF:FF:FF:FF: OK
+[131861] RECV from D4:D4:DA:85:4D:98 | len=36
+[131861] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=188
+[131862] RREP: not better, drop
+[134592] KEEPALIVE RREQ: Sending RREQ (id=66 ttl=6)
+[134644] RECV from 4C:75:25:CB:89:98 | len=36
+[134645] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=65
+[134645] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[134735] RREQ: relayed (ttl=5 hop=1)
+[134736] SEND to FF:FF:FF:FF:FF:FF: OK
+[134737] SEND to FF:FF:FF:FF:FF:FF: OK
+[134781] RECV from D4:D4:DA:85:4D:98 | len=36
+[134781] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=189
+[134781] RREP: not better, drop
+[134792] RECV from D4:D4:DA:85:4D:98 | len=36
+[134792] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=190
+[134802] RREP: not better, drop
+[134829] RECV from 4C:75:25:CB:89:98 | len=36
+[134829] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=66
+[134830] RREQ: ignore self-origin
+[137592] KEEPALIVE RREQ: Sending RREQ (id=67 ttl=6)
+[137619] JOIN INTENT: sending AUTH_RESP (id=68 ttl=6)
+[137622] SEND to FF:FF:FF:FF:FF:FF: OK
+[137644] SEND to FF:FF:FF:FF:FF:FF: OK
+[137645] RECV from D4:D4:DA:85:4D:98 | len=36
+[137646] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=191
+[137656] RREP: not better, drop
+[137792] RECV from 4C:75:25:CB:89:98 | len=36
+[137792] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=66
+[137793] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[137867] RREQ: relayed (ttl=5 hop=1)
+[137867] RECV from 4C:75:25:CB:89:98 | len=36
+[137868] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=67
+[137878] RREQ: ignore self-origin
+[137878] RECV from 4C:75:25:CB:89:98 | len=36
+[137878] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=68
+[137889] AUTH_RESP: ignore self-origin
+[137892] SEND to FF:FF:FF:FF:FF:FF: OK
+[137915] RECV from D4:D4:DA:85:4D:98 | len=36
+[137915] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=192
+[137916] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[137926] RREP forward: via 4C:75:25:CB:89:98 toward 4C:75:25:CB:89:98 (ttl=5 hop=1 route_hops=1)
+[137936] RREP: forwarded toward requester
+[137938] SEND to 4C:75:25:CB:89:98: OK
+[140592] KEEPALIVE RREQ: Sending RREQ (id=69 ttl=6)
+[140618] SEND to FF:FF:FF:FF:FF:FF: OK
+[140641] RECV from D4:D4:DA:85:4D:98 | len=36
+[140642] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=193
+[140642] RREP: not better, drop
+[140697] RECV from 4C:75:25:CB:89:98 | len=36
+[140698] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=67
+[140698] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[140786] RREQ: relayed (ttl=5 hop=1)
+[140786] RECV from 4C:75:25:CB:89:98 | len=36
+[140787] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=68
+[140832] AUTH_RESP: relayed (ttl=5 hop=1)
+[140832] RECV from 4C:75:25:CB:89:98 | len=36
+[140832] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=69
+[140843] RREQ: ignore self-origin
+[140844] SEND to FF:FF:FF:FF:FF:FF: OK
+[140845] SEND to FF:FF:FF:FF:FF:FF: OK
+[140915] RECV from D4:D4:DA:85:4D:98 | len=36
+[140915] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=194
+[140915] RREP: not better, drop
+[143592] KEEPALIVE RREQ: Sending RREQ (id=70 ttl=6)
+[143639] SEND to FF:FF:FF:FF:FF:FF: OK
+[143664] RECV from D4:D4:DA:85:4D:98 | len=36
+[143664] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=195
+[143664] RREP: not better, drop
+[143729] RECV from 4C:75:25:CB:89:98 | len=36
+[143729] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=69
+[143730] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[143812] RREQ: relayed (ttl=5 hop=1)
+[143812] RECV from 4C:75:25:CB:89:98 | len=36
+[143813] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=70
+[143823] RREQ: ignore self-origin
+[143827] SEND to FF:FF:FF:FF:FF:FF: OK
+[143850] RECV from D4:D4:DA:85:4D:98 | len=36
+[143850] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=196
+[143850] RREP: not better, drop
+[146592] KEEPALIVE RREQ: Sending RREQ (id=71 ttl=6)
+[146604] RECV from 4C:75:25:CB:89:98 | len=36
+[146604] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=70
+[146605] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[146653] RREQ: relayed (ttl=5 hop=1)
+[146654] SEND to FF:FF:FF:FF:FF:FF: OK
+[146655] SEND to FF:FF:FF:FF:FF:FF: OK
+[146699] RECV from D4:D4:DA:85:4D:98 | len=36
+[146699] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=197
+[146699] RREP: not better, drop
+[146710] RECV from D4:D4:DA:85:4D:98 | len=36
+[146710] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=198
+[146720] RREP: not better, drop
+[146721] RECV from 4C:75:25:CB:89:98 | len=36
+[146721] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=71
+[146731] RREQ: ignore self-origin
+[149592] KEEPALIVE RREQ: Sending RREQ (id=72 ttl=6)
+[149630] RECV from 4C:75:25:CB:89:98 | len=36
+[149630] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=71
+[149631] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[149711] RREQ: relayed (ttl=5 hop=1)
+[149713] SEND to FF:FF:FF:FF:FF:FF: OK
+[149714] SEND to FF:FF:FF:FF:FF:FF: OK
+[149757] RECV from D4:D4:DA:85:4D:98 | len=36
+[149758] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=199
+[149758] RREP: learned route to D4:D4:DA:85:4D:98 via D4:D4:DA:85:4D:98 hops=1
+[149768] RREP: route discovery complete
+[149768] RECV from D4:D4:DA:85:4D:98 | len=36
+[149779] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=200
+[149779] RREP: not better, drop
+[149811] RECV from 4C:75:25:CB:89:98 | len=36
+[149811] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=72
+[149811] RREQ: ignore self-origin
+[152592] KEEPALIVE RREQ: Sending RREQ (id=73 ttl=6)
+[152634] RECV from 4C:75:25:CB:89:98 | len=36
+[152634] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=72
+[152635] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[152654] JOIN INTENT: sending AUTH_RESP (id=74 ttl=6)
+[152722] RREQ: relayed (ttl=5 hop=1)
+[152723] SEND to FF:FF:FF:FF:FF:FF: OK
+[152724] SEND to FF:FF:FF:FF:FF:FF: OK
+[152735] SEND to FF:FF:FF:FF:FF:FF: OK
+[152816] RECV from D4:D4:DA:85:4D:98 | len=36
+[152816] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=201
+[152816] RREP: not better, drop
+[152827] RECV from D4:D4:DA:85:4D:98 | len=36
+[152827] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=202
+[152837] RREP: not better, drop
+[152865] RECV from 4C:75:25:CB:89:98 | len=36
+[152865] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=73
+[152865] RREQ: ignore self-origin
+[152876] RECV from 4C:75:25:CB:89:98 | len=36
+[152876] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=1 id=74
+[152886] AUTH_RESP: ignore self-origin
+[155592] KEEPALIVE RREQ: Sending RREQ (id=75 ttl=6)
+[155648] RECV from 4C:75:25:CB:89:98 | len=36
+[155648] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=0 id=73
+[155648] RREQ: reverse route origin=4C:75:25:CB:89:98 via=4C:75:25:CB:89:98 hops=1
+[155733] RREQ: relayed (ttl=5 hop=1)
+[155733] RECV from 4C:75:25:CB:89:98 | len=36
+[155734] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=0 id=74
+[155818] AUTH_RESP: relayed (ttl=5 hop=1)
+[155818] SEND to FF:FF:FF:FF:FF:FF: OK
+[155819] RECV from D4:D4:DA:85:4D:98 | len=36
+[155819] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=0C:8B:95:A8:1D:2C hop=0 id=203
+[155829] RREP: not better, drop
+[155830] SEND to FF:FF:FF:FF:FF:FF: OK
+[155840] SEND to FF:FF:FF:FF:FF:FF: OK
+[155840] RECV from 4C:75:25:CB:89:98 | len=36
+[155841] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=1 id=75
+[155851] RREQ: ignore self-origin
+[155890] RECV from D4:D4:DA:85:4D:98 | len=36
+[155891] PKT type=2 origin=D4:D4:DA:85:4D:98 dest=4C:75:25:CB:89:98 hop=0 id=204
+[155891] RREP: not better, drop

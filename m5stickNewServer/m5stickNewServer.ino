@@ -7,7 +7,8 @@
 
 uint8_t myMac[6];
 uint8_t broadcastMac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-const uint8_t faultyPlayerMac[6] = {0x4C, 0x75, 0x25, 0xCB, 0x85, 0x90};
+//MAC:                4c:75:25:cb:89:98
+const uint8_t faultyPlayerMac[6] = {0x4C, 0x75, 0x25, 0xCB, 0x89, 0x98};
 const unsigned long FAULTY_GO_DELAY_MS = 1000;
 #define MAX_PLAYERS 10
 #define PLAYER_REMOVE_TIMEOUT_MS 10000

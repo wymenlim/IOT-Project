@@ -11,7 +11,7 @@ uint8_t broadcastMac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 // Demo topology: block the direct server <-> faulty-player link.
 // Fill this with the real m5stickNewServer MAC before flashing for the demo.
-const uint8_t blockedServerMac[6] = {0xE8, 0x9F, 0x6D, 0x09, 0x03, 0xA4};
+const uint8_t blockedServerMac[6] = {0xD4, 0xD4, 0xDA, 0x85, 0x4D, 0x98};
 
 bool lastButtonState = false;
 unsigned long lastDebounceTime = 0;

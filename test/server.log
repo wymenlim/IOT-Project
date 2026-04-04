@@ -1,0 +1,1728 @@
+z*l{u*H?@+"~*xxT*l||$y+rID!W*zHY*}"x*h(CPW*{|4x
+load:0x40080400,len:3500
+entry 0x400805b4
+E (315) gpio: gpio_p[  1740] Server | actual MAC: D4:D4:DA:85:4D:98
+[  1742] WiFi channel locked to 1
+[  1742] esp_now_init() OK
+[  1743] ESP-NOW PMK set OK
+[  1743] Registered peer FF:FF:FF:FF:FF:FF on ch1 encrypt=off
+[  1753] Demo topology: server blocks direct faulty-player link to 4C:75:25:CB:89:98
+[  1763] Server ready - waiting for player discovery (up to 10 players)
+[  1790] --- Round reset. 0 players registered ---
+[159929] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[159929] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[159968] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[159968] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[161009] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[161009] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[163998] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[163998] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[167018] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[167018] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[170006] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[170006] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[172966] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[172966] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[173041] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[173041] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[175972] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[175972] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[179009] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[179009] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[182004] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[182004] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[184983] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[184983] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[187965] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[187965] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[188004] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[188004] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[381060] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[381061] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=1 reaction_ms=0
+[381071] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[381145] RREQ: relayed (ttl=5 hop=1)
+[381146] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[381146] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=2 reaction_ms=0
+[381157] Registered peer 0C:8B:95:A8:1D:2C on ch1 encrypt=on
+[381157] New player registered: 0C:8B:95:A8:1D:2C (1 total)
+[381167] Player 0 back ONLINE (AUTH_RESP heartbeat): 0C:8B:95:A8:1D:2C
+[381167] Player 0 online (heartbeat age=10 ms): 0C:8B:95:A8:1D:2C
+[381177] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[381215] SEND to FF:FF:FF:FF:FF:FF: OK
+[382230] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[382231] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=3 reaction_ms=0
+[382241] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[382292] RREQ: relayed (ttl=5 hop=1)
+[382294] SEND to FF:FF:FF:FF:FF:FF: OK
+[385255] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[385256] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=4 reaction_ms=0
+[385266] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[385299] RREQ: relayed (ttl=5 hop=1)
+[385300] SEND to FF:FF:FF:FF:FF:FF: OK
+[388221] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[388222] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=5 reaction_ms=0
+[388232] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[388306] RREQ: relayed (ttl=5 hop=1)
+[388307] SEND to FF:FF:FF:FF:FF:FF: OK
+[391217] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[391218] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=6 reaction_ms=0
+[391228] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[391279] RREQ: relayed (ttl=5 hop=1)
+[391280] SEND to FF:FF:FF:FF:FF:FF: OK
+[394227] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[394228] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=7 reaction_ms=0
+[394238] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[394269] RREQ: relayed (ttl=5 hop=1)
+[394270] SEND to FF:FF:FF:FF:FF:FF: OK
+[394283] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[394283] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=8 reaction_ms=0
+[394293] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[397227] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[397227] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=9 reaction_ms=0
+[397238] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[397268] RREQ: relayed (ttl=5 hop=1)
+[397269] SEND to FF:FF:FF:FF:FF:FF: OK
+[400235] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[400236] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=10 reaction_ms=0
+[400246] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[400269] RREQ: relayed (ttl=5 hop=1)
+[400270] SEND to FF:FF:FF:FF:FF:FF: OK
+[403238] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[403239] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=11 reaction_ms=0
+[403249] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[403293] RREQ: relayed (ttl=5 hop=1)
+[403296] SEND to FF:FF:FF:FF:FF:FF: OK
+[406248] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[406249] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=12 reaction_ms=0
+[406259] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[406313] RREQ: relayed (ttl=5 hop=1)
+[406314] SEND to FF:FF:FF:FF:FF:FF: OK
+[409231] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[409232] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=13 reaction_ms=0
+[409242] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[409316] RREQ: relayed (ttl=5 hop=1)
+[409317] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[409317] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=14 reaction_ms=0
+[409327] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[409366] SEND to FF:FF:FF:FF:FF:FF: OK
+[414328] Player 0 marked OFFLINE (no heartbeat for 5001 ms): 0C:8B:95:A8:1D:2C
+[419328] Removing disconnected player idx=0 mac=0C:8B:95:A8:1D:2C offline=10001 ms
+[419328] Removed 1 disconnected player(s). Active slots now: 0/10
+[486888] Button B pressed | broadcasting discovery beacon
+[486888] Beacon sent; players should announce themselves back to the server
+[486921] SEND to FF:FF:FF:FF:FF:FF: OK
+[488946] --- Round reset. 0 players registered ---
+[490331] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[490332] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=1 reaction_ms=0
+[490342] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[490365] RREQ: relayed (ttl=5 hop=1)
+[490366] SEND to FF:FF:FF:FF:FF:FF: OK
+[490390] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[490390] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=2 reaction_ms=0
+[490400] New player registered: 0C:8B:95:A8:1D:2C (1 total)
+[490401] Player 0 back ONLINE (AUTH_RESP heartbeat): 0C:8B:95:A8:1D:2C
+[490401] Player 0 online (heartbeat age=1 ms): 0C:8B:95:A8:1D:2C
+[490411] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[491520] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[491521] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=3 reaction_ms=0
+[491531] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[491603] RREQ: relayed (ttl=5 hop=1)
+[491604] SEND to FF:FF:FF:FF:FF:FF: OK
+[494553] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[494553] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=4 reaction_ms=0
+[494563] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[494600] RREQ: relayed (ttl=5 hop=1)
+[494601] SEND to FF:FF:FF:FF:FF:FF: OK
+[495616] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[495616] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[495684] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[495684] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[495784] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[495785] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=1 reaction_ms=0
+[495795] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[495841] RREQ: relayed (ttl=4 hop=2)
+[495842] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[495842] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=2 reaction_ms=0
+[495852] New player registered: 4C:75:25:CB:89:98 (2 total)
+[495852] Player 1 online (heartbeat age=0 ms): 4C:75:25:CB:89:98
+[495852] Player 1 back ONLINE (AUTH_RESP heartbeat): 4C:75:25:CB:89:98
+[495873] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[495901] SEND to FF:FF:FF:FF:FF:FF: OK
+[496794] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[496794] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[496851] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[496851] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=3 reaction_ms=0
+[496861] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[496937] RREQ: relayed (ttl=4 hop=2)
+[496938] SEND to FF:FF:FF:FF:FF:FF: OK
+[497514] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[497514] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=5 reaction_ms=0
+[497524] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[497553] RREQ: relayed (ttl=5 hop=1)
+[497554] SEND to FF:FF:FF:FF:FF:FF: OK
+[497597] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[497597] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[499805] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[499805] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[499879] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[499879] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=4 reaction_ms=0
+[499889] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[499954] RREQ: relayed (ttl=4 hop=2)
+[499955] SEND to FF:FF:FF:FF:FF:FF: OK
+[500546] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[500546] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=6 reaction_ms=0
+[500556] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[500636] RREQ: relayed (ttl=5 hop=1)
+[500637] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[500637] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[500648] SEND to FF:FF:FF:FF:FF:FF: OK
+[502839] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[502839] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[502877] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[502877] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=5 reaction_ms=0
+[502887] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[502966] RREQ: relayed (ttl=4 hop=2)
+[502967] SEND to FF:FF:FF:FF:FF:FF: OK
+[503530] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[503530] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=7 reaction_ms=0
+[503540] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[503596] RREQ: relayed (ttl=5 hop=1)
+[503597] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[503597] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=8 reaction_ms=0
+[503607] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[503648] SEND to FF:FF:FF:FF:FF:FF: OK
+[503658] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[503659] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[503659] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[503670] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[505809] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[505810] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[505902] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[505902] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=6 reaction_ms=0
+[505913] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[505985] RREQ: relayed (ttl=4 hop=2)
+[505987] SEND to FF:FF:FF:FF:FF:FF: OK
+[506509] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=9 reaction_ms=0
+[506519] RREQ: reverse route origi[510591] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[511591] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[511591] GO: sent to player 1 (4C:75:25:CB:89:98)
+[511593] SEND to 0C:8B:95:A8:1D:2C: OK
+[511624] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[511807] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[511862] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[511862] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=9 reaction_ms=0
+[511872] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[511873] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[511885] SEND to 0C:8B:95:A8:1D:2C: OK
+[512527] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[512527] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=11 reaction_ms=0
+[512537] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[512538] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[512550] SEND to 0C:8B:95:A8:1D:2C: OK
+[512596] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[512596] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[514805] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[514805] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[514846] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[514846] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=10 reaction_ms=0
+[514856] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[514857] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[514871] SEND to 0C:8B:95:A8:1D:2C: OK
+[515545] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[515545] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=12 reaction_ms=0
+[515555] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[515556] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[515568] SEND to 0C:8B:95:A8:1D:2C: OK
+[515581] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[515581] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[517839] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[517840] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[517917] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[517917] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=11 reaction_ms=0
+[517927] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[517928] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[517940] SEND to 0C:8B:95:A8:1D:2C: OK
+[518534] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[518534] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=13 reaction_ms=0
+[518544] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[518545] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[518557] SEND to 0C:8B:95:A8:1D:2C: OK
+[518594] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[518594] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[518605] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[518606] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=14 reaction_ms=0
+[518616] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[518637] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[518637] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[520496] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[520496] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=12 reaction_ms=8875
+[520507] ACCEPTED PRESS from player 1 | reaction_ms=8875 hop=1
+[520507] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[520518] Press state: 1/2 active players received SEND to 0C:8B:95:A8:1D:2C: OK
+[520825] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[520825] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[520900] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[520900] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=13 reaction_ms=0
+[520910] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[520911] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[520923] SEND to 0C:8B:95:A8:1D:2C: OK
+[521511] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[521512] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=15 reaction_ms=0
+[521522] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[521522] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[521534] SEND to 0C:8B:95:A8:1D:2C: OK
+[521589] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[521589] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[523812] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[523812] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[523849] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[523849] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[523970] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[523970] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=14 reaction_ms=0
+[523980] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[523981] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[523991] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[523992] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=15 reaction_ms=0
+[524002] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[524018] SEND to 0C:8B:95:A8:1D:2C: OK
+[524558] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[524558] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=16 reaction_ms=0
+[524568] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[524569] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[524581] SEND to 0C:8B:95:A8:1D:2C: OK
+[524633] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[524633] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[525081] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[525082] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=17 reaction_ms=14557
+[525092] ACCEPTED PRESS from player 0 | reaction_ms=14557 hop=0
+[525092] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[525103] Press state: 2/2 active players received
+[525103] === ROUND RESULT ===
+[525105] SEND to 0C:8B:95:A8:1D:2C: OK
+[525113]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=14557 | hop=0 | diff=+5682 ms
+[525123]   Player 1 (4C:75:25:CB:89:98) | reactionMs=8875 | hop=1 | diff=+0 ms
+[525123]   >> WINNER: Player 1 <<
+[525134] ====================
+[525162] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[525162] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[525163] SEND to 0C:8B:95:A8:1D:2C: OK
+[525173] SEND to 0C:8B:95:A8:1D:2C: OK
+[526827] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[526827] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[526869] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[526869] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=16 reaction_ms=0
+[526879] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[526880] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[526893] SEND to 0C:8B:95:A8:1D:2C: OK
+[527505] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[527505] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=18 reaction_ms=0
+[527516] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[527516] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[527528] SEND to 0C:8B:95:A8:1D:2C: OK
+[527578] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[527578] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[528198] --- Round reset. 2 players registered ---
+[529823] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[529823] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[529905] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[529905] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=17 reaction_ms=0
+[529915] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[529916] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[529928] SEND to 0C:8B:95:A8:1D:2C: OK
+[530516] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[530516] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=19 reaction_ms=0
+[530526] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[530527] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[530539] SEND to 0C:8B:95:A8:1D:2C: OK
+[530602] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[530602] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[532818] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[532819] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[532882] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[532882] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=18 reaction_ms=0
+[532892] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[532893] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[532905] SEND to 0C:8B:95:A8:1D:2C: OK
+[533515] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[533515] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=20 reaction_ms=0
+[533525] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[533526] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[533540] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[533541] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=21 reaction_ms=0
+[533551] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[533578] SEND to 0C:8B:95:A8:1D:2C: OK
+[533637] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[533637] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[533637] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[533648] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[535839] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[535839] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[535888] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[535888] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=19 reaction_ms=0
+[535898] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[535899] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[535911] SEND to 0C:8B:95:A8:1D:2C: OK
+[536543] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[536543] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=22 reaction_ms=0
+[536554] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[536554] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[536566] SEND to 0C:8B:95:A8:1D:2C: OK
+[536606] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[536606] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[538830] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[538830] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[538856] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[538857] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[538968] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[538968] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=20 reaction_ms=0
+[538979] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[538979] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[538990] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[538990] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=21 reaction_ms=0
+[539001] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[539039] SEND to 0C:8B:95:A8:1D:2C: OK
+[539542] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[539543] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=23 reaction_ms=0
+[539553] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[539553] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[539565] SEND to 0C:8B:95:A8:1D:2C: OK
+[539592] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[539592] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[541835] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[541835] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[541927] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[541927] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=22 reaction_ms=0
+[541937] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[541938] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[541950] SEND to 0C:8B:95:A8:1D:2C: OK
+[542537] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[542537] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=24 reaction_ms=0
+[542548] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[542548] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[542561] SEND to 0C:8B:95:A8:1D:2C: OK
+[542594] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[542594] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[544785] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[544785] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[544852] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[544852] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=23 reaction_ms=0
+[544862] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[544863] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[544875] SEND to 0C:8B:95:A8:1D:2C: OK
+[545517] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[545517] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=25 reaction_ms=0
+[545527] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[545528] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[545540] SEND to 0C:8B:95:A8:1D:2C: OK
+[545599] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[545599] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[547828] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[547828] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[547883] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[547884] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=24 reaction_ms=0
+[547894] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[547894] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[547906] SEND to 0C:8B:95:A8:1D:2C: OK
+[548547] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[548547] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=26 reaction_ms=0
+[548558] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[548558] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[548570] SEND to 0C:8B:95:A8:1D:2C: OK
+[548595] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[548595] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=27 reaction_ms=0
+[548606] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[548705] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[548705] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[548706] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[548716] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[551532] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[551532] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=28 reaction_ms=0
+[551543] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[551543] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[551555] SEND to 0C:8B:95:A8:1D:2C: OK
+[552895] Player 1 marked OFFLINE (no heartbeat for 5001 ms): 4C:75:25:CB:89:98
+[554547] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[554547] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=29 reaction_ms=0
+[554558] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[554558] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[554570] SEND to 0C:8B:95:A8:1D:2C: OK
+[557895] Removing disconnected player idx=1 mac=4C:75:25:CB:89:98 offline=10001 ms
+[557895] Removed 1 disconnected player(s). Active slots now: 1/10
+[559559] Player 0 marked OFFLINE (no heartbeat for 5001 ms): 0C:8B:95:A8:1D:2C
+[561403] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[561403] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[561463] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[561463] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[562574] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[562574] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+=0
+[571607] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[571607] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[574590] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[574590] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[574670] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[574670] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[577582] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[577582] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[578045] Button B pressed | broadcasting discovery beacon
+[578046] Beacon sent; players should announce themselves back to the server
+[578077] SEND to FF:FF:FF:FF:FF:FF: OK
+[580103] --- Round reset. 0 players registered ---
+[580574] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[580574] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[583568] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[583568] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[586559] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[586559] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[586781] Button B pressed | broadcasting discovery beacon
+[586782] Beacon sent; players should announce themselves back to the server
+[586804] SEND to FF:FF:FF:FF:FF:FF: OK
+[588839] --- Round reset. 0 players registered ---
+[589521] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[589522] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=1 reaction_ms=0
+[589532] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[589602] RREQ: relayed (ttl=5 hop=1)
+[589603] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[589603] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=2 reaction_ms=0
+[589613] New player registered: 0C:8B:95:A8:1D:2C (1 total)
+[589613] Player 0 back ONLINE (AUTH_RESP heartbeat): 0C:8B:95:A8:1D:2C
+[589613] Player 0 online (heartbeat age=0 ms): 0C:8B:95:A8:1D:2C
+[589624] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[589665] SEND to FF:FF:FF:FF:FF:FF: OK
+[589690] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[589690] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[589691] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[589701] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[589701] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[589711] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[589722] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[589722] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[589880] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[589881] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=13 reaction_ms=0
+[589891] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[589912] RREQ: relayed (ttl=4 hop=2)
+[589913] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[589913] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=14 reaction_ms=0
+[589923] New player registered: 4C:75:25:CB:89:98 (2 total)
+[589923] Player 1 online (heartbeat age=0 ms): 4C:75:25:CB:89:98
+[589923] Player 1 back ONLINE (AUTH_RESP heartbeat): 4C:75:25:CB:89:98
+[589944] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[589972] SEND to FF:FF:FF:FF:FF:FF: OK
+[590747] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[590747] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=3 reaction_ms=0
+[590758] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[590824] RREQ: relayed (ttl=5 hop=1)
+[590825] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[590825] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[590836] SEND to FF:FF:FF:FF:FF:FF: OK
+[593744] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[593744] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=4 reaction_ms=0
+[593754] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[593820] RREQ: relayed (ttl=5 hop=1)
+[593823] SEND to FF:FF:FF:FF:FF:FF: OK
+[594924] Player 1 marked OFFLINE (no heartbeat for 5001 ms): 4C:75:25:CB:89:98
+[595244] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[595244] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[595278] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[595278] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[595373] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[595373] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=1 reaction_ms=0
+[595383] Player 1 back ONLINE (RREQ heartbeat): 4C:75:25:CB:89:98
+[595383] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[595425] RREQ: relayed (ttl=4 hop=2)
+[595426] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[595426] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=2 reaction_ms=0
+[595436] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[595475] SEND to FF:FF:FF:FF:FF:FF: OK
+[596444] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[596444] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[596484] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[596485] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=3 reaction_ms=0
+[596495] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[596571] RREQ: relayed (ttl=4 hop=2)
+[596572] SEND to FF:FF:FF:FF:FF:FF: OK
+[596744] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[596744] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=5 reaction_ms=0
+[596755] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[596821] RREQ: relayed (ttl=5 hop=1)
+[596824] SEND to FF:FF:FF:FF:FF:FF: OK
+[596826] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[596826] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[599451] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[599451] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[599543] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[599543] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=4 reaction_ms=0
+[599553] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[599614] RREQ: relayed (ttl=4 hop=2)
+[599615] SEND to FF:FF:FF:FF:FF:FF: OK
+[599763] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[599763] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=6 reaction_ms=0
+[599773] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[599827] RREQ: relayed (ttl=5 hop=1)
+[599828] SEND to FF:FF:FF:FF:FF:FF: OK
+[599841] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[599841] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[601141] Button A pressed | starting round
+[601141] Valid routes: 2/2
+[601141] === STARTING ROUND - Player Route Status ===
+[601141]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[601151]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[601161] ==========================================
+[601162] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[601164] SEND to 0C:8B:95:A8:1D:2C: OK
+[601172] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[601232] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[602232] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[602232] GO: sent to player 1 (4C:75:25:CB:89:98)
+[602234] SEND to 0C:8B:95:A8:1D:2C: OK
+[602265] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[602429] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[602429] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[602499] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[602499] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=5 reaction_ms=0
+[602509] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[602510] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[602528] SEND to 0C:8B:95:A8:1D:2C: OK
+[602706] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[602706] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=7 reaction_ms=0
+[602717] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[602717] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[602728] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[602728] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=8 reaction_ms=0
+[602739] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[602750] SEND to 0C:8B:95:A8:1D:2C: OK
+[602835] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[602835] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[602836] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[602846] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[604522] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[604522] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=6 reaction_ms=2260
+[604532] ACCEPTED PRESS from player 1 | reaction_ms=2260 hop=1
+[604533] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[604543] Press state: 1/2 active players received
+[604543] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[604554] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=9 reaction_ms=3362
+[604564] ACCEPTED PRESS from player 0 | reaction_ms=3362 hop=0
+[604565] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[604575] Press state: 2/2 active players received
+[604575] === ROUND RESULT ===
+[604577] SEND to 0C:8B:95:A8:1D:2C: OK
+[604585]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=3362 | hop=0 | diff=+1102 ms
+[604586] SEND to 0C:8B:95:A8:1D:2C: OK
+[604596]   Player 1 (4C:75:25:CB:89:98) | reactionMs=2260 | hop=1 | diff=+0 ms
+[604606]   >> WINNER: Player 1 <<
+[604606] ====================
+[604634] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[604634] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[604636] SEND to 0C:8B:95:A8:1D:2C: OK
+[604645] SEND to 0C:8B:95:A8:1D:2C: OK
+[605442] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[605442] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[605479] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[605479] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=7 reaction_ms=0
+[605489] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[605490] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[605502] SEND to 0C:8B:95:A8:1D:2C: OK
+[605763] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[605763] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=10 reaction_ms=0
+[605774] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[605774] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[605787] SEND to 0C:8B:95:A8:1D:2C: OK
+[605801] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[605801] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[607670] --- Round reset. 2 players registered ---
+[608431] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[608431] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[608473] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[608473] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[608526] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[608526] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=8 reaction_ms=0
+[608536] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[608537] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[608547] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[608548] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=9 reaction_ms=0
+[608558] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[608602] SEND to 0C:8B:95:A8:1D:2C: OK
+[608755] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[608755] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=11 reaction_ms=0
+[608766] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[608766] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[608778] SEND to 0C:8B:95:A8:1D:2C: OK
+[608847] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[608847] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[611436] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[611436] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[611513] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[611513] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=10 reaction_ms=0
+[611523] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[611524] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[611536] SEND to 0C:8B:95:A8:1D:2C: OK
+[611725] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[611725] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=12 reaction_ms=0
+[611735] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[611736] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[611748] SEND to 0C:8B:95:A8:1D:2C: OK
+[611794] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[611794] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[614446] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[614446] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[614522] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[614522] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=11 reaction_ms=0
+[614532] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[614533] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[614552] SEND to 0C:8B:95:A8:1D:2C: OK
+[614761] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[614761] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=13 reaction_ms=0
+[614772] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[614772] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[614784] SEND to 0C:8B:95:A8:1D:2C: OK
+[614797] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[614797] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[617456] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[617456] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[617529] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[617529] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=12 reaction_ms=0
+[617539] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[617540] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[617562] SEND to 0C:8B:95:A8:1D:2C: OK
+[617755] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[617755] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=14 reaction_ms=0
+[617766] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[617766] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[617781] SEND to 0C:8B:95:A8:1D:2C: OK
+[617805] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[617805] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=15 reaction_ms=0
+[617816] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[617850] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[617850] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[617851] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[617861] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[620439] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[620439] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[620525] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[620525] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=13 reaction_ms=0
+[620535] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[620536] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[620548] SEND to 0C:8B:95:A8:1D:2C: OK
+[620737] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[620737] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=16 reaction_ms=0
+[620748] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[620748] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[620760] SEND to 0C:8B:95:A8:1D:2C: OK
+[620814] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[620814] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[623409] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[623409] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[623450] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[623450] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=14 reaction_ms=0
+[623461] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[623461] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[623473] SEND to 0C:8B:95:A8:1D:2C: OK
+[623479] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[623479] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[623578] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[623578] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=15 reaction_ms=0
+[623589] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[623708] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[623708] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=17 reaction_ms=0
+[623718] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[623719] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[623731] SEND to 0C:8B:95:A8:1D:2C: OK
+[623785] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[623785] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[626411] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[626411] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[626474] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[626474] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=16 reaction_ms=0
+[626485] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[626485] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[626497] SEND to 0C:8B:95:A8:1D:2C: OK
+[626716] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[626716] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=18 reaction_ms=0
+[626727] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[626727] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[626739] SEND to 0C:8B:95:A8:1D:2C: OK
+[626792] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[626793] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[629427] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[629427] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[629476] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[629476] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=17 reaction_ms=0
+[629487] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[629487] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[629500] SEND to 0C:8B:95:A8:1D:2C: OK
+[629733] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[629733] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=19 reaction_ms=0
+[629744] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[629744] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[629758] SEND to 0C:8B:95:A8:1D:2C: OK
+[629819] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[629819] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[632420] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[632420] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[632477] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[632477] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=18 reaction_ms=0
+[632488] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[632488] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[632500] SEND to 0C:8B:95:A8:1D:2C: OK
+[632727] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[632728] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=20 reaction_ms=0
+[632738] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[632738] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[632750] SEND to 0C:8B:95:A8:1D:2C: OK
+[632762] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[632763] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=21 reaction_ms=0
+[632773] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[632849] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[632849] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[632852] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[632862] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[637489] Player 1 marked OFFLINE (no heartbeat for 5001 ms): 4C:75:25:CB:89:98
+[637774] Player 0 marked OFFLINE (no heartbeat for 5001 ms): 0C:8B:95:A8:1D:2C
+[642489] Removing disconnected player idx=1 mac=4C:75:25:CB:89:98 offline=10001 ms
+[642489] Removed 1 disconnected player(s). Active slots now: 1/10
+[642774] Removing disconnected player idx=0 mac=0C:8B:95:A8:1D:2C offline=10001 ms
+[642774] Removed 1 disconnected player(s). Active slots now: 0/10
+[1126564] Button B pressed | broadcasting discovery beacon
+[1126564] Beacon sent; players should announce themselves back to the server
+[1126566] SEND to FF:FF:FF:FF:FF:FF: OK
+[1128632] --- Round reset. 0 players registered ---
+[1130534] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1130534] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=1 reaction_ms=0
+[1130544] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1130571] RREQ: relayed (ttl=5 hop=1)
+[1130572] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1130572] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=2 reaction_ms=0
+[1130582] New player registered: 0C:8B:95:A8:1D:2C (1 total)
+[1130582] Player 0 online (heartbeat age=0 ms): 0C:8B:95:A8:1D:2C
+[1130582] Player 0 back ONLINE (AUTH_RESP heartbeat): 0C:8B:95:A8:1D:2C
+[1130603] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1130631] SEND to FF:FF:FF:FF:FF:FF: OK
+[1131745] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1131746] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=3 reaction_ms=0
+[1131756] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1131817] RREQ: relayed (ttl=5 hop=1)
+[1131824] SEND to FF:FF:FF:FF:FF:FF: OK
+[1134152] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1134152] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1134230] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1134230] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1134320] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1134320] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=1 reaction_ms=0
+[1134331] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1134408] RREQ: relayed (ttl=4 hop=2)
+[1134409] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1134409] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=2 reaction_ms=0
+[1134419] New player registered: 4C:75:25:CB:89:98 (2 total)
+[1134419] Player 1 online (heartbeat age=0 ms): 4C:75:25:CB:89:98
+[1134419] Player 1 back ONLINE (AUTH_RESP heartbeat): 4C:75:25:CB:89:98
+[1134440] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1134468] SEND to FF:FF:FF:FF:FF:FF: OK
+[1134754] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1134755] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=4 reaction_ms=0
+[1134765] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1134803] RREQ: relayed (ttl=5 hop=1)
+[1134805] SEND to FF:FF:FF:FF:FF:FF: OK
+[1134836] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1134836] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1135302] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1135302] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1135361] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1135362] PKT type=1 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=3 reaction_ms=0
+[1135372] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1135403] RREQ: relayed (ttl=4 hop=2)
+[1135405] SEND to FF:FF:FF:FF:FF:FF: OK
+[1137058] Button A pressed | starting round
+[1137058] Valid routes: 2/2
+[1137058] === STARTING ROUND - Player Route Status ===
+[1137058]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1137069]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1137079] ==========================================
+[1137079] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1137081] SEND to 0C:8B:95:A8:1D:2C: OK
+[1137090] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1137150] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+5:4D:98 hop=0 id=5 reaction_ms=0
+[1137772] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1137772] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1137784] SEND to 0C:8B:95:A8:1D:2C: OK
+[1137839] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1137840] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1138150] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1138150] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1138152] SEND to 0C:8B:95:A8:1D:2C: OK
+[1138183] Round is live. GO sent to 2/2 registered players | waiting for PRESS packetse=1[1143772] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1143773] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=7 reaction_ms=0
+[1143783] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1143783] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1143795] SEND to 0C:8B:95:A8:1D:2C: OK
+[1143846] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1143846] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1143857] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1143858] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=8 reaction_ms=0
+[1143868] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1143885] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1143885] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1144328] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1144328] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1144420] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1144421] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=6 reaction_ms=0
+[1144431] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1144431] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1144443] SEND to 0C:8B:95:A8:1D:2C: OK
+[1146730] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1146731] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=9 reaction_ms=0
+[1146741] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1146741] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1146753] SEND to 0C:8B:95:A8:1D:2C: OK
+[1146824] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1146824] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1147326] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1147326] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1147364] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1147364] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1147430] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1147430] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=7 reaction_ms=0
+[1147441] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1147441] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1147452] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1147452] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=8 reaction_ms=0
+[1147462] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1147474] SEND to 0C:8B:95:A8:1D:2C: OK
+[1147572] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1147573] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=10 reaction_ms=10489
+[1147583] ACCEPTED PRESS from player 0 | reaction_ms=10489 hop=0
+[1147583] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1147594] Press state: 1/2 active players received
+[1147596] SEND to 0C:8B:95:A8:1D:2C: OK
+[1147654] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1147655] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=9 reaction_ms=9474
+[1147665] ACCEPTED PRESS from player 1 | reaction_ms=9474 hop=1
+[1147665] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1147676] Press state: 2/2 active players received
+[1147676] === ROUND RESULT ===
+[1147678] SEND to 0C:8B:95:A8:1D:2C: OK
+[1147686]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=10489 | hop=0 | diff=+1015 ms
+[1147696]   Player 1 (4C:75:25:CB:89:98) | reactionMs=9474 | hop=1 | diff=+0 ms
+[1147696]   >> WINNER: Player 1 <<
+[1147707] ====================
+[1147734] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1147735] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1147736] SEND to 0C:8B:95:A8:1D:2C: OK
+[1147745] SEND to 0C:8B:95:A8:1D:2C: OK
+[1149757] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1149757] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=11 reaction_ms=0
+[1149767] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1149768] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1149780] SEND to 0C:8B:95:A8:1D:2C: OK
+[1149825] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1149826] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1150321] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1150321] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1150376] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1150377] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=10 reaction_ms=0
+[1150387] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1150387] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1150399] SEND to 0C:8B:95:A8:1D:2C: OK
+[1150771] --- Round reset. 2 players registered ---
+[1152756] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1152757] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=12 reaction_ms=0
+[1152767] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1152767] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1152779] SEND to 0C:8B:95:A8:1D:2C: OK
+[1152792] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1152793] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1153310] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1153310] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1153351] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1153352] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=11 reaction_ms=0
+[1153362] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1153362] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1153374] SEND to 0C:8B:95:A8:1D:2C: OK
+p[1167822] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1167822] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1168307] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1168307] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1168391] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1168391] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=17 reaction_ms=0
+[1168402] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1168402] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1168414] SEND to 0C:8B:95:A8:1D:2C: OK
+[1170774] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1170775] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=19 reaction_ms=0
+[1170785] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1170786] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1170798] SEND to 0C:8B:95:A8:1D:2C: OK
+[1170816] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1170816] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1171291] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1171291] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1171356] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1171357] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=18 reaction_ms=0
+[1171367] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1171368] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1171379] SEND to 0C:8B:95:A8:1D:2C: OK
+[1172475] Button A pressed | starting round
+[1172475] Valid routes: 2/2
+[1172475] === STARTING ROUND - Player Route Status ===
+[1172475]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1172485]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1172496] ==========================================
+[1172496] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1172498] SEND to 0C:8B:95:A8:1D:2C: OK
+[1172506] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1172566] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1173566] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1173566] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1173568] SEND to 0C:8B:95:A8:1[1173599] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1173757] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1173757] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=20 reaction_ms=0
+[1173768] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1173768] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1173780] SEND to 0C:8B:95:A8:1D:2C: OK
+[1173794] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1173795] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=21 reaction_ms=0
+[1173805] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1173900] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1173900] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1173901] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1173911] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1174301] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1174301] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1174350] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1174351] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=19 reaction_ms=0
+[1174361] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1174362] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1174376] SEND to 0C:8B:95:A8:1D:2C: OK
+[1175253] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1175253] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=20 reaction_ms=1655
+[1175264] ACCEPTED PRESS from player 1 | reaction_ms=1655 hop=1
+[1175264] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1175275] Press state: 1/2 active players received
+[1175275] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1175286] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=22 reaction_ms=2755
+[1175296] ACCEPTED PRESS from player 0 | reaction_ms=2755 hop=0
+[1175297] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1175307] Press state: 2/2 active players received
+[1175307] === ROUND RESULT ===
+[1175307] SEND to 0C:8B:95:A8:1D:2C: OK
+[1175317]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=2755 | hop=0 | diff=+1100 ms
+[1175319] SEND to 0C:8B:95:A8:1D:2C: OK
+[1175327]   Player 1 (4C:75:25:CB:89:98) | reactionMs=1655 | hop=1 | diff=+0 ms
+[1175338]   >> WINNER: Player 1 <<
+[1175338] ====================
+[1175366] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1175366] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1175367] SEND to 0C:8B:95:A8:1D:2C: OK
+[1175376] SEND to 0C:8B:95:A8:1D:2C: OK
+[1175387] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1175387] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1175468] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1175468] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=21 reaction_ms=0
+[1175478] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1175479] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1175491] SEND to 0C:8B:95:A8:1D:2C: OK
+[1176732] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1176733] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=23 reaction_ms=0
+[1176743] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1176744] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1176756] SEND to 0C:8B:95:A8:1D:2C: OK
+[1176784] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1176784] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1178347] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1178347] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1178369] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1178370] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1178402] --- Round reset. 2 players registered ---
+[1178520] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1178521] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=22 reaction_ms=0
+[1178531] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1178531] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1178542] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1178542] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=23 reaction_ms=0
+[1178553] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1178591] SEND to 0C:8B:95:A8:1D:2C: OK
+[1179779] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1179780] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=24 reaction_ms=0
+[1179790] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1179791] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1179804] SEND to 0C:8B:95:A8:1D:2C: OK
+[1179837] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1179837] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1180326] Button A pressed | starting round
+[1180326] Valid routes: 2/2
+[1180326] === STARTING ROUND - Player Route Status ===
+[1180326]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1180336]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1180346] ==========================================
+[1180347] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1180348] SEND to 0C:8B:95:A8:1D:2C: OK
+[1180357] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1180417] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1181373] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1181373] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1181417] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1181417] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1181419] SEND to 0C:8B:95:A8:1D:2C: OK
+[1181450] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1181452] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1181452] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=24 reaction_ms=0
+[1181463] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1181473] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1181477] SEND to 0C:8B:95:A8:1D:2C: OK
+[1181854] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1181854] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=25 reaction_ms=1503
+[1181864] ACCEPTED PRESS from player 0 | reaction_ms=1503 hop=0
+[1181865] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1181875] Press state: 1/2 active players received
+[1181877] SEND to 0C:8B:95:A8:1D:2C: OK
+[1182550] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1182551] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=25 reaction_ms=1062
+[1182561] ACCEPTED PRESS from player 1 | reaction_ms=1062 hop=1
+[1182561] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1182572] Press state: 2/2 active players received
+[1182572] === ROUND RESULT ===
+[1182574] SEND to 0C:8B:95:A8:1D:2C: OK
+[1182582]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=1503 | hop=0 | diff=+441 ms
+[1182592]   Player 1 (4C:75:25:CB:89:98) | reactionMs=1062 | hop=1 | diff=+0 ms
+[1182592]   >> WINNER: Player 1 <<
+[1182603] ====================
+[1182630] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1182631] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1182632] SEND to 0C:8B:95:A8:1D:2C: OK
+[1182641] SEND to 0C:8B:95:A8:1D:2C: OK
+[1182779] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1182780] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=26 reaction_ms=0
+[1182790] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1182791] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1182803] SEND to 0C:8B:95:A8:1D:2C: OK
+[1182862] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1182862] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1184356] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1184356] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1184411] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1184411] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=26 reaction_ms=0
+[1184422] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1184422] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1184434] SEND to 0C:8B:95:A8:1D:2C: OK
+[1185667] --- Round reset. 2 players registered ---
+[1185775] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1185776] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=27 reaction_ms=0
+[1185786] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1185787] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1185800] SEND to 0C:8B:95:A8:1D:2C: OK
+[1185868] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1185868] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1187378] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1187378] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1187422] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1187423] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=27 reaction_ms=0
+[1187433] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1187434] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1187445] SEND to 0C:8B:95:A8:1D:2C: OK
+[1188741] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1188741] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=28 reaction_ms=0
+[1188751] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1188752] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1188765] SEND to 0C:8B:95:A8:1D:2C: OK
+[1188777] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1188777] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=29 reaction_ms=0
+[1188788] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1188858] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1188858] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1188859] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1188869] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1190377] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1190377] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1190413] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1190413] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=28 reaction_ms=0
+[1190424] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1190424] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1190436] SEND to 0C:8B:95:A8:1D:2C: OK
+:8B193544] SEND to 0C:8B:95:A8:1D:2C: OK
+00P~[1194751] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1194752] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=31 reaction_ms=0
+[1194762] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1194763] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1194775] SEND to 0C:8B:95:A8:1D:2C: OK
+[1194786] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1194786] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1195448] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1195448] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=32 reaction_ms=3088
+[1195459] ACCEPTED PRESS from player 0 | reaction_ms=3088 hop=0
+[1195459] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1195470] Press state: 2/2 active players received
+[1195470] === ROUND RESULT ===
+[1195473] SEND to 0C:8B:95:A8:1D:2C: OK
+[1195480]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=3088 | hop=0 | diff=+2332 ms
+[1195490]   Player 1 (4C:75:25:CB:89:98) | reactionMs=756 | hop=1 | diff=+0 ms
+[1195490]   >> WINNER: Player 1 <<
+[1195501] ====================
+[1195528] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1195529] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1195530] SEND to 0C:8B:95:A8:1D:2C: OK
+[1195539] SEND to 0C:8B:95:A8:1D:2C: OK
+[1196336] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1196336] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1196405] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1196406] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=32 reaction_ms=0
+[1196416] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1196417] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1196429] SEND to 0C:8B:95:A8:1D:2C: OK
+[1197764] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1197764] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=33 reaction_ms=0
+[1197774] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1197775] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1197787] SEND to 0C:8B:95:A8:1D:2C: OK
+[1197828] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1197828] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1198565] --- Round reset. 2 players registered ---
+[1199353] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1199354] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1199394] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1199395] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=33 reaction_ms=0
+[1199405] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1199406] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1199419] SEND to 0C:8B:95:A8:1D:2C: OK
+[1200728] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1200728] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=34 reaction_ms=0
+[1200738] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1200739] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1200751] SEND to 0C:8B:95:A8:1D:2C: OK
+[1200807] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1200807] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1202342] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1202342] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1202421] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1202422] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=34 reaction_ms=0
+[1202432] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1202433] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1202445] SEND to 0C:8B:95:A8:1D:2C: OK
+[1203732] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1203732] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=35 reaction_ms=0
+[1203742] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1203743] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1203761] SEND to 0C:8B:95:A8:1D:2C: OK
+[1203802] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1203802] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1203805] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1203816] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=36 reaction_ms=0
+[1203816] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1203853] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1203853] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1205375] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1205376] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1205430] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1205430] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=35 reaction_ms=0
+[1205440] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1205441] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1205453] SEND to 0C:8B:95:A8:1D:2C: OK
+[1206759] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1206760] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=37 reaction_ms=0
+[1206770] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1206771] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1206783] SEND to 0C:8B:95:A8:1D:2C: OK
+[1206839] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1206839] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1207339] Button A pressed | starting round
+[1207339] Valid routes: 2/2
+[1207340] === STARTING ROUND - Player Route Status ===
+[1207340]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1207350]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1207360] ==========================================
+[1207361] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1207362] SEND to 0C:8B:95:A8:1D:2C: OK
+[1207371] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1207431] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1208373] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1208373] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1208417] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1208417] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1208431] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1208431] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1208433] SEND to 0C:8B:95:A8:1D:2C: OK
+[1208464] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1208546] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1208546] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=36 reaction_ms=0
+[1208557] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1208557] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1208568] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1208568] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=37 reaction_ms=0
+[1208578] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1208590] SEND to 0C:8B:95:A8:1D:2C: OK
+[1209476] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1209477] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=38 reaction_ms=2112
+[1209487] ACCEPTED PRESS from player 0 | reaction_ms=2112 hop=0
+[1209487] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1209498] Press state: 1/2 active players received
+[1209500] SEND to 0C:8B:95:A8:1D:2C: OK
+[1209738] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1209738] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=39 reaction_ms=0
+[1209749] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1209749] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1209761] SEND to 0C:8B:95:A8:1D:2C: OK
+[1209792] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1209792] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1210721] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1210721] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=38 reaction_ms=2126
+[1210732] ACCEPTED PRESS from player 1 | reaction_ms=2126 hop=1
+[1210732] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1210743] Press state: 2/2 active players received
+[1210743] === ROUND RESULT ===
+[1210744] SEND to 0C:8B:95:A8:1D:2C: OK
+[1210753]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=2112 | hop=0 | diff=+0 ms
+[1210763]   Player 1 (4C:75:25:CB:89:98) | reactionMs=2126 | hop=1 | diff=+14 ms
+[1210763]   >> WINNER: Player 0 <<
+[1210773] ====================
+[1210801] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1210802] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1210803] SEND to 0C:8B:95:A8:1D:2C: OK
+[1210812] SEND to 0C:8B:95:A8:1D:2C: OK
+[1211364] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1211364] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1211436] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1211436] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=39 reaction_ms=0
+[1211446] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1211447] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1211459] SEND to 0C:8B:95:A8:1D:2C: OK
+[1212723] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1212723] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=40 reaction_ms=0
+[1212733] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1212734] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1212746] SEND to 0C:8B:95:A8:1D:2C: OK
+[1212793] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1212793] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1213838] --- Round reset. 2 players registered ---
+[1214358] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1214359] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1214448] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1214448] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=40 reaction_ms=0
+[1214458] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1214459] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1214472] SEND to 0C:8B:95:A8:1D:2C: OK
+[1215758] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1215758] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=41 reaction_ms=0
+[1215768] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1215769] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1215781] SEND to 0C:8B:95:A8:1D:2C: OK
+[1215843] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1215843] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1217339] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1217339] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1217386] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1217386] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=41 reaction_ms=0
+[1217396] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1217397] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1217409] SEND to 0C:8B:95:A8:1D:2C: OK
+5:41`	P1
+x[1221303] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1221304] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=44 reaction_ms=2081
+[1221314] ACCEPTED PRESS from player 0 | reaction_ms=2081 hop=0
+[1221314] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1221325] Press state: 1/2 active players received
+[1221328] SEND to 0C:8B:95:A8:1D:2C: OK
+[1221738] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1221738] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=45 reaction_ms=0
+[1221748] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1221749] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1221761] SEND to 0C:8B:95:A8:1D:2C: OK
+[1221784] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1221784] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1222570] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1222570] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=43 reaction_ms=2249
+[1222580] ACCEPTED PRESS from player 1 | reaction_ms=2249 hop=1
+[1222581] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1222591] Press state: 2/2 active players received
+[1222591] === ROUND RESULT ===
+[1222593] SEND to 0C:8B:95:A8:1D:2C: OK
+[1222601]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=2081 | hop=0 | diff=+0 ms
+[1222612]   Player 1 (4C:75:25:CB:89:98) | reactionMs=2249 | hop=1 | diff=+168 ms
+[1222612]   >> WINNER: Player 0 <<
+[1222622] ====================
+[1222650] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1222650] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1222653] SEND to 0C:8B:95:A8:1D:2C: OK
+[1222661] SEND to 0C:8B:95:A8:1D:2C: OK
+[1223372] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1223372] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1223403] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1223404] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1223470] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1223471] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=44 reaction_ms=0
+[1223481] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1223482] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1223492] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1223493] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=45 reaction_ms=0
+[1223503] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1223541] SEND to 0C:8B:95:A8:1D:2C: OK
+[1224779] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1224779] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=46 reaction_ms=0
+[1224789] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1224790] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1224802] SEND to 0C:8B:95:A8:1D:2C: OK
+[1224820] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1224820] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1225687] --- Round reset. 2 players registered ---
+[1226341] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1226341] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1226390] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1226391] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=46 reaction_ms=0
+[1226401] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1226402] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1226414] SEND to 0C:8B:95:A8:1D:2C: OK
+[1226881] Button A pressed | starting round
+[1226882] Valid routes: 2/2
+[1226882] === STARTING ROUND - Player Route Status ===
+[1226882]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1226892]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1226902] ==========================================
+[1226903] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1226904] SEND to 0C:8B:95:A8:1D:2C: OK
+[1226913] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1226973] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1227784] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1227785] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=47 reaction_ms=0
+[1227795] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1227795] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1227807] SEND to 0C:8B:95:A8:1D:2C: OK
+[1227851] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1227851] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1227973] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1227973] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1227975] SEND to 0C:8B:95:A8:1D:2C: OK
+[1228006] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1228493] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1228493] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=47 reaction_ms=488
+[1228503] ACCEPTED PRESS from player 1 | reaction_ms=488 hop=1
+[1228504] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1228514] Press state: 1/2 active players received
+[1228516] SEND to 0C:8B:95:A8:1D:2C: OK
+[1228966] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1228966] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=48 reaction_ms=2059
+[1228977] ACCEPTED PRESS from player 0 | reaction_ms=2059 hop=0
+[1228977] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1228987] Press state: 2/2 active players received
+[1228987] === ROUND RESULT ===
+[1228989] SEND to 0C:8B:95:A8:1D:2C: OK
+[1228998]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=2059 | hop=0 | diff=+1571 ms
+[1229008]   Player 1 (4C:75:25:CB:89:98) | reactionMs=488 | hop=1 | diff=+0 ms
+[1229008]   >> WINNER: Player 1 <<
+[1229018] ====================
+[1229046] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1229047] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1229053] SEND to 0C:8B:95:A8:1D:2C: OK
+[1229059] SEND to 0C:8B:95:A8:1D:2C: OK
+[1229339] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1229339] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1229381] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1229381] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=48 reaction_ms=0
+[1229391] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1229392] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1229404] SEND to 0C:8B:95:A8:1D:2C: OK
+[1230724] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1230724] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=49 reaction_ms=0
+[1230734] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1230735] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1230749] SEND to 0C:8B:95:A8:1D:2C: OK
+[1230758] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1230758] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1232083] --- Round reset. 2 players registered ---
+[1232336] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1232336] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1232429] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1232430] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=49 reaction_ms=0
+[1232440] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1232440] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1232452] SEND to 0C:8B:95:A8:1D:2C: OK
+[1232506] Button A pressed | starting round
+[1232506] Valid routes: 2/2
+[1232506] === STARTING ROUND - Player Route Status ===
+[1232506]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1232516]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1232526] ==========================================
+[1232527] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1232528] SEND to 0C:8B:95:A8:1D:2C: OK
+[1232537] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1232597] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1233597] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1233597] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1233599] SEND to 0C:8B:95:A8:1D:2C: OK
+[1233630] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1233726] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1233726] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=50 reaction_ms=0
+[1233736] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1233737] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1233749] SEND to 0C:8B:95:A8:1D:2C: OK
+[1233775] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1233775] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1233802] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1233802] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=51 reaction_ms=0
+[1233812] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1233834] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1233834] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1234492] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1234492] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=52 reaction_ms=1961
+[1234503] ACCEPTED PRESS from player 0 | reaction_ms=1961 hop=0
+[1234503] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1234513] Press state: 1/2 active players received
+[1234515] SEND to 0C:8B:95:A8:1D:2C: OK
+[1234558] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1234558] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=50 reaction_ms=928
+[1234569] ACCEPTED PRESS from player 1 | reaction_ms=928 hop=1
+[1234569] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1234579] Press state: 2/2 active players received
+[1234579] === ROUND RESULT ===
+[1234583] SEND to 0C:8B:95:A8:1D:2C: OK
+[1234590]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=1961 | hop=0 | diff=+1033 ms
+[1234600]   Player 1 (4C:75:25:CB:89:98) | reactionMs=928 | hop=1 | diff=+0 ms
+[1234600]   >> WINNER: Player 1 <<
+[1234610] ====================
+[1234638] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1234639] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1234641] SEND to 0C:8B:95:A8:1D:2C: OK
+[1234649] SEND to 0C:8B:95:A8:1D:2C: OK
+[1235337] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1235337] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1235378] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1235378] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=51 reaction_ms=0
+[1235388] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1235389] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1235405] SEND to 0C:8B:95:A8:1D:2C: OK
+[1236768] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1236768] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=53 reaction_ms=0
+[1236778] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1236779] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1236791] SEND to 0C:8B:95:A8:1D:2C: OK
+[1236859] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1236859] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1237675] --- Round reset. 2 players registered ---
+[1238356] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1238356] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1238401] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1238401] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=52 reaction_ms=0
+[1238411] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1238412] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1238423] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1238423] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1238433] SEND to 0C:8B:95:A8:1D:2C: OK
+[1238500] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1238500] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=53 reaction_ms=0
+[1238510] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1239746] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1239746] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=54 reaction_ms=0
+[1239756] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1239757] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1239769] SEND to 0C:8B:95:A8:1D:2C: OK
+[1239787] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1239787] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1240425] Button A pressed | starting round
+[1240425] Valid routes: 2/2
+[1240425] === STARTING ROUND - Player Route Status ===
+[1240425]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1240436]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1240446] ==========================================
+[1240447] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1240448] SEND to 0C:8B:95:A8:1D:2C: OK
+[1240457] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1240517] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1241359] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1241359] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1241391] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1241391] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=54 reaction_ms=0
+[1241401] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1241402] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1241414] SEND to 0C:8B:95:A8:1D:2C: OK
+[1241501] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1241502] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=55 reaction_ms=1050
+[1241512] DROP: round not active
+[1241517] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1241517] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1241519] SEND to 0C:8B:95:A8:1D:2C: OK
+[1241550] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1241573] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1241573] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=55 reaction_ms=22
+[1241583] ACCEPTED PRESS from player 1 | reaction_ms=22 hop=1
+[1241584] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1241594] Press state: 1/2 active players received
+[1241597] SEND to 0C:8B:95:A8:1D:2C: OK
+[1242730] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1242730] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=56 reaction_ms=0
+[1242741] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1242741] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1242753] SEND to 0C:8B:95:A8:1D:2C: OK
+[1242775] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1242775] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1244351] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1244351] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1244412] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1244413] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=56 reaction_ms=0
+[1244423] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1244424] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1244436] SEND to 0C:8B:95:A8:1D:2C: OK
+[1245725] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1245725] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=57 reaction_ms=0
+[1245736] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1245736] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1245748] SEND to 0C:8B:95:A8:1D:2C: OK
+[1245811] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1245811] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1246641] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1246642] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=58 reaction_ms=0
+[1246652] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1246652] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1246663] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1246663] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=55 reaction_ms=1050
+[1246674] ACCEPTED PRESS from player 0 | reaction_ms=1050 hop=0
+[1246685] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1246685] Press state: 2/2 active players received
+[1246695] === ROUND RESULT ===
+[1246695]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=1050 | hop=0 | diff=+1028 ms
+[1246695] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1246705]   Player 1 (4C:75:25:CB:89:98) | reactionMs=22 | hop=1 | diff=+0 ms
+[1246705] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1246716]   >> WINNER: Player 1 <<
+[1246726] ====================
+[1246726] SEND to 0C:8B:95:A8:1D:2C: OK
+[1246732] SEND to 0C:8B:95:A8:1D:2C: OK
+[1246753] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1246754] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1246756] SEND to 0C:8B:95:A8:1D:2C: OK
+[1246764] SEND to 0C:8B:95:A8:1D:2C: OK
+[1247347] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1247347] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1247407] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1247407] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=57 reaction_ms=0
+[1247417] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1247418] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1247430] SEND to 0C:8B:95:A8:1D:2C: OK
+[1249552] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1249552] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=59 reaction_ms=0
+[1249563] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1249563] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1249575] SEND to 0C:8B:95:A8:1D:2C: OK
+[1249602] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1249602] PKT type=9 origin=0C:8B:95:A8:1D:2C dest=FF:FF:FF:FF:FF:FF hop=0 id=60 reaction_ms=0
+[1249613] AUTH_RESP: explicit join from 0C:8B:95:A8:1D:2C | registered
+[1249671] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1249671] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1249672] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1249682] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1249790] --- Round reset. 2 players registered ---
+[1250335] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1250335] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1250379] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1250379] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=58 reaction_ms=0
+[1250389] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1250390] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1250402] SEND to 0C:8B:95:A8:1D:2C: OK
+[1252568] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1252568] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=61 reaction_ms=0
+[1252579] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1252579] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1252591] SEND to 0C:8B:95:A8:1D:2C: OK
+[1252612] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1252612] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1253340] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1253340] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1253406] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1253406] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=59 reaction_ms=0
+[1253417] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1253417] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1253428] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1253428] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1253440] SEND to 0C:8B:95:A8:1D:2C: OK
+[1253517] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1253517] PKT type=9 origin=4C:75:25:CB:89:98 dest=FF:FF:FF:FF:FF:FF hop=1 id=60 reaction_ms=0
+[1253528] AUTH_RESP: explicit join from 4C:75:25:CB:89:98 | registered
+[1255272] Button A pressed | starting round
+[1255272] Valid routes: 2/2
+[1255272] === STARTING ROUND - Player Route Status ===
+[1255272]   Player 0 (0C:8B:95:A8:1D:2C) has route | hop_count=1 | valid=true
+[1255282]   Player 1 (4C:75:25:CB:89:98) has route | hop_count=2 | valid=true
+[1255292] ==========================================
+[1255293] GO to player 0 (0C:8B:95:A8:1D:: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1255295] SEND to 0C:8B:95:A8:1D:2C: OK
+[1255303] GO: sent to player 0 (0C:8B:95:A8:1D:2C)
+[1255363] GO: injecting 1000 ms demo delay for faulty player 1 (4C:75:25:CB:89:98)
+[1255553] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1255553] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=62 reaction_ms=0
+[1255564] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1255564] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1255576] SEND to 0C:8B:95:A8:1D:2C: OK
+[1255619] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1255619] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1256363] GO to player 1 (4C:75:25:CB:89:: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1256363] GO: sent to player 1 (4C:75:25:CB:89:98)
+[1256365] SEND to 0C:8B:95:A8:1D:2C: OK
+[1256394] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=1
+[1256395] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1256396] Round is live. GO sent to 2/2 registered players | waiting for PRESS packets
+[1256485] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1256485] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=61 reaction_ms=0
+[1256495] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1256496] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1256508] SEND to 0C:8B:95:A8:1D:2C: OK
+[1257213] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1257214] PKT type=4 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=62 reaction_ms=813
+[1257224] ACCEPTED PRESS from player 1 | reaction_ms=813 hop=1
+[1257225] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1257235] Press state: 1/2 active players received
+[1257235] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=1
+[1257246] PKT type=4 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=63 reaction_ms=1911
+[1257256] ACCEPTED PRESS from player 0 | reaction_ms=1911 hop=0
+[1257257] PRESS ACK: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1257267] Press state: 2/2 active players received
+[1257267] === ROUND RESULT ===
+[1257271] SEND to 0C:8B:95:A8:1D:2C: OK
+[1257277]   Player 0 (0C:8B:95:A8:1D:2C) | reactionMs=1911 | hop=0 | diff=+1098 ms
+[1257278] SEND to 0C:8B:95:A8:1D:2C: OK
+[1257288]   Player 1 (4C:75:25:CB:89:98) | reactionMs=813 | hop=1 | diff=+0 ms
+[1257298]   >> WINNER: Player 1 <<
+[1257298] ====================
+[1257326] RESULT to player 0: via 0C:8B:95:A8:1D:2C toward 0C:8B:95:A8:1D:2C (ttl=6 hop=0 route_hops=1)
+[1257326] RESULT to player 1: via 0C:8B:95:A8:1D:2C toward 4C:75:25:CB:89:98 (ttl=6 hop=0 route_hops=2)
+[1257327] SEND to 0C:8B:95:A8:1D:2C: OK
+[1257337] SEND to 0C:8B:95:A8:1D:2C: OK
+[1257378] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1257378] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1257386] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1257386] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=64 reaction_ms=0
+[1257396] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1257407] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1257409] SEND to 0C:8B:95:A8:1D:2C: OK
+[1257464] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1257464] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1257471] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1257472] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=63 reaction_ms=0
+[1257482] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1257492] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1257494] SEND to 0C:8B:95:A8:1D:2C: OK
+[1260359] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1260359] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=65 reaction_ms=0
+[1260362] --- Round reset. 2 players registered ---
+[1260370] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1260380] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1260382] SEND to 0C:8B:95:A8:1D:2C: OK
+[1260450] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1260450] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1260451] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1260461] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1260540] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1260540] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=64 reaction_ms=0
+[1260550] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1260551] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1260563] SEND to 0C:8B:95:A8:1D:2C: OK
+[1263346] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1263346] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
+[1263438] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1263438] PKT type=1 origin=0C:8B:95:A8:1D:2C dest=D4:D4:DA:85:4D:98 hop=0 id=66 reaction_ms=0
+[1263449] RREQ: reverse route origin=0C:8B:95:A8:1D:2C via=0C:8B:95:A8:1D:2C hops=1
+[1263449] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1263460] RECV from 0C:8B:95:A8:1D:2C | len=36 | roundActive=0
+[1263460] PKT type=1 origin=4C:75:25:CB:89:98 dest=D4:D4:DA:85:4D:98 hop=1 id=65 reaction_ms=0
+[1263470] RREQ: reverse route origin=4C:75:25:CB:89:98 via=0C:8B:95:A8:1D:2C hops=2
+[1263481] RREQ: I am dest, sent RREP to 0C:8B:95:A8:1D:2C
+[1263483] SEND to 0C:8B:95:A8:1D:2C: OK
+[1263484] SEND to 0C:8B:95:A8:1D:2C: OK
+[1263531] RECV from 4C:75:25:CB:89:98 | len=36 | roundActive=0
+[1263531] DROP: source 4C:75:25:CB:89:98 is blocked for NewServer
